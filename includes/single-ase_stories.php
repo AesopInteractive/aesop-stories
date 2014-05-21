@@ -1,9 +1,16 @@
-<?php get_header(); ?>
-	<div class="ase-content">
-		<?php if (have_posts()) : while(have_posts()) : the_post();
+<?php get_header();
 
-			the_content();
+if (have_posts()) : while(have_posts()) : the_post();
 
-		endwhile;endif; ?>
+	?>
+	<!-- ASE Content -->
+	<div class="ase-content ase-single-story">
+
+		<?php the_content(); ?>
+
 	</div>
-<?php get_footer();
+	<?php
+
+endwhile;endif;
+
+get_footer();

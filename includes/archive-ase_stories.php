@@ -3,9 +3,9 @@
 get_header();
 
 	?>
-	<div class="ase-stories-wrap">
+	<div class="ase-content ase-stories-wrap">
 
-		<h1>Aesop Original Story Series | Archive</h1>
+		story archive grid with author / date etc
 
 	</div>
 	<?php
