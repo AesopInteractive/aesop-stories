@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       ASE Stories
  * Plugin URI:        http://aesopstoryengine.com/stories
- * Description:       Storiess awesome sites using Aesop Story Engine
+ * Description:       Plugin to create stories template for Aesop Original Story Series
  * Version:           1.0.0
  * Author:            Aesopinteractive L.L.C.
  * Author URI:        http://aesopinteractive.com
