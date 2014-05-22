@@ -1,9 +1,9 @@
 // variables
-@width:        900px;
-@base:         white;
+@width:             900px;
+@base:              white;
 
-@base-font:    'Lato', sans-serif;
-@headings-font:      'Lustria', serif;
+@base-font:         'Lato', sans-serif;
+@headings-font:     'Lustria', serif;
 
 /*
 *
@@ -27,6 +27,16 @@
 // header
 .aesop-story-header{
     background: @base;
+
+    &:after {
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,0.5);
+    }
 }
 .aesop-story-header-inner {
     top: 40%;
