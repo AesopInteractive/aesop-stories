@@ -66,6 +66,8 @@ class ASE_Stories {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		add_action('init', array($this,'img_sizes'));
+
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
@@ -266,6 +268,10 @@ class ASE_Stories {
 		if ('aesop_stories' == get_post_type() ) {
 			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/public.js', array('jquery'), ASE_STORIES_VERSION, true );
 		}
+	}
+
+	function img_sizes(){
+		add_image_size('aesop-story-cover', 1200, 9999, true);
 	}
 
 }
