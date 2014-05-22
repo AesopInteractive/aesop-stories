@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
 
 	var storyFader = function(){
 	 	window_scroll = jQuery(this).scrollTop();
-   		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/jQuery(window).height())});
+   		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/ (jQuery(window).height() / 1.4))});
    	}
 
    	// call teh fancy cover resizer and again on resize
