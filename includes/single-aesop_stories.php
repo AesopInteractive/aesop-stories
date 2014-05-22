@@ -4,7 +4,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 	?>
 	<!-- ASE Content -->
-	<div class="ase-content ase-single-story">
+	<div class="aesop-content ase-single-story">
 
 		<?php the_content(); ?>
 

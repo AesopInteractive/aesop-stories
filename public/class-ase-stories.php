@@ -10,13 +10,6 @@
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * public-facing side of the WordPress site.
- *
- * If you're interested in introducing administrative or dashboard
- * functionality, then refer to `class-plugin-name-admin.php`
- *
- * @TODO: Rename this class to a proper name for your plugin.
  *
  * @package ASE_Stories
  * @author  Nick Haskins <nick@aesopinteractive.com>
@@ -33,8 +26,6 @@ class ASE_Stories {
 	const VERSION = '1.0.0';
 
 	/**
-	 * @TODO - Rename "plugin-name" to the name your your plugin
-	 *
 	 * Unique identifier for your plugin.
 	 *
 	 *
@@ -46,7 +37,7 @@ class ASE_Stories {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'ase-stories';
+	protected $plugin_slug = 'aesop-stories';
 
 	/**
 	 * Instance of this class.
@@ -73,7 +64,6 @@ class ASE_Stories {
 
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
@@ -264,16 +254,10 @@ class ASE_Stories {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
-	}
 
-	/**
-	 * Register and enqueues public-facing JavaScript files.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		if ('aesop_stories' == get_post_type() ) {
+			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
+		}
 	}
 
 
