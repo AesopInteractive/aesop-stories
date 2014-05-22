@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
 
    	// call teh fancy cover resizer and again on resize
 	storyResizer();
-	jQuery(window).resize(function(){
+	jQuery(window).on('resize', function(){
         storyResizer();
     });
 
@@ -29,14 +29,7 @@ jQuery(document).ready(function(){
     	if ( scrollPosition <= jQuery(window).height() ) {
     		storyFader();
     	}
+
     });
-
-	// when the story hits the top of the page
-	jQuery(storyEntry).waypoint(function(direction) {
-
-		// remove the story cover so it doesnt bleed out the bottom
-	   	jQuery(storyHeader).toggleClass('not-visible');
-
-	});
 
 });

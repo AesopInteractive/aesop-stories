@@ -6,7 +6,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 	$coverimg 		= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'aesop-story-cover' );
 
 	?>
-	<article id="story-<?php the_ID();?>">
+	<article id="story-<?php the_ID();?>" class="aesop-story">
 
 		<!-- Story Header -->
 		<header class="aesop-story-header">

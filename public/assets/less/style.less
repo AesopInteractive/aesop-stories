@@ -2,11 +2,27 @@
 @width:        900px;
 @base:         white;
 
+@base-font:    'Lato', sans-serif;
+@headings-font:      'Lustria', serif;
+
 /*
 *
 * THEME
 *
 */
+
+.aesop-story {
+      -webkit-font-smoothing: antialiased;
+    p {
+        font-family:@base-font;
+        font-weight:300;
+        font-size: 1.85rem; // 19px
+        line-height: 3rem; // 30px
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: @headings-font;
+    }
+}
 
 // header
 .aesop-story-header{
@@ -23,6 +39,7 @@
 
 // entry
 .aesop-story-entry {
+    padding-top:60px;
     background:@base;
 }
 
