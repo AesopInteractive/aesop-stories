@@ -10,19 +10,26 @@ jQuery(document).ready(function(){
 		jQuery(storyEntry).css({'margin-top':(jQuery(window).height())+'px'});
 	}
 
-	storyResizer();
+	var storyFader = function(){
+	 	window_scroll = jQuery(this).scrollTop();
+   		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/jQuery(window).height())});
+   	}
 
+   	// call teh fancy cover resizer and again on resize
+	storyResizer();
 	jQuery(window).resize(function(){
         storyResizer();
     });
 
-	// when the story hits the bottom page
-	jQuery(storyEntry).waypoint(function(direction) {
+	// fade the cover out on scroll and stop the paint after we're past the header
+    jQuery(window).on('scroll',function(){
 
-		// toggle a class of faded so we can fade a white mask in and out
-	   	jQuery(storyHeader).toggleClass('faded');
+    	scrollPosition = jQuery(this).scrollTop();
 
-	}, {offset:'100%'});
+    	if ( scrollPosition <= jQuery(window).height() ) {
+    		storyFader();
+    	}
+    });
 
 	// when the story hits the top of the page
 	jQuery(storyEntry).waypoint(function(direction) {
