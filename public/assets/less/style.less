@@ -1,13 +1,55 @@
-// structure
+// variables
+@width:        900px;
+@base:         white;
+
+/*
+*
+* THEME
+*
+*/
+
+// header
+.aesop-story-header-inner {
+    .aesop-story-title {
+        text-align: center;
+        color:white;
+    }
+}
+
+// entry
+.aesop-story-entry {
+    background:@base;
+}
+
+/**
+*
+*  STRUCTURE
+*
+*/
+
+// mixins
+.aesop-story-width {
+    max-width:@width;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+// header
 .aesop-story-header {
     height:1000px; //temporary until js kicks in
-    position: relative;
+    width:100%;
+    position: fixed;
+    top:0;
 
     .aesop-story-header-inner {
-        position: relative;
+        position: absolute;
         z-index: 1;
+        top: 50%;
+        width: 100%;
+        left: 0;
+        right: 0;
 
-        h1 {
+        .aesop-story-title {
             margin-top:0;
         }
     }
@@ -17,5 +59,16 @@
         height:100%;
         left:0;
         top:0;
+    }
+}
+
+// entry
+.aesop-story-entry {
+    z-index: 1;
+    position: relative;
+    margin-top:1000px;
+
+    p,h1,h2,h3,h4,h5,h6,ul,ol {
+        .aesop-story-width;
     }
 }
