@@ -3,7 +3,7 @@
 get_header();
 
 	?>
-	<div class="ase-content ase-stories-wrap">
+	<div class="aesop-content aesop-stories-archive">
 
 		story archive grid with author / date etc
 

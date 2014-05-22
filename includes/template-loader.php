@@ -15,7 +15,7 @@ class aseStoriesTemplateLoader {
 	* @return page template based on view
 	*/
 	function template_loader($template) {
-		
+
 	    // override single
 	    if ( 'aesop_stories' == get_post_type() ):
 
@@ -29,7 +29,6 @@ class aseStoriesTemplateLoader {
 			}
 
 	    endif;
-	    
 
 	    // override archive
 	    if ( is_post_type_archive('aesop_stories')):
