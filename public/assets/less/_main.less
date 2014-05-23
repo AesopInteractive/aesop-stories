@@ -1,0 +1,120 @@
+// general
+.aesop-story {
+    -webkit-font-smoothing: antialiased;
+    p {
+        font-family:@base-font;
+        font-weight:300;
+        font-size: 1.85rem; // 19px
+        line-height: 3rem; // 30px
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: @headings-font;
+    }
+}
+// entry
+.aesop-story-entry {
+    padding-top:60px;
+    background:@base;
+        z-index: 1;
+    position: relative;
+    margin-top:1000px;
+
+    p,h1,h2,h3,h4,h5,h6,ul,ol {
+        .aesop-story-width;
+    }
+}
+
+// story cover
+.aesop-story-cover{
+    background: @base;
+    height:1000px; //temporary until js kicks in
+    width:100%;
+    position: fixed;
+    top:0;
+
+    &:before {
+        content:'\f347';
+        font-family: 'Dashicons';
+        position: absolute;
+        bottom: 80px;
+        color: #fff;
+        left: 50%;
+        height: 40px;
+        width: 60px;
+        z-index: 2;
+    }
+    &:after {
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,0.5);
+    }
+    .aesop-story-cover-inner {
+        top: 20%;
+        text-align: center;
+        color:white;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        right: 0;
+
+        .aesop-story-title {
+            margin:0;
+            font-size:12rem;
+            line-height: 12rem;
+            text-transform: uppercase;
+        }
+        .aesop-story-meta {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+    .aesop-story-excerpt {
+        text-align: left;
+        max-width:60%;
+        margin:3rem auto 0;
+
+        &:first-letter {
+            float: left;
+            font-size: 9.6rem;
+            line-height: 8rem;
+            padding-top: 0.9rem;
+            padding-right: 0.85rem;
+            padding-left: 0;
+            font-family: @headings-font;
+            font-weight:700;
+        }
+    }
+    .aesop-story-cover-img {
+        position: absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+    }
+}
+
+// story header
+.aesop-story-header {
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 2;
+    background: @base;
+    opacity:0;
+    transition: opacity .35s ease-in-out;
+
+    &.visible {
+        opacity:1.0;
+        z-index: 2;
+        display: block;
+
+        &:after {
+            opacity:0;
+        }
+    }
+}
