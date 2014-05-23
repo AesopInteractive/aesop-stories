@@ -31,11 +31,6 @@ if (have_posts()) : while(have_posts()) : the_post();
 			<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
 			<div class="aesop-story-chapters"></div>
 			<?php } ?>
-			<progress value="0">
-			  	<div class="aesop-story-progress-container">
-			    <span class="aesop-story-progress-bar"></span>
-			  	</div>
-			</progress>
 		</aside>
 
 		<!-- Story Entry -->
