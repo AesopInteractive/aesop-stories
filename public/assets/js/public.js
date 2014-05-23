@@ -3,6 +3,7 @@ jQuery(document).ready(function(){
 	// globa variabls
 	var storyHeader	= jQuery('.aesop-story-cover'),
 		storyEntry  = jQuery('.aesop-story-entry'),
+		storyExcerpt= jQuery('.aesop-story-excerpt'),
 		storyIndicator = jQuery('.aesop-story-indicator');
 
 	//  global functions
@@ -14,7 +15,8 @@ jQuery(document).ready(function(){
 	var storyFader = function(){
 	 	window_scroll = jQuery(this).scrollTop();
    		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/ (jQuery(window).height() / 1.4))});
-   		jQuery(storyIndicator).css({'opacity' : 1-(window_scroll/ (jQuery(window).height() / 10))});
+   		jQuery(storyExcerpt).css({'opacity' : 1-(window_scroll/ (jQuery(window).height() / 2.2))});
+   		jQuery(storyIndicator).css({'opacity' : 0.5-(window_scroll/ (jQuery(window).height() / 10))});
    	}
 
    	// call teh fancy cover resizer and again on resize
