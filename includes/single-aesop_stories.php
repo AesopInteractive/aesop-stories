@@ -19,16 +19,11 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 		</header>
 
-		<?php
+		<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
+			<!-- Story Chapters -->
+			<aside class="aesop-entry-header aesop-story-chapters"></aside>
 
-		if ( function_exists('aesop_component_exists') ) {
-
-			if ( aesop_component_exists('chapter') ) {
-				?><div class="aesop-entry-header"></div><?php
-			}
-		}
-
-		?>
+		<?php } ?>
 
 		<!-- Story Entry -->
 		<section class="aesop-entry-content aesop-story-entry">

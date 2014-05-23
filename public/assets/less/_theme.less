@@ -1,0 +1,41 @@
+.aesop-story {
+      -webkit-font-smoothing: antialiased;
+    p {
+        font-family:@base-font;
+        font-weight:300;
+        font-size: 1.85rem; // 19px
+        line-height: 3rem; // 30px
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: @headings-font;
+    }
+}
+
+// header
+.aesop-story-header{
+    background: @base;
+
+    &:after {
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background:rgba(0,0,0,0.5);
+    }
+}
+.aesop-story-header-inner {
+    top: 40%;
+    .aesop-story-title {
+        text-align: center;
+        color:white;
+        font-size:8rem;
+    }
+}
+
+// entry
+.aesop-story-entry {
+    padding-top:60px;
+    background:@base;
+}
