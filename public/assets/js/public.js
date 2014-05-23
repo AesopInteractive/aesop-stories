@@ -39,4 +39,56 @@ jQuery(document).ready(function(){
 
 	});
 
+	// sroll indicator
+	 var getMax = function(){
+    return jQuery(document).height() - jQuery(window).height();
+  }
+
+  var getValue = function(){
+    return jQuery(window).scrollTop();
+  }
+
+  if ('max' in document.createElement('progress')) {
+    // Browser supports progress element
+    var progressBar = jQuery('progress');
+
+    // Set the Max attr for the first time
+    progressBar.attr({ max: getMax() });
+
+    jQuery(document).on('scroll', function(){
+      // On scroll only Value attr needs to be calculated
+      progressBar.attr({ value: getValue() });
+    });
+
+    jQuery(window).resize(function(){
+      // On resize, both Max/Value attr needs to be calculated
+      progressBar.attr({ max: getMax(), value: getValue() });
+    });
+
+  } else {
+
+    var progressBar = jQuery('.aesop-story-progress'),
+        max = getMax(),
+        value, width;
+
+    var getWidth = function() {
+      // Calculate width in percentage
+      value = getValue();
+      width = (value/max) * 100;
+      width = width + '%';
+      return width;
+    }
+
+    var setWidth = function(){
+      progressBar.css({ width: getWidth() });
+    }
+
+    jQuery(document).on('scroll', setWidth);
+    jQuery(window).on('resize', function(){
+      // Need to reset the Max attr
+      max = getMax();
+      setWidth();
+    });
+  }
+
 });
