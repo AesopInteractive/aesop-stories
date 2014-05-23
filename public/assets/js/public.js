@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 
 	// globa variabls
-	var storyHeader	= jQuery('.aesop-story-header'),
+	var storyHeader	= jQuery('.aesop-story-cover'),
 		storyEntry  = jQuery('.aesop-story-entry');
 
 	//  global functions
@@ -31,5 +31,12 @@ jQuery(document).ready(function(){
     	}
 
     });
+
+    // fade in story header
+    jQuery(storyEntry).waypoint(function(direction){
+
+		jQuery('.aesop-story-header').toggleClass('visible');
+
+	});
 
 });

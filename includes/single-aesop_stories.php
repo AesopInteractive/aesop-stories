@@ -8,22 +8,28 @@ if (have_posts()) : while(have_posts()) : the_post();
 	?>
 	<article id="story-<?php the_ID();?>" class="aesop-story">
 
-		<!-- Story Header -->
-		<header class="aesop-story-header">
+		<!-- Story Cover -->
+		<header class="aesop-story-cover">
 
-			<div class="aesop-content aesop-story-header-inner">
+			<div class="aesop-content aesop-story-cover-inner">
+
 				<?php the_title('<h1 class="aesop-story-title">','</h1>');?>
+				<p class="aesop-story-meta">By <?php echo the_author();?></p>
+
 			</div>
 
-			<div class="aesop-story-cover clearfix" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
+			<div class="aesop-story-cover-img clearfix" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
 
 		</header>
 
-		<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
-			<!-- Story Chapters -->
-			<aside class="aesop-entry-header aesop-story-chapters"></aside>
+		<!-- Story Header -->
+		<aside class="aesop-story-header">
 
-		<?php } ?>
+			<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
+			<div class="aesop-story-chapters"></div>
+			<?php } ?>
+
+		</aside>
 
 		<!-- Story Entry -->
 		<section class="aesop-entry-content aesop-story-entry">

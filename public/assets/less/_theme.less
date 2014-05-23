@@ -1,3 +1,4 @@
+// general
 .aesop-story {
       -webkit-font-smoothing: antialiased;
     p {
@@ -12,7 +13,7 @@
 }
 
 // header
-.aesop-story-header{
+.aesop-story-cover{
     background: @base;
 
     &:after {
@@ -25,13 +26,23 @@
         background:rgba(0,0,0,0.5);
     }
 }
-.aesop-story-header-inner {
+.aesop-story-cover-inner {
     top: 40%;
+    text-align: center;
+    color:white;
     .aesop-story-title {
-        text-align: center;
-        color:white;
         font-size:8rem;
     }
+    .aesop-story-meta {
+
+    }
+}
+
+// story header
+.aesop-story-header {
+    background: @base;
+    opacity:0;
+    transition: opacity .35s ease-in-out;
 }
 
 // entry

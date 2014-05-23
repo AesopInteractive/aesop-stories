@@ -68,6 +68,8 @@ class ASE_Stories {
 
 		add_action('init', array($this,'img_sizes'));
 
+		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
+
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
@@ -276,6 +278,11 @@ class ASE_Stories {
 
 	function img_sizes(){
 		add_image_size('aesop-story-cover', 1200, 9999, true);
+	}
+
+	function aesop_chapter_scroll_nav($class){
+		$class = '.aesop-story-chapters';
+		return $class;
 	}
 
 }
