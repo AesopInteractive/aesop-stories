@@ -116,6 +116,7 @@
 // story header
 .aesop-story-header {
     position: fixed;
+    height:3rem;  //30px;
     top:0;
     width:100%;
     z-index: 2;
@@ -137,9 +138,11 @@
     }
 
     .aesop-story-header-inner {
+        .clearfix();
         .aesop-story-width;
         .transition(opacity .35s ease-in-out);
         .opacity(0.5);
+        height:3rem;
     }
 
     &:hover {
@@ -148,22 +151,22 @@
         }
     }
 
-    .aesop-story-site-logo,
+    .aesop-story-logo,
     .aesop-story-site-title {
         float: left;
     }
 
     // site logo
-    .aesop-story-site-logo {
+    .aesop-story-logo {
 
     }
     .aesop-story-site-title {
-        font-size:@font-size;
+        font-size:@font-size - 0.2;
         margin:0;
-
-        a{
-            color: inherit;
-        }
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        position: relative;
+        top: 7px;
     }
 
     // chapter scroll
@@ -171,6 +174,8 @@
         position: relative;
         float: right;
         width:auto;
+        line-height: 1;
+        top:3px;
 
         .scroll-nav {
             .clearfix();
@@ -185,15 +190,34 @@
                     margin:0 10px;
                     list-style-position: inside;
 
+                    &.in-view a {
+                        color:lighten(@link-color,10);
+                    }
+                    &.active a {
+                        color:@link-color;
+                    }
+
                     &:first-child {
                         margin-left:0;
+                        a {
+                            color:inherit;
+                        }
+                    }
+                    &:last-child {
+                        margin-right:0;
                     }
 
                     a {
                         font-weight:300;
                         display: block;
                         color:inherit;
-                        font-size:@font-size - 0.1;
+                        text-transform: uppercase;
+                        font-size:@font-size - 0.3;
+
+                        &:hover {
+                            text-decoration: none;
+                            color:@link-color;
+                        }
                     }
                 }
             }
