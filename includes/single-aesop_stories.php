@@ -14,7 +14,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 			<div class="aesop-content aesop-story-cover-inner">
 
 				<?php the_title('<h1 class="aesop-story-title">','</h1>');?>
-				<p class="aesop-story-meta">By <?php echo the_author();?></p>
+				<p class="aesop-story-meta">Story by <?php echo the_author();?></p>
 				<div class="aesop-story-excerpt">
 					<?php the_excerpt();?>
 				</div>
@@ -31,6 +31,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 			<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
 			<div class="aesop-story-chapters"></div>
 			<?php } ?>
+
 		</aside>
 
 		<!-- Story Entry -->
