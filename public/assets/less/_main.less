@@ -36,7 +36,6 @@
     position: fixed;
     top:0;
 
-
     // cover mask
     &:after {
         content:'';
@@ -110,7 +109,7 @@
         height: 40px;
         width: 60px;
         z-index: 2;
-        opacity:0.5;
+        .opacity(0.5);
     }
 }
 
@@ -122,16 +121,82 @@
     z-index: 2;
     background: @base;
     opacity:0;
-    transition: opacity .35s ease-in-out;
+    .transition(opacity .35s ease-in-out);
+    .clearfix();
 
     // visible status after cover cleared
     &.visible {
         opacity:1.0;
         z-index: 2;
         display: block;
+        border-bottom:1px solid darken(@base,2);
 
         &:after {
-            opacity:0;
+            .opacity(0);
+        }
+    }
+
+    .aesop-story-header-inner {
+        .aesop-story-width;
+        .transition(opacity .35s ease-in-out);
+        .opacity(0.5);
+    }
+
+    &:hover {
+        &.visible .aesop-story-header-inner {
+            .opacity(1.0);
+        }
+    }
+
+    .aesop-story-site-logo,
+    .aesop-story-site-title {
+        float: left;
+    }
+
+    // site logo
+    .aesop-story-site-logo {
+
+    }
+    .aesop-story-site-title {
+        font-size:@font-size;
+        margin:0;
+
+        a{
+            color: inherit;
+        }
+    }
+
+    // chapter scroll
+    .aesop-story-chapters {
+        position: relative;
+        float: right;
+        width:auto;
+
+        .scroll-nav {
+            .clearfix();
+
+            ol {
+                .clearfix();
+                margin:0;
+                padding:0;
+
+                li {
+                    display: inline-block;
+                    margin:0 10px;
+                    list-style-position: inside;
+
+                    &:first-child {
+                        margin-left:0;
+                    }
+
+                    a {
+                        font-weight:300;
+                        display: block;
+                        color:inherit;
+                        font-size:@font-size - 0.1;
+                    }
+                }
+            }
         }
     }
 }

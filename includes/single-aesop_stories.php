@@ -23,14 +23,28 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 			<div class="aesop-story-cover-img clearfix" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
 			<div class="aesop-story-indicator dashicons dashicons-arrow-down-alt2"></div>
+
 		</header>
 
 		<!-- Story Header -->
 		<aside class="aesop-story-header">
 
-			<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
-			<div class="aesop-story-chapters"></div>
-			<?php } ?>
+			<div class="aesop-story-header-inner">
+
+				<?php if (get_theme_mod('aesop_story_logo')) { ?>
+
+					<a class="aesop-story-logo"  href="#"><img src="<?php echo  get_theme_mod('aesop_story_site_logo');?>"></a>
+
+				<?php } else { ?>
+
+					<h1 class="aesop-story-site-title"><?php the_title();?></h1>
+
+				<?php } ?>
+
+				<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
+				<div class="aesop-story-chapters"></div>
+				<?php } ?>
+			</div>
 
 		</aside>
 
