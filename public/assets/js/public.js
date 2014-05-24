@@ -1,10 +1,10 @@
 jQuery(document).ready(function(){
 
 	// globa variabls
-	var storyHeader	= jQuery('.aesop-story-cover'),
-		storyHeaderInner = jQuery('.aesop-story-cover-inner'),
-		storyEntry  = jQuery('.aesop-story-entry'),
-		storyIndicator = jQuery('.aesop-story-indicator');
+	var storyHeader			= jQuery('.aesop-story-cover'),
+		storyHeaderInner 	= jQuery('.aesop-story-cover-inner'),
+		storyEntry  		= jQuery('.aesop-story-entry'),
+		storyIndicator 		= jQuery('.aesop-story-indicator');
 
 	//  global functions
 	var storyResizer = function(){
@@ -19,10 +19,17 @@ jQuery(document).ready(function(){
    		jQuery(storyIndicator).css({'opacity' : 0.5-(window_scroll/ (jQuery(window).height() / 10))});
    	}
 
-   	// call teh fancy cover resizer and again on resize
+   	var storyInnerPosition = function(){
+   		var marginTop = (jQuery(window).height() / 2) - (jQuery(storyHeaderInner).height() / 2);
+   		jQuery(storyHeaderInner).css({'top':marginTop});
+   	}
+
+   	storyInnerPosition();
 	storyResizer();
+
 	jQuery(window).on('resize', function(){
         storyResizer();
+        storyInnerPosition();
     });
 
 	// fade the cover out on scroll and stop the paint after we're past the header
