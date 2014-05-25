@@ -58,11 +58,7 @@ class aesop_story_settings_api_wrap {
             array(
                 'id' 	=> 'aesop_story_settings_main',
                 'title' => __( 'Setup', 'aesop-stories' )
-            ),
-            array(
-                'id' 	=> 'aesop_story_settings_design',
-                'title' => __( 'Setup', 'aesop-stories' )
-            )
+			)
         );
         return $sections;
     }
@@ -76,16 +72,6 @@ class aesop_story_settings_api_wrap {
                     'desc' 				=> __( 'By default its called Stories. You can rename this to something like, portfolio. Flush permalinks after renaming by going to Settings-->Permalinks and clicking Save Settings.', 'aesop-stories' ),
                     'type' 				=> 'text',
                     'default' 			=> 'stories',
-                    'sanitize_callback' => ''
-                )
-            ),
-            'aesop_story_settings_design' => array(
-            	array(
-                    'name' 				=> 'aesop_stories_width',
-                    'label' 			=> __( 'Width', 'aesop-stories' ),
-                    'desc' 				=> __( 'Width in px or %.', 'aesop-stories' ),
-                    'type' 				=> 'text',
-                    'default' 			=> '900px',
                     'sanitize_callback' => ''
                 )
             )
