@@ -71,6 +71,7 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
+		require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/content-contributors.php');
 	}

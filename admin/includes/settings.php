@@ -56,7 +56,11 @@ class aesop_story_settings_api_wrap {
     function get_settings_sections() {
         $sections = array(
             array(
-                'id' 	=> 'aesop_story_settings_one',
+                'id' 	=> 'aesop_story_settings_main',
+                'title' => __( 'Setup', 'aesop-stories' )
+            ),
+            array(
+                'id' 	=> 'aesop_story_settings_design',
                 'title' => __( 'Setup', 'aesop-stories' )
             )
         );
@@ -65,13 +69,23 @@ class aesop_story_settings_api_wrap {
 
     function get_settings_fields() {
         $settings_fields = array(
-            'aesop_story_settings_one' => array(
+            'aesop_story_settings_main' => array(
             	array(
                     'name' 				=> 'aesop_stories_domain',
-                    'label' 			=> __( 'Naming Convention', 'projects-part-deux' ),
-                    'desc' 				=> __( 'By default its called Stories. You can rename this to something like, portfolio. Flush permalinks after renaming by going to Settings-->Permalinks and clicking Save Settings.', 'projects-part-deux' ),
+                    'label' 			=> __( 'Naming Convention', 'aesop-stories' ),
+                    'desc' 				=> __( 'By default its called Stories. You can rename this to something like, portfolio. Flush permalinks after renaming by going to Settings-->Permalinks and clicking Save Settings.', 'aesop-stories' ),
                     'type' 				=> 'text',
                     'default' 			=> 'stories',
+                    'sanitize_callback' => ''
+                )
+            ),
+            'aesop_story_settings_design' => array(
+            	array(
+                    'name' 				=> 'aesop_stories_width',
+                    'label' 			=> __( 'Width', 'aesop-stories' ),
+                    'desc' 				=> __( 'Width in px or %.', 'aesop-stories' ),
+                    'type' 				=> 'text',
+                    'default' 			=> '900px',
                     'sanitize_callback' => ''
                 )
             )
