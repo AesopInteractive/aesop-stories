@@ -69,6 +69,9 @@ class ASE_Stories_Admin {
 		$plugin = ASE_Stories::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
+		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
+		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
+
 	}
 
 	/**
