@@ -123,7 +123,7 @@
     z-index: 2;
     background: @base;
     opacity:0;
-    .transition(opacity .35s ease-in-out);
+    .transition(top .35s ease-in-out);
     .clearfix();
 
     // visible status after cover cleared
@@ -138,18 +138,14 @@
         }
     }
 
+    &.nav-up {
+        top:-3rem;
+    }
+
     .aesop-story-header-inner {
         .clearfix();
         .aesop-story-width;
-        .transition(opacity .35s ease-in-out);
-        .opacity(0.5);
         height:3rem;
-    }
-
-    &:hover {
-        &.visible .aesop-story-header-inner {
-            .opacity(1.0);
-        }
     }
 
     .aesop-story-logo,
