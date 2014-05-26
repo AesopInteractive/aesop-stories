@@ -70,6 +70,8 @@ class ASE_Stories {
 
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 
+		add_action('wp_print_styles', 			array($this,'clean_head'));
+
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
@@ -289,4 +291,18 @@ class ASE_Stories {
 		return $class;
 	}
 
+	function clean_head(){
+
+    	wp_deregister_style( 'twentytwelve-style' );
+    	wp_dequeue_style(	'twentytwelve-style');
+
+    	// clean up wp head on the resume page
+    	remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'index_rel_link');
+		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+		remove_action('wp_head', 'start_post_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+		remove_action('wp_head', 'wp_generator');
+	}
 }

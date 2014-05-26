@@ -3,6 +3,7 @@ jQuery(document).ready(function(){
 	// globa variabls
 	var storyHeader			= jQuery('.aesop-story-cover'),
 		storyHeaderInner 	= jQuery('.aesop-story-cover-inner'),
+		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry  		= jQuery('.aesop-story-entry'),
 		storyIndicator 		= jQuery('.aesop-story-indicator'),
 		didScroll,
@@ -10,6 +11,8 @@ jQuery(document).ready(function(){
 		delta 				= 5,
 		navbarHeight 		= jQuery('.aesop-story-header').outerHeight();
 
+		jQuery('html').addClass('aesop-story-single');
+		
 	//  global functions
 	var storyResizer = function(){
 		jQuery(storyHeader).css({'height':(jQuery(window).height())+'px', 'width':(jQuery(window).width())+'px'});
