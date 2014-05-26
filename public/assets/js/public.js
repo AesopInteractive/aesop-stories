@@ -4,7 +4,11 @@ jQuery(document).ready(function(){
 	var storyHeader			= jQuery('.aesop-story-cover'),
 		storyHeaderInner 	= jQuery('.aesop-story-cover-inner'),
 		storyEntry  		= jQuery('.aesop-story-entry'),
-		storyIndicator 		= jQuery('.aesop-story-indicator');
+		storyIndicator 		= jQuery('.aesop-story-indicator'),
+		didScroll,
+		lastScrollTop 		= 0,
+		delta 				= 5,
+		navbarHeight 		= jQuery('.aesop-story-header').outerHeight();
 
 	//  global functions
 	var storyResizer = function(){
@@ -50,13 +54,7 @@ jQuery(document).ready(function(){
 
 	});
 
-	// fancy hidden nav
 	// Hide Header on on scroll down
-	var didScroll;
-	var lastScrollTop = 0;
-	var delta = 5;
-	var navbarHeight = jQuery('.aesop-story-header').outerHeight();
-
 	jQuery(window).scroll(function(event){
 	    didScroll = true;
 	});
