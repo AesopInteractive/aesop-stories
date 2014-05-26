@@ -51,6 +51,7 @@ jQuery(document).ready(function(){
     jQuery(storyEntry).waypoint(function(direction){
 
 		jQuery('.aesop-story-header').toggleClass('visible');
+		jQuery(storyHeader).toggleClass('not-visible');
 
 	});
 

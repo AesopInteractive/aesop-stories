@@ -2,13 +2,14 @@
 .aesop-story {
     -webkit-font-smoothing: antialiased;
     p {
-        font-family:@font-family-sans-serif;
+        font-family:@font-family-serif;
         font-weight:300;
         font-size: @font-size; // 19px
         line-height: @line-height; // 30px
     }
     h1,h2,h3,h4,h5,h6 {
         font-family: @font-family-serif;
+        letter-spacing: inherit;
     }
 
     a {
@@ -161,7 +162,7 @@
 
     }
     .aesop-story-site-title {
-        font-size:@font-size - 0.2;
+        font-size:@font-size-small;
         margin:0;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
@@ -212,7 +213,7 @@
                         display: block;
                         color:inherit;
                         text-transform: uppercase;
-                        font-size:@font-size - 0.3;
+                        font-size:@font-size-small;
 
                         &:hover {
                             text-decoration: none;
