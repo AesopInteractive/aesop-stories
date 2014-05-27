@@ -63,24 +63,13 @@ class AesopStoriesMeta {
 					'cols'				=> 6
 				),
 				array(
-					'id'             	=> 'aesop_stories_block_cover_options',
-					'name'           	=> __('Block Style Cover Options', 'aesop_stories'),
-					'type'				=> 'title'
-				),
-				array(
-					'id'             	=> 'aesop_stories_block_cover_options',
-					'name'           	=> ' ',
-					'type'				=> 'title',
-					'desc'				=> __('If you are using Block Style Cover option, and you do not like the way the title has been automatically formatted, you can specify the title and what lines the words are on using the fields below.', 'aesop_stories')
-				),
-				array(
 					'id' 			=> 'aesop_stories_cover_lines',
-					'name' 			=> __('Cover Lines', 'aesop-stories'),
+					'name' 			=> __('Cover Title', 'aesop-stories'),
 					'type' 			=> 'group',
 					'repeatable'     => true,
 					'repeatable_max' => 5,
 					'sortable'		=> true,
-					'desc'			=> __('Add a line for each text item.', 'aesop-stories'),
+					'desc'			=> __('If you do not like how the default title has been styled, you can adjust it here. Add a new group for each line of the cover.', 'aesop-stories'),
 					'fields' 		=> array(
 						array(
 							'id' 	=> 'text',
@@ -90,38 +79,6 @@ class AesopStoriesMeta {
 						)
 					)
 				),
-				/*
-				array(
-					'id'				=> 'aesop_stories_block_cover_line2',
-					'name'				=> __('Cover Line 2', 'aesop_stories'),
-					'type'				=> 'text',
-					'cols'				=> 4
-				),
-				array(
-					'id'				=> 'aesop_stories_block_cover_line3',
-					'name'				=> __('Cover Line 3', 'aesop_stories'),
-					'type'				=> 'text',
-					'cols'				=> 4
-				),
-				array(
-					'id'				=> 'aesop_stories_block_cover_line4',
-					'name'				=> __('Cover Line 4', 'aesop_stories'),
-					'type'				=> 'text',
-					'cols'				=> 4
-				),
-				array(
-					'id'				=> 'aesop_stories_block_cover_line5',
-					'name'				=> __('Cover Line 5', 'aesop_stories'),
-					'type'				=> 'text',
-					'cols'				=> 4
-				),
-				array(
-					'id'				=> 'aesop_stories_block_cover_line5',
-					'name'				=> '',
-					'type'				=> 'title',
-					'cols'				=> 4,
-				),
-				*/
 				array(
 					'id'             	=> 'aesop_stories_block_cover_options',
 					'name'           	=> ' ',
