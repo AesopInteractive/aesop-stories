@@ -70,7 +70,7 @@ class ASE_Stories_Admin {
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
-		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
+		//require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
 
 	}
 
