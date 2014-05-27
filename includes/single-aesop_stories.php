@@ -45,8 +45,9 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 				<?php } ?>
 
-				<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ) { ?>
+				<?php if ( function_exists('aesop_component_exists') &&  aesop_component_exists('chapter') ||  aesop_component_exists('timeline_stop')) { ?>
 				<div class="aesop-story-chapters"></div>
+				<div class="aesop-timeline"></div>
 				<?php } ?>
 			</div>
 
