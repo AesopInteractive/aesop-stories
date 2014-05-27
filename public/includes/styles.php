@@ -9,17 +9,20 @@ class AesopStoriesStyles {
 	public function story_styles(){
 		global $post;
 
-		$maxfontsize    = get_post_meta(get_the_ID(),'aesop_stories_block_title_size', true) ? get_post_meta(get_the_ID(),'aesop_stories_block_title_size', true) : 400;
+		
 		$coverlines 	= get_post_meta( get_the_ID(), 'aesop_stories_cover_lines', false);
 
-		$titlecolor     = get_post_meta(get_the_ID(),'aesop_stories_cover_text_color', true);
-		$titlewidth  	= get_post_meta(get_the_ID(),'aesop_stories_block_title_width', true);
+		$storytitlecolor     = get_post_meta(get_the_ID(),'aesop_stories_cover_text_color', true);
+		$storybasecolor = get_post_meta(get_the_ID(),'aesop_stories_bg_color', true);
+		$storytxtcolor = get_post_meta(get_the_ID(),'aesop_stories_text_color', true);
+		$storymaskcolor = get_post_meta(get_the_ID(),'aesop_stories_mask_color', true);
 
+		$titlewidth  	= get_post_meta(get_the_ID(),'aesop_stories_title_width', true);
+		$maxfontsize    = get_post_meta(get_the_ID(),'aesop_stories_title_size', true) ? get_post_meta(get_the_ID(),'aesop_stories_block_title_size', true) : 400;
 		$coverwidthstyle = $titlewidth ? sprintf('style="width:%s;"',$titlewidth) : false;
 
-    	$storybasecolor = get_post_meta(get_the_ID(),'aesop_stories_article_bg', true);
-		$storytxtcolor = get_post_meta(get_the_ID(),'aesop_stories_article_text', true);
 
+		$coverstyles = $storytitlecolor || $storybasecolor || $storytxtcolor;
 
 		if($coverlines) { ?>
 			<!-- Story Cover Slabtext -->
@@ -40,6 +43,26 @@ class AesopStoriesStyles {
 				});
 			</script>
 		<?php }
+
+		if ( $coverstyles ) {
+			?>
+			<!-- Story Cover Styles -->
+			<style>
+				<?php if ($storybasecolor) { ?>
+					.postid-<?php echo get_the_ID();?>,
+					.postid-<?php echo get_the_ID();?> .aesop-story-cover,
+					.postid-<?php echo get_the_ID();?> .aesop-story-entry {
+						background: <?php echo $storybasecolor;?> ;
+					}
+				<?php } ?>
+				<?php if ($storytxtcolor) { ?>
+					.postid-<?php echo get_the_ID();?> p {
+						color: <?php echo $storytxtcolor;?> ;
+					}
+				<?php } ?>
+			</style>
+			<?php
+		}
 
 		if ($titlewidth) { ?>
 			<!-- Story Title Width Styles -->

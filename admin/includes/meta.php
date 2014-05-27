@@ -26,25 +26,25 @@ class AesopStoriesMeta {
 					'cols'				=> 4
 				),
 				array(
-					'id'				=> 'aesop_stories_article_bg',
+					'id'				=> 'aesop_stories_bg_color',
 					'name'				=> __('Story Background Color (optional)', 'aesop_stories'),
 					'type'				=> 'colorpicker',
 					'cols'				=> 4
 				),
 				array(
-					'id'				=> 'aesop_stories_article_text',
+					'id'				=> 'aesop_stories_text_color',
 					'name'				=> __('Story Text Color (optional)', 'aesop_stories'),
 					'type'				=> 'colorpicker',
 					'cols'				=> 4
 				),
 				array(
-					'id'				=> 'aesop_stories_article_mask_color',
+					'id'				=> 'aesop_stories_cover_mask_color',
 					'name'				=> __('Story Cover Mask Color (optional)', 'aesop_stories'),
 					'type'				=> 'colorpicker',
 					'cols'				=> 6
 				),
 				array(
-					'id'				=> 'aesop_stories_article_mask_opacity',
+					'id'				=> 'aesop_stories_cover_mask_opacity',
 					'name'				=> __('Story Cover Mask Opacity', 'aesop_stories'),
 					'type'           	=> 'select',
 					'default'			=> '0.6',
@@ -86,14 +86,14 @@ class AesopStoriesMeta {
 					'desc'				=> __('The two options below control the appearence of the cover title. By default, the maximum font size is <code>400</code>. If you have a really short title, try making this number larger, like <code>600</code>. If you have a really long title, make this number shorter like <code>200</code>. You can use this together with the maximum title width. By default, it\'s set at <code>60%</code>. However you can change this to something like <code>75%</code>', 'aesop_stories')
 				),
 				array(
-					'id'				=> 'aesop_stories_block_title_size',
+					'id'				=> 'aesop_stories_title_size',
 					'name'				=> __('Maximum Font Size', 'aesop_stories'),
 					'type'				=> 'text',
 					'default'			=> 400,
 					'cols'				=> 6
 				),
 				array(
-					'id'				=> 'aesop_stories_block_title_width',
+					'id'				=> 'aesop_stories_title_width',
 					'name'				=> __('Maximum Title Width', 'aesop_stories'),
 					'type'				=> 'text',
 					'default'			=> '70%',
