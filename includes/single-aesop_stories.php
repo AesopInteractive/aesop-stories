@@ -63,7 +63,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 		<!-- Story Footer -->
 		<footer class="aesop-story-footer">
 			<div class="aesop-content aesop-story-footer-inner">
-				<?php echo // aesop_stories_footer();?>
+				
 			</div>
 		</footer>
 
