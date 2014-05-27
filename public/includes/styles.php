@@ -18,7 +18,7 @@ class AesopStoriesStyles {
 		$storymaskcolor = get_post_meta(get_the_ID(),'aesop_stories_mask_color', true);
 
 		$titlewidth  	= get_post_meta(get_the_ID(),'aesop_stories_title_width', true);
-		$maxfontsize    = get_post_meta(get_the_ID(),'aesop_stories_title_size', true) ? get_post_meta(get_the_ID(),'aesop_stories_block_title_size', true) : 400;
+		$maxfontsize    = get_post_meta(get_the_ID(),'aesop_stories_title_size', true) ? get_post_meta(get_the_ID(),'aesop_stories_title_size', true) : 400;
 		$coverwidthstyle = $titlewidth ? sprintf('style="width:%s;"',$titlewidth) : false;
 
 
@@ -30,9 +30,13 @@ class AesopStoriesStyles {
 				jQuery(document).ready(function(){
 					stS = "<span class='slabtext'>";
 				    stE = "</span>";
-					txt = [<?php foreach($coverlines as $coverline) { ?>"<?php echo $coverline['text'];?>",<?php;}?>];
+					txt = [
+						<?php foreach($coverlines as $coverline) { 
+							?>"<?php echo $coverline['text'];?>",<?php;
+						} ?>
+					];
 
-					jQuery('.aesop-story-cover .aesop-story-title').html(stS + txt.join(stE + stS) + stE).slabText({maxFontSize:<?php echo $maxfontsize;?>});
+					jQuery('.aesop-story-cover .aesop-story-title').html(stS + txt.join(stE + stS) + stE).slabText();
 				});
 			</script>
 		<?php } else { ?>
