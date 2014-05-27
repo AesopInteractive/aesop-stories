@@ -74,7 +74,7 @@ class ASE_Stories {
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
-		//require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
+		require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/content-contributors.php');
 	}
