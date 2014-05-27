@@ -11,11 +11,11 @@ jQuery(document).ready(function(){
 		delta 				= 5,
 		navbarHeight 		= jQuery('.aesop-story-header').outerHeight();
 
-		jQuery('html').addClass('aesop-story-single');
-		
+	jQuery('html').addClass('aesop-story-single');
+
 	//  global functions
 	var storyResizer = function(){
-		jQuery(storyHeader).css({'height':(jQuery(window).height())+'px', 'width':(jQuery(window).width())+'px'});
+		jQuery('.aesop-story-cover, .aesop-article-chapter').css({'height':(jQuery(window).height())+'px', 'width':(jQuery(window).width())+'px'});
 		jQuery(storyEntry).css({'margin-top':(jQuery(window).height())+'px'});
 	}
 
