@@ -39,6 +39,10 @@ jQuery(document).ready(function(){
         storyInnerPosition();
     });
 
+	if ( jQuery.cookie("scroll") !== null ) {
+        jQuery(document).scrollTop( jQuery.cookie("scroll") );
+    }
+
 	// fade the cover out on scroll and stop the paint after we're past the header
     jQuery(window).on('scroll',function(){
 
@@ -48,6 +52,7 @@ jQuery(document).ready(function(){
     		storyFader();
     	}
 
+    	jQuery.cookie("scroll", jQuery(document).scrollTop() );
     });
 
     // fade in story header

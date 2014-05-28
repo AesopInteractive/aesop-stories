@@ -10,15 +10,7 @@ class AesopStoriesMeta {
 
 	function meta( array $meta_boxes ) {
 
-
 			$opts = array(
-				array(
-					'id'             	=> 'aesop_stories_global_help',
-					'name'           	=> ' ',
-					'type'				=> 'title',
-					'cols'				=> 12,
-					'desc'				=> __('Use the controls below to craft the look of this specific story.','aesop_stories')
-				),
 				array(
 					'id'				=> 'aesop_stories_cover_text_color',
 					'name'				=> __('Cover Text Color (optional)', 'aesop_stories'),
@@ -77,14 +69,14 @@ class AesopStoriesMeta {
 			);
 
 			$meta_boxes[] = array(
-				'title' => __('Story Cover', 'aesop_stories-core'),
+				'title' => __('Aesop Stories - Cover', 'aesop_stories-core'),
 				'pages' 	=> array('aesop_stories'),
 				'fields' => $opts
 			);
 
 
 		$meta_boxes[] = array(
-			'title' => __('Aesop Stories', 'aesop-stories'),
+			'title' => __('Aesop Stories - Contributors', 'aesop-stories'),
 			'pages' 	=> array('aesop_stories'),
 			'fields' => array(
 				array(
