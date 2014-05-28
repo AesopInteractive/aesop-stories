@@ -47,11 +47,17 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 				<?php if ( function_exists('aesop_component_exists')) {
 
+					// TODO
+					// someting is up with this whole area
+
 					if ( aesop_component_exists('chapter')) {?>
 						<div class="aesop-story-chapters"></div>
-						<?php } ?>
+					<?php }
 
-					<div class="aesop-timeline"></div>
+					if ( aesop_component_exists('timeline_stop')) {?>
+						<div class="aesop-timeline"></div>
+					<?php } ?>
+
 				<?php } ?>
 			</div>
 
