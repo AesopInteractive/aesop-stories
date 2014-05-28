@@ -38,31 +38,6 @@ class AesopStoriesMeta {
 					'cols'				=> 4
 				),
 				array(
-					'id'				=> 'aesop_stories_cover_mask_color',
-					'name'				=> __('Story Cover Mask Color (optional)', 'aesop_stories'),
-					'type'				=> 'colorpicker',
-					'cols'				=> 6
-				),
-				array(
-					'id'				=> 'aesop_stories_cover_mask_opacity',
-					'name'				=> __('Story Cover Mask Opacity', 'aesop_stories'),
-					'type'           	=> 'select',
-					'default'			=> '0.6',
-					'options'			=> array(
-						'0.1'			=> __('0.1', 'aesop_stories'),
-						'0.2'			=> __('0.2', 'aesop_stories'),
-						'0.3'			=> __('0.3', 'aesop_stories'),
-						'0.4'			=> __('0.4', 'aesop_stories'),
-						'0.5'			=> __('0.5', 'aesop_stories'),
-						'0.6'			=> __('0.6', 'aesop_stories'),
-						'0.7'			=> __('0.7', 'aesop_stories'),
-						'0.8'			=> __('0.8', 'aesop_stories'),
-						'0.9'			=> __('0.9', 'aesop_stories'),
-						'1.0'			=> __('1.0', 'aesop_stories')
-					),
-					'cols'				=> 6
-				),
-				array(
 					'id' 			=> 'aesop_stories_cover_lines',
 					'name' 			=> __('Cover Title', 'aesop-stories'),
 					'type' 			=> 'group',

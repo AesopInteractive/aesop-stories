@@ -15,13 +15,12 @@ class AesopStoriesStyles {
 		$storycovercolor     = get_post_meta(get_the_ID(),'aesop_stories_cover_text_color', true);
 		$storybasecolor = get_post_meta(get_the_ID(),'aesop_stories_bg_color', true);
 		$storytxtcolor = get_post_meta(get_the_ID(),'aesop_stories_text_color', true);
-		$storycovermaskcolor = get_post_meta(get_the_ID(),'aesop_stories_mask_color', true);
 
 		$titlewidth  	= get_post_meta(get_the_ID(),'aesop_stories_title_width', true);
 		$maxfontsize    = get_post_meta(get_the_ID(),'aesop_stories_title_size', true) ? get_post_meta(get_the_ID(),'aesop_stories_title_size', true) : 400;
 
 		$basestyles = $storybasecolor || $storytxtcolor;
-		$coverstyles = $storycovercolor || $storycovermaskcolor;
+		$coverstyles = $storycovercolor;
 
 		if($coverlines) { ?>
 			<!-- Aesop Stories - Slabtext -->
@@ -59,6 +58,7 @@ class AesopStoriesStyles {
 					.postid-<?php echo get_the_ID();?> .aesop-story-cover .aesop-story-indicator {
 						color: <?php echo $storycovercolor;?> ;
 					}
+
 				<?php } ?>
 			</style>
 			<?php
@@ -86,7 +86,7 @@ class AesopStoriesStyles {
 		if ($titlewidth) { ?>
 			<!-- Aesop Stories - Title Width -->
 			<style>
-				.postid-<?php echo get_the_ID();?> .block-cover .aesop_stories-cover-title {
+				.postid-<?php echo get_the_ID();?> .aesop-story-cover .aesop-story-title {
 					width:<?php echo $titlewidth;?>;
 				}
 			</style>
