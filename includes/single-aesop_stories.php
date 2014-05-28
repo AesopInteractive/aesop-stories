@@ -5,8 +5,6 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 	$coverimg 		= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'aesop-story-cover' );
 
-	echo the_content();
-
 	?>
 	<article id="story-<?php the_ID();?>" class="aesop-story">
 
@@ -47,10 +45,6 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 				<?php } ?>
 
-				<?php if ( ( function_exists('aesop_component_exists')) && aesop_component_exists('chapter') ||  aesop_component_exists('timeline_stop') ) { ?>
-				<div class="aesop-story-chapters"></div>
-				<div class="aesop-timeline"></div>
-				<?php } ?>
 			</div>
 
 		</aside>
@@ -65,7 +59,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 		<!-- Story Footer -->
 		<footer class="aesop-story-footer">
 			<div class="aesop-content aesop-story-footer-inner">
-				
+				<?php echo aesop_stories_footer();?>
 			</div>
 		</footer>
 
