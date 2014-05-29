@@ -69,12 +69,15 @@ class ASE_Stories {
 		add_action('init', array($this,'img_sizes'));
 
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
+		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
+		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
 
 		add_action('wp_print_styles', 			array($this,'clean_head'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
+		require_once(ASE_STORIES_DIR.'/public/includes/shortcodes.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/content-contributors.php');
 	}
@@ -289,6 +292,11 @@ class ASE_Stories {
 	function aesop_chapter_scroll_nav($class){
 		$class = '.aesop-story-chapters';
 		return $class;
+	}
+
+	function aesop_scroll_offset($offset){
+		$offset = 36;
+		return $offset;
 	}
 
 	function clean_head(){

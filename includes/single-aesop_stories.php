@@ -45,7 +45,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 				<?php } ?>
 
-				<?php if ( function_exists('aesop_component_exists')) {
+				<?php if ( function_exists('aesop_component_exists') ) {
 
 					// TODO
 					// someting is up with this whole area
