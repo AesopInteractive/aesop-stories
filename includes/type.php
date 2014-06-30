@@ -36,7 +36,7 @@ class aseStoriesType{
 			'show_in_menu'        => true,
 			'show_in_nav_menus'   => true,
 			'show_in_admin_bar'   => true,
-			'menu_icon'           => '',
+			'menu_icon'           => 'dashicons-edit',
 			'can_export'          => true,
 			'has_archive'			=> 'stories',
 			'rewrite'				=> array('slug' => 'story'),

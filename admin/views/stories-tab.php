@@ -12,15 +12,20 @@ class aesopStoriesStoryTab {
 
 	function stories(){
 
-	  	$args = array(
-	    	'author' => get_current_user_ID(),
-	    	'post_type' => 'aesop_stories',
-	    	'post_status' => 'publish, private, draft',
-	    	'posts_per_page' => -1,
-	  	);
+	  	$q = wp_cache_get( 'aesop_stories_admin_stories' );
 
-	  	$q = new WP_Query($args);
+	  	if ( $q == false ) {
 
+	  		$args = array(
+	    		'author' => get_current_user_ID(),
+	    		'post_type' => 'aesop_stories',
+	    		'post_status' => 'publish, private, draft',
+	    		'posts_per_page' => -1,
+	  		);
+	  		$q = new WP_Query($args);
+
+	  		wp_cache_set( 'aesop_stories_admin_stories', $q );
+	  	}
 
 	  	?>
 	  	<div class="aesop-admin-story-grid-wrap">
@@ -33,7 +38,7 @@ class aesopStoriesStoryTab {
 		  			<a href="<?php echo admin_url();?>/post-new.php?post_type=aesop_stories" class="aesop-clear">
 		  				<div class="aesop-admin-grid-create-inner">
 		      				<i class="dashicons dashicons-plus"></i>
-		      				<h3><?php _e('Create a Story','aesop-hosted');?></h3>
+		      				<h3><?php _e('Create a Story','aesop-stories');?></h3>
 		      			</div>
 		      		 </a>
 
