@@ -287,6 +287,7 @@ class ASE_Stories {
 
 	function img_sizes(){
 		add_image_size('aesop-story-cover', 1200, 9999, true);
+		add_image_size('aesop-story-grid', 400, 400, true );
 	}
 
 	function aesop_chapter_scroll_nav($class){
