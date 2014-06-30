@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name.
+ * Aesop Stories
  *
  * @package   ASE_Stories
  * @author    Nick Haskins <nick@aesopinteractive.com>
@@ -71,8 +71,6 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
 		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
-
-		add_action('wp_print_styles', 			array($this,'clean_head'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
@@ -268,12 +266,17 @@ class ASE_Stories {
 
 		if ('aesop_stories' == get_post_type()) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
-			
+
 			// dashichons
 			wp_enqueue_style('dashicons');
 			// fonts
 			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lustria', ASE_STORIES_VERSION);
 			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic', ASE_STORIES_VERSION);
+
+			//deregister theme styles
+			wp_deregister_style( 'twentytwelve-style' );
+    		wp_dequeue_style(	'twentytwelve-style');
+
 		}
 	}
 
@@ -297,21 +300,5 @@ class ASE_Stories {
 	function aesop_scroll_offset($offset){
 		$offset = 36;
 		return $offset;
-	}
-
-	function clean_head(){
-
-    	wp_deregister_style( 'twentytwelve-style' );
-    	wp_dequeue_style(	'twentytwelve-style');
-    	wp_dequeue_style('subtitles-style');
-
-    	// clean up wp head on the resume page
-    	remove_action('wp_head', 'rsd_link');
-		remove_action('wp_head', 'wlwmanifest_link');
-		remove_action('wp_head', 'index_rel_link');
-		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-		remove_action('wp_head', 'start_post_rel_link', 10, 0);
-		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-		remove_action('wp_head', 'wp_generator');
 	}
 }
