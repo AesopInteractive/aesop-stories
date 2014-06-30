@@ -1,6 +1,5 @@
 <?php
 
-function aesop_stories_footer() {
 
 	$contributors = get_post_meta( get_the_ID(), 'aesop_stories_contributors', false );
 
@@ -23,4 +22,3 @@ function aesop_stories_footer() {
 		</div>
 		<?php
 	}
-}

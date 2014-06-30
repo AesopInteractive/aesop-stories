@@ -73,7 +73,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 		<!-- Story Footer -->
 		<footer class="aesop-story-footer">
 			<div class="aesop-content aesop-story-footer-inner">
-				<?php echo aesop_stories_footer();?>
+				<?php aesop_stories_get_template_part('content-contributors');?>
 			</div>
 		</footer>
 
@@ -82,4 +82,19 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 endwhile;endif;
 
-get_footer();
+?><div class="aesop-more-stories aesop-stories-grid">
+
+	<?php
+
+	$args = array('post_type' => 'aesop_stories', 'posts_per_page' => 3);
+	$q = new wp_query($args);
+
+	if ( $q->have_posts() ): while( $q->have_posts() ) : $q->the_post();
+
+		aesop_stories_get_template_part('story-grid-item');
+
+	endwhile;endif;?>
+
+</div>
+
+<?php get_footer();
