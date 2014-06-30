@@ -266,7 +266,7 @@ class ASE_Stories {
 	 */
 	public function enqueue_styles() {
 
-		if ('aesop_stories' == get_post_type() || get_post_type_archive('aesop_stories') ) {
+		if ('aesop_stories' == get_post_type()) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
 			
 			// dashichons
@@ -279,7 +279,7 @@ class ASE_Stories {
 
 	public function enqueue_scripts(){
 
-		if ('aesop_stories' == get_post_type() || get_post_type_archive('aesop_stories') ) {
+		if ('aesop_stories' == get_post_type()) {
 			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/public.js', array('jquery'), ASE_STORIES_VERSION, true );
 		}
 	}
@@ -303,6 +303,7 @@ class ASE_Stories {
 
     	wp_deregister_style( 'twentytwelve-style' );
     	wp_dequeue_style(	'twentytwelve-style');
+    	wp_dequeue_style('subtitles-style');
 
     	// clean up wp head on the resume page
     	remove_action('wp_head', 'rsd_link');
