@@ -17,7 +17,16 @@ module.exports = function(grunt) {
             }
         },
         // style (Sass) compilation via Compass
-		less: {
+		less: {		  	
+			adminLess: {
+		    	options: {
+		      		paths: ["admin/assets/less"],
+		      		cleancss:true
+		    	},
+		    	files: {
+		      		"admin/assets/css/admin.css": "admin/assets/less/admin.less"
+		    	}
+		  	},
 		  	publicLess: {
 		    	options: {
 		      		paths: ["public/assets/less"],

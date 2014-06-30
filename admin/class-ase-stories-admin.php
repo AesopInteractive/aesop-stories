@@ -69,8 +69,14 @@ class ASE_Stories_Admin {
 		$plugin = ASE_Stories::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
+		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
+		add_action( 'admin_menu', 			array($this,'remove_menus'));
+
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
+		require_once(ASE_STORIES_DIR.'/admin/views/stories-tab.php');
+
+
 
 	}
 
@@ -100,4 +106,25 @@ class ASE_Stories_Admin {
 		return self::$instance;
 	}
 
+	function admin_styles(){
+
+        //Register Styles
+		wp_register_style( $this->plugin_slug.'-admin-styles', ASE_STORIES_URL. '/admin/assets/css/admin.css', ASE_STORIES_VERSION, true);
+
+		// Load styles and scripts on areas that users will edit
+		if ( is_admin() ) {
+
+			// Enqueue styles
+			wp_enqueue_style( 'aesop-stories-admin-styles' );
+
+		}
+	}
+
+	function remove_menus(){
+
+	  	// remove the main stories listing
+		remove_submenu_page( 'post-new.php?post_type=aesop_stories','post-new.php?post_type=aesop_stories');
+	  	remove_submenu_page( 'edit.php?post_type=aesop_stories','edit.php?post_type=aesop_stories' );    //Pages
+	  	
+	}
 }
