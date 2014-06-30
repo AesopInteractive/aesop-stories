@@ -1,16 +1,17 @@
 .aesop-stories-grid {
     overflow: hidden;
-margin: 0;
-padding: 3em 0 0 0;
-width: 100%;
-list-style: none;
-text-align: center;
+    margin: 0;
+    padding: 3em 0 0 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+
     figure {
         position: relative;
         z-index: 1;
-        display: inline-block;
+        float:left;
         overflow: hidden;
-        margin: -0.135em;
+        margin: 0;
         width: 33.333%;
         height: 400px;
         -webkit-perspective: 1000px;
@@ -42,6 +43,7 @@ text-align: center;
             width: 100%;
             -webkit-transition: -webkit-transform 0.35s;
             transition: transform 0.35s;
+            text-shadow:0 1px 1px rgba(0,0,0,0.5);
             color:white;
         }
 
@@ -59,7 +61,7 @@ text-align: center;
             letter-spacing: 1px;
             font-size: 68.5%;
             line-height:1.1;
-            padding: 0.25em 2em;
+            padding: 0 2em;
             -webkit-transform: translate3d(0,-50%,0) translate3d(0,150%,0);
             transform: translate3d(0,-50%,0) translate3d(0,150%,0);
         }
