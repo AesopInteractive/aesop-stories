@@ -69,6 +69,11 @@ class ASE_Stories_Admin {
 		$plugin = ASE_Stories::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
+		if( !class_exists( 'TGM_Plugin_Activation' ) && is_admin() ) {
+			require_once(ASE_STORIES_DIR.'/class-tgm-plugin-activation.php');
+			require_once(ASE_STORIES_DIR.'/activator.php');
+		}
+
 		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
 
 		require_once(ASE_STORIES_DIR.'/admin/includes/menu.php');
