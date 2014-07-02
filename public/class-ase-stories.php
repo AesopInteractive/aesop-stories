@@ -259,16 +259,32 @@ class ASE_Stories {
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 
 	}
-	
+
 	function clean_head(){
 
 		if ('aesop_stories' == get_post_type()) {
 
-			// remove 2012 stuff
+			//deregister 2012 styles and scripts
 	    	wp_deregister_script('twentytwelve-navigation');
 	    	wp_dequeue_script(	'twentytwelve-navigation');
+
 	    	wp_deregister_style( 'twentytwelve-style' );
 	    	wp_dequeue_style(	'twentytwelve-style');
+
+	    	//deregister 2013 styles and scripts
+	    	wp_deregister_style( 'twentythirteen-style' );
+    		wp_dequeue_style(	'twentythirteen-style');
+
+	    	wp_deregister_script('twentythirteen-script');
+	    	wp_dequeue_script('twentythirteen-script');
+
+
+	    	//deregister 2014 styles and scripts
+    		wp_deregister_style( 'twentyfourteen-style' );
+    		wp_dequeue_style(	'twentyfourteen-style');
+
+    		wp_deregister_script('twentyfourteen-script');
+	    	wp_dequeue_script('twentyfourteen-script');
 
 	    	// clean up wp head on the resume page
 	    	remove_action('wp_head', 'rsd_link');
@@ -296,10 +312,6 @@ class ASE_Stories {
 			// fonts
 			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lustria', ASE_STORIES_VERSION);
 			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic', ASE_STORIES_VERSION);
-
-			//deregister theme styles
-			wp_deregister_style( 'twentytwelve-style' );
-    		wp_dequeue_style(	'twentytwelve-style');
 
 		}
 	}
