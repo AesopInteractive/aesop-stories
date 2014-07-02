@@ -98,6 +98,6 @@ jQuery(document).ready(function(){
 	}
 
 	// clean up 2012 header
-	jQuery('.single-aesop_stories #masthead, .single-aesop_stories #colophon').remove();
+	jQuery('.single-aesop_stories #masthead, .single-aesop_stories #colophon , .post-type-archive-aesop_stories #masthead, .post-type-archive-aesop_stories #colophon').remove();
 
 });

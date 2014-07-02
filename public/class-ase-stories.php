@@ -262,7 +262,7 @@ class ASE_Stories {
 
 	function clean_head(){
 
-		if ('aesop_stories' == get_post_type()) {
+		if ('aesop_stories' == get_post_type() || is_post_type_archive('aesop_stories')) {
 
 			//deregister 2012 styles and scripts
 	    	wp_deregister_script('twentytwelve-navigation');
