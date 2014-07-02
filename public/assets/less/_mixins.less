@@ -45,3 +45,15 @@
     -o-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+
+.hide-junk {
+    display:none;
+    position: absolute;
+    left:-10000px;
+}
+
+.box-sizing(@type) {
+    -webkit-box-sizing:@type;
+    -moz-box-sizing:@type;
+    box-sizing:@type;
+}

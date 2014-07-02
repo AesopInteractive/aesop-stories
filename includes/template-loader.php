@@ -4,7 +4,7 @@ class aseStoriesTemplateLoader {
 
 	function __construct() {
 
-		add_filter( 'template_include', array($this,'template_loader'));
+		add_filter( 'template_include', array($this,'template_loader'),99);
 
 	}
 

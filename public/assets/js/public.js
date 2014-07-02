@@ -96,4 +96,8 @@ jQuery(document).ready(function(){
 
 	    lastScrollTop = st;
 	}
+
+	// clean up 2012 header
+	jQuery('.single-aesop_stories #masthead, .single-aesop_stories #colophon').remove();
+
 });

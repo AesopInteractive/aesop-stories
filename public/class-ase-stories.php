@@ -66,6 +66,9 @@ class ASE_Stories {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// clearn head
+		add_action('wp_print_styles', array($this,'clean_head'));
+
 		add_action('init', array($this,'img_sizes'));
 
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
@@ -256,7 +259,28 @@ class ASE_Stories {
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 
 	}
+	
+	function clean_head(){
 
+		if ('aesop_stories' == get_post_type()) {
+
+			// remove 2012 stuff
+	    	wp_deregister_script('twentytwelve-navigation');
+	    	wp_dequeue_script(	'twentytwelve-navigation');
+	    	wp_deregister_style( 'twentytwelve-style' );
+	    	wp_dequeue_style(	'twentytwelve-style');
+
+	    	// clean up wp head on the resume page
+	    	remove_action('wp_head', 'rsd_link');
+			remove_action('wp_head', 'wlwmanifest_link');
+			remove_action('wp_head', 'index_rel_link');
+			remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+			remove_action('wp_head', 'start_post_rel_link', 10, 0);
+			remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+			remove_action('wp_head', 'wp_generator');
+	    }
+
+	}
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
