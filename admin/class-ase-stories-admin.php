@@ -70,11 +70,10 @@ class ASE_Stories_Admin {
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
 		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
-		add_action( 'admin_menu', 			array($this,'remove_menus'));
 
+		require_once(ASE_STORIES_DIR.'/admin/includes/menu.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
-		require_once(ASE_STORIES_DIR.'/admin/views/stories-tab.php');
 
 
 
@@ -118,13 +117,5 @@ class ASE_Stories_Admin {
 			wp_enqueue_style( 'aesop-stories-admin-styles' );
 
 		}
-	}
-
-	function remove_menus(){
-
-	  	// remove the main stories listing
-		remove_submenu_page( 'post-new.php?post_type=aesop_stories','post-new.php?post_type=aesop_stories');
-	  	remove_submenu_page( 'edit.php?post_type=aesop_stories','edit.php?post_type=aesop_stories' );    //Pages
-	  	
 	}
 }

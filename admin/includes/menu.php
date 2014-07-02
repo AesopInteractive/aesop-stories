@@ -1,16 +1,27 @@
 <?php
 
-class aesopStoriesStoryTab {
 
- 	function __construct(){
- 		add_action( 'admin_menu', array($this,'submenu_page' ),0);
- 	}
+class AesopStoriesMenuTab {
 
-	function submenu_page() {
-		add_submenu_page( 'edit.php?post_type=aesop_stories', 'All Stories', __('All Stories','aesop-stories'), 'manage_options', 'all-stories', array($this,'stories') );
+	function __construct() {
+		add_action( 'admin_menu', array($this,'menu_page') );
+		add_action( 'admin_menu', array($this,'all_stories_tab' ));
+		add_action('admin_menu', array($this,'add_story'));
 	}
 
-	function stories(){
+	function menu_page(){
+	    add_menu_page( 'Stories', 'Stories', 'manage_options', 'aesop-stories', array($this,'all_stories'), 'dashicons-edit',30 );
+	}
+
+	function all_stories_tab() {
+		add_submenu_page( 'aesop-stories', 'All Stories', __('All Stories','aesop-stories'), 'manage_options', 'aesop-stories', array($this,'all_stories') );
+	}
+
+	function add_story() {
+		add_submenu_page( 'aesop-stories', 'Add new', __('Add New','aesop-stories'), 'manage_options', 'post-new.php?post_type=aesop_stories' );
+	}
+
+	function all_stories(){
 
 	  	$q = wp_cache_get( 'aesop_stories_admin_stories' );
 
@@ -35,7 +46,7 @@ class aesopStoriesStoryTab {
 
 		  		<li class="aesop-admin-grid-create">
 
-		  			<a href="<?php echo admin_url();?>/post-new.php?post_type=aesop_stories" class="aesop-clear">
+		  			<a href="<?php echo admin_url();?>post-new.php?post_type=aesop_stories" class="aesop-clear">
 		  				<div class="aesop-admin-grid-create-inner">
 		      				<i class="dashicons dashicons-plus"></i>
 		      				<h3><?php _e('Create a Story','aesop-stories');?></h3>
@@ -72,6 +83,5 @@ class aesopStoriesStoryTab {
 		  	?></ul>
 		 </div><?php
 	}
-
 }
-new aesopStoriesStoryTab;
+new AesopStoriesMenuTab;

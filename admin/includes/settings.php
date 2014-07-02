@@ -23,7 +23,7 @@ class aesop_story_settings_api_wrap {
         $this->settings_api = new WeDevs_Settings_API;
 
         add_action( 'admin_init', array($this, 'admin_init') );
-        add_action( 'admin_menu', array($this,'submenu_page'));
+        add_action( 'admin_menu', array($this,'submenu_page'),99);
 
     }
 
@@ -38,7 +38,7 @@ class aesop_story_settings_api_wrap {
     }
 
 	function submenu_page() {
-		add_submenu_page( 'edit.php?post_type=aesop_stories', 'Settings', __('Settings','aesop-stories'), 'manage_options', 'aesop-stories-settings', array($this,'submenu_page_callback') );
+		add_submenu_page( 'aesop-stories', 'Settings', __('Settings','aesop-stories'), 'manage_options', 'aesop-stories-settings', array($this,'submenu_page_callback') );
 	}
 
 	function submenu_page_callback() {

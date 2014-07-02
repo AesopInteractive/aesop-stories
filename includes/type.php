@@ -33,7 +33,7 @@ class aseStoriesType{
 			'hierarchical'        => true,
 			'public'              => true,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_nav_menus'   => true,
 			'show_in_admin_bar'   => true,
 			'menu_icon'           => 'dashicons-edit',
