@@ -107,3 +107,25 @@ if ( !function_exists('aesop_stories_locate_template') ):
 		return $located;
 	}
 endif;
+
+/**
+ 	* Time required to read the article
+ 	*
+ 	* @return string
+**/
+if ( !function_exists('aesop_stories_reading_time') ):
+	function aesop_stories_reading_time() {
+
+	    $post = get_post();
+
+	    $wpm = 250;
+
+	    $words = str_word_count( strip_tags( $post->post_content ) );
+	    $minutes = floor( $words / $wpm );
+
+	    $time = $minutes . ' minute';
+
+	    return $time;
+
+	}
+endif;

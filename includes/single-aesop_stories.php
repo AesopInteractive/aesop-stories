@@ -26,6 +26,8 @@ if (have_posts()) : while(have_posts()) : the_post();
 					</div>
 				<?php } ?>
 
+				<p class="aesop-stories-time-to-read"><?php echo aesop_stories_reading_time();?> <?php echo apply_filters('aesop_stories_to_read',_e(' read','aesop-stories'));?></p>
+
 			</div>
 
 			<?php if ( $video_bg && !wp_is_mobile() ) { ?>
