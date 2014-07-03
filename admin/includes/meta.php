@@ -12,6 +12,13 @@ class AesopStoriesMeta {
 
 			$opts = array(
 				array(
+					'id'				=> 'aesop_stories_video_bg',
+					'name'				=> __('Video Background', 'aesop_stories'),
+					'type'				=> 'file',
+					'default'			=> '',
+					'cols'				=> 12
+				),
+				array(
 					'id'				=> 'aesop_stories_cover_text_color',
 					'name'				=> __('Cover Text Color (optional)', 'aesop_stories'),
 					'type'				=> 'colorpicker',

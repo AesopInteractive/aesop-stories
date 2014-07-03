@@ -133,6 +133,20 @@
         height:100%;
         left:0;
         top:0;
+
+        &.aesop-video-container {
+
+            .wp-video-shortcode,
+            .wp-video {
+
+                .mejs-overlay {
+                    .opacity(0.2);
+                }
+                .mejs-controls {
+                    z-index: -1;
+                }
+            }
+        }
     }
 
     //story indicator
