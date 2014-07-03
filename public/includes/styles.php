@@ -8,10 +8,7 @@ class AesopStoriesStyles {
 
 	public function story_styles(){
 		global $post;
-
 		
-		$coverlines 	= get_post_meta( get_the_ID(), 'aesop_stories_cover_lines', false);
-
 		$storycovercolor     = get_post_meta(get_the_ID(),'aesop_stories_cover_text_color', true);
 		$storybasecolor = get_post_meta(get_the_ID(),'aesop_stories_bg_color', true);
 		$storytxtcolor = get_post_meta(get_the_ID(),'aesop_stories_text_color', true);
@@ -21,30 +18,6 @@ class AesopStoriesStyles {
 
 		$basestyles = $storybasecolor || $storytxtcolor;
 		$coverstyles = $storycovercolor;
-
-		if($coverlines) { ?>
-			<!-- Aesop Stories - Slabtext -->
-	    	<script>
-				jQuery(document).ready(function(){
-					stS = "<span class='slabtext'>";
-				    stE = "</span>";
-					txt = [
-						<?php foreach($coverlines as $coverline) { 
-							?>"<?php echo $coverline['text'];?>",<?php;
-						} ?>
-					];
-
-					jQuery('.aesop-story-cover .aesop-story-title').html(stS + txt.join(stE + stS) + stE).slabText();
-				});
-			</script>
-		<?php } else { ?>
-			<!-- Aesop Stories - Slabtext -->
-			<script>
-				jQuery(document).ready(function(){
-					jQuery('.aesop-story-cover .aesop-story-title').slabText({maxFontSize:<?php echo $maxfontsize;?>});
-				});
-			</script>
-		<?php }
 
 		if ( $coverstyles ) {
 			?>

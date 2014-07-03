@@ -74,15 +74,24 @@ class ASE_Stories_Admin {
 			require_once(ASE_STORIES_DIR.'/activator.php');
 		}
 
+
 		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
+
 
 		require_once(ASE_STORIES_DIR.'/admin/includes/menu.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
+		require_once(ASE_STORIES_DIR.'/admin/includes/feat-img-mod.php');
 
-
+		new AesopStoriesFeaturedImageMod(array(
+	    	'post_type'     => 'aesop_stories',
+	    	'metabox_title' => __( 'Story Cover', 'aesop-stories' ),
+	    	'set_text'      => __( 'Set Story Cover', 'aesop-stories' ),
+	    	'remove_text'   => __( 'Remove Story Cover', 'aesop-stories' )
+		));
 
 	}
+
 
 	/**
 	 * Return an instance of this class.
@@ -110,17 +119,30 @@ class ASE_Stories_Admin {
 		return self::$instance;
 	}
 
-	function admin_styles(){
+
+	function admin_styles($hook){
+
+		global $current_screen;
 
         //Register Styles
 		wp_register_style( $this->plugin_slug.'-admin-styles', ASE_STORIES_URL. '/admin/assets/css/admin.css', ASE_STORIES_VERSION, true);
+		wp_register_script( $this->plugin_slug.'-admin-script', ASE_STORIES_URL. '/admin/assets/js/admin.js', array('jquery'), ASE_STORIES_VERSION, true);
 
-		// Load styles and scripts on areas that users will edit
-		if ( is_admin() ) {
+		// if all stories
+		if ( 'toplevel_page_aesop-stories' == $hook ) {
 
 			// Enqueue styles
 			wp_enqueue_style( 'aesop-stories-admin-styles' );
 
 		}
+
+		// if single edit
+		if ('aesop_stories' == $current_screen->post_type) {
+			wp_enqueue_script( 'aesop-stories-admin-script' );
+
+		}
+
+
 	}
+
 }
