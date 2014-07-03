@@ -36,7 +36,22 @@ module.exports = function(grunt) {
 		      		"public/assets/css/style.css": "public/assets/less/style.less"
 		    	}
 		  	}
-		}
+		},
+		        // concatenation and minification all in one
+   		uglify: {
+            publicscripts: {
+                options: {
+                    sourceMap: 'public/assets/js/aesop-stories.js.map',
+                    sourceMappingURL: 'aesop-stories.js.map',
+                    sourceMapPrefix: 10
+                },
+               	files: {
+                    'public/assets/js/aesop-stories.min.js': [
+                     	'public/assets/js/public.js'
+                    ]
+                }
+            }
+        }
     });
 
     // register task

@@ -319,7 +319,7 @@ class ASE_Stories {
 	public function enqueue_scripts(){
 
 		if ('aesop_stories' == get_post_type()) {
-			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/public.js', array('jquery'), ASE_STORIES_VERSION, true );
+			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
 		}
 	}
 

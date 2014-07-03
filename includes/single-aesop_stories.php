@@ -30,6 +30,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 			<?php if ( $video_bg && !wp_is_mobile() ) { ?>
 				<div class="aesop-story-cover-img aesop-video-container">
+
 					<?php
 
 					$vid_args = array(
@@ -39,6 +40,7 @@ if (have_posts()) : while(have_posts()) : the_post();
 					);
 					echo wp_video_shortcode($vid_args);
 					?>
+
 				</div>
 			<?php } else { ?>
 			<div class="aesop-story-cover-img clearfix" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
