@@ -77,17 +77,16 @@ class ASE_Stories_Admin {
 
 		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
 
-
+		require_once(ASE_STORIES_DIR.'/admin/includes/feat-img-mod.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/menu.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/settings.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/meta.php');
-		require_once(ASE_STORIES_DIR.'/admin/includes/feat-img-mod.php');
 
 		new AesopStoriesFeaturedImageMod(array(
 	    	'post_type'     => 'aesop_stories',
-	    	'metabox_title' => __( 'Story Cover', 'aesop-stories' ),
-	    	'set_text'      => __( 'Set Story Cover', 'aesop-stories' ),
-	    	'remove_text'   => __( 'Remove Story Cover', 'aesop-stories' )
+	    	'metabox_title' => __( 'Story Cover Image', 'aesop-stories' ),
+	    	'set_text'      => __( 'Set Story Cover Image', 'aesop-stories' ),
+	    	'remove_text'   => __( 'Remove Story Cover Image', 'aesop-stories' )
 		));
 
 	}
