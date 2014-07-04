@@ -7,6 +7,7 @@ class AesopStoriesMenuTab {
 		add_action( 'admin_menu', array($this,'menu_page') );
 		add_action( 'admin_menu', array($this,'all_stories_tab' ));
 		add_action('admin_menu', array($this,'add_story'));
+		add_action('admin_menu', array($this,'add_collection'));
 	}
 
 	function menu_page(){
@@ -19,6 +20,10 @@ class AesopStoriesMenuTab {
 
 	function add_story() {
 		add_submenu_page( 'aesop-stories', 'Add new', __('Add New','aesop-stories'), 'manage_options', 'post-new.php?post_type=aesop_stories' );
+	}
+
+	function add_collection() {
+		add_submenu_page( 'aesop-stories', 'Collections', __('Collections','aesop-stories'), 'manage_options', 'edit-tags.php?taxonomy=aesop_stories_collections&post_type=aesop_stories' );
 	}
 
 	function all_stories(){
