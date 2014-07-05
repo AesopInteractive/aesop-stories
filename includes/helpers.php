@@ -154,7 +154,7 @@ if ( !function_exists('aesop_stories_is_front_story') ):
 		if ( !$story_page )
 			return;
 
-		if ( $story_page && is_page( $story_page ) && $enabled )
+		if ( $story_page && is_page( $story_page ) && 'on' == $enabled )
 			return true;
 		else
 			return false;

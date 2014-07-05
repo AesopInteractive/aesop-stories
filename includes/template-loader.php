@@ -78,8 +78,10 @@ class aseStoriesTemplateLoader {
 
 		$story_id 	= aesop_stories_get_opt('aesop_stories_front_story_id','aesop_story_settings_front');
 		$story_page = get_option('page_on_front');
+		$enabled	= $enabled	= aesop_stories_get_opt('aesop_stories_story_front', 'aesop_story_settings_front');
 
-		if ( $story_page && is_single( $story_id ) ) {
+
+		if ( $story_page && is_single( $story_id ) && 'on' == $enabled ) {
 			wp_redirect( get_permalink($story_page) );
 		}
 	}
