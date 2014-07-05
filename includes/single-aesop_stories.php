@@ -92,19 +92,22 @@ if (have_posts()) : while(have_posts()) : the_post();
 
 		</section>
 
+		<?php if ( aesop_stories_rcp() ) { ?>
 		<!-- Story Footer -->
 		<footer class="aesop-story-footer">
 			<div class="aesop-content aesop-story-footer-inner">
 				<?php aesop_stories_get_template_part('content-contributors');?>
 			</div>
 		</footer>
+		<?php } ?>
 
 	</article>
 	<?php
 
 endwhile;endif;
 
-?><div class="aesop-more-stories aesop-stories-grid">
+if ( aesop_stories_rcp() ) { ?>
+<div class="aesop-more-stories aesop-stories-grid">
 
 	<?php
 
@@ -118,5 +121,6 @@ endwhile;endif;
 	endwhile;endif;?>
 
 </div>
+<?php } ?>
 
 <?php get_footer();

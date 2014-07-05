@@ -1,0 +1,42 @@
+.aesop-stories-restricted {
+    text-align: center;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+
+    h2 {
+        display:inline-block;
+        font-size:3rem;
+        border-bottom:2px solid;
+        padding-bottom:5px;
+    }
+
+    p {
+        margin-top:0;
+        font-size:1.75rem;
+        line-height:2.5rem;
+    }
+
+    a {
+        font-size:1.65rem;
+        font-family:@font-family-sans-serif;
+        background:@link-color;
+        padding:12px 20px 7px;
+        text-decoration:none;
+        text-transform: uppercase;
+        color:white;
+        border-radius:2px;
+        display:inline-block;
+
+        &:hover {
+            color:white;
+            background:darken(@link-color,15);
+        }
+
+        &:active {
+            color:white;
+            background:darken(@link-color,25);
+        }
+    }
+
+}

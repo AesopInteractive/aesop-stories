@@ -129,3 +129,17 @@ if ( !function_exists('aesop_stories_reading_time') ):
 
 	}
 endif;
+
+/**
+ 	* Used to determine if the post is marked as paid
+ 	* Since this is used on secondary content we can get away with only checking if the post is marked as paid
+ 	*
+ 	* @return string
+**/
+if ( !function_exists('aesop_stories_rcp') ):
+	function aesop_stories_rcp(){
+
+		if (current_user_can('manage_options') || (function_exists('rcp_is_paid_content') && !rcp_is_paid_content( get_the_ID() )) )
+			return true;
+	}
+endif;
