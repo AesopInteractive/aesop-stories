@@ -1,13 +1,17 @@
 <?php
 get_header();
 
-	$q = wp_cache_get( 'aesop_stories_story_query' );
+
 	$id 	= aesop_stories_get_opt('aesop_stories_front_story_id','aesop_story_settings_front');
 
+	$id_array = array_map('intval', explode(',', $id));
 
-	$q = new WP_Query( array('post__in' => array($id) ) );
+	$q = new WP_Query( array('post_type' => 'aesop_stories', 'post__in' => $id_array) );
+
 
 	if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();
+
+	the_title();
 
 		aesop_stories_get_template_part('content-single-story');
 

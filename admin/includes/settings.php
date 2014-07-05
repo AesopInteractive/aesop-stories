@@ -82,8 +82,8 @@ class aesop_story_settings_api_wrap {
             'aesop_story_settings_front' => array(
             	array(
                     'name' 				=> 'aesop_stories_front_page',
-                    'label' 			=> __( 'Enable Story Front', 'aesop-stories' ),
-                    'desc' 				=> __( 'Enable story front.', 'aesop-stories' ),
+                    'label' 			=> __( 'Page to Show Story', 'aesop-stories' ),
+                    'desc' 				=> __( 'Create a page and set it as the home page of your site.', 'aesop-stories' ),
                     'type' 				=> 'select',
                     'options' 			=> self::get_pages(),
                     'default' 			=> '',
@@ -119,9 +119,9 @@ class aesop_story_settings_api_wrap {
 
 		$stories = get_posts('post_type=aesop_stories&numberposts=');
 
-    	foreach( $stories as $story ) :
+    	foreach( $stories as $story ) : setup_postdata( $story );
         	$item[$story->ID] = $story->post_title;
-    	endforeach;
+    	endforeach; wp_reset_postdata();
 
     	return $item;
     }
