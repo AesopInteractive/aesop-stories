@@ -310,7 +310,7 @@ class ASE_Stories {
 	 */
 	public function enqueue_styles() {
 
-		if ('aesop_stories' == get_post_type()) {
+		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
 
 			// dashichons
@@ -324,7 +324,7 @@ class ASE_Stories {
 
 	public function enqueue_scripts(){
 
-		if ('aesop_stories' == get_post_type()) {
+		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story() ) {
 			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
 		}
 	}

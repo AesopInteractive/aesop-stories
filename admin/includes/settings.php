@@ -84,7 +84,8 @@ class aesop_story_settings_api_wrap {
                     'name' 				=> 'aesop_stories_front_page',
                     'label' 			=> __( 'Enable Story Front', 'aesop-stories' ),
                     'desc' 				=> __( 'Enable story front.', 'aesop-stories' ),
-                    'type' 				=> 'checkbox',
+                    'type' 				=> 'select',
+                    'options' 			=> self::get_pages(),
                     'default' 			=> '',
                     'sanitize_callback' => ''
                 ),
@@ -93,7 +94,7 @@ class aesop_story_settings_api_wrap {
                     'label' 			=> __( 'Front Story', 'aesop-stories' ),
                     'desc' 				=> __( 'Choose a story to set as the front page of your website (optional).', 'aesop-stories' ),
                     'type' 				=> 'select',
-                    'options' => self::get_stories(),
+                    'options' 			=> self::get_stories(),
                     'default' 			=> '',
                     'sanitize_callback' => ''
                 )
@@ -101,6 +102,17 @@ class aesop_story_settings_api_wrap {
         );
 
         return $settings_fields;
+    }
+
+    function get_pages(){
+
+		$stories = get_pages();
+
+    	foreach( $stories as $story ) :
+        	$item[$story->ID] = $story->post_title;
+    	endforeach;
+
+    	return $item;
     }
 
     function get_stories(){

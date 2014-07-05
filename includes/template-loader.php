@@ -6,6 +6,7 @@ class aseStoriesTemplateLoader {
 
 		add_filter( 'template_include',	 	array($this,'template_loader'),99);
 		add_action( 'template_redirect', 	array($this,'redirector' ));
+		add_filter( 'body_class',			array($this,'body_class'));
 
 	}
 
@@ -17,8 +18,22 @@ class aseStoriesTemplateLoader {
 	*/
 	function template_loader($template) {
 
+		// front page override
+		if ( aesop_stories_is_front_story() ) {
+
+			if ( $overridden_template = locate_template( 'front-aesop_stories.php', true ) ) {
+
+			   $template = load_template( $overridden_template );
+
+			} else {
+
+			    $template = ASE_STORIES_DIR.'includes/front-aesop_stories.php';
+			}
+
+		}
+
 	    // override single
-	    if ( 'aesop_stories' == get_post_type() || $this->is_story_page() ):
+	    if ( 'aesop_stories' == get_post_type() ):
 
 	    	if ( $overridden_template = locate_template( 'single-aesop_stories.php', true ) ) {
 
@@ -32,7 +47,7 @@ class aseStoriesTemplateLoader {
 	    endif;
 
 	    // override archive
-	    if ( is_post_type_archive('aesop_stories')):
+	    if ( is_post_type_archive('aesop_stories') ):
 
 	    	if ( $overridden_template = locate_template( 'archive-aesop_stories.php', true ) ) {
 
@@ -49,25 +64,25 @@ class aseStoriesTemplateLoader {
 
 	}
 
-	public static function is_story_page(){
+	// add body class
+	function body_class($classes){
 
-		$story_page = aesop_stories_get_opt('aesop_story_settings_front', 'aesop_stories_front_page');
+		if ( aesop_stories_is_front_story() )
 
-		if ( $story_page && is_page( $story_page ) )
-			return true;
-		else
-			return false;
+			$classes[] = 'single-aesop_stories';
+			return $classes;
 	}
 
 	// redirect the set story to the set page for seo
 	function redirector(){
 
-		$story_id 	= aesop_stories_get_opt('aesop_story_settings_front', 'aesop_stories_front_story_id');
-		$story_page = aesop_stories_get_opt('aesop_story_settings_front', 'aesop_stories_front_page');
+		$story_id 	= aesop_stories_get_opt('aesop_stories_front_story_id','aesop_story_settings_front');
+		$story_page = aesop_stories_get_opt('aesop_stories_front_page','aesop_story_settings_front' );
 
 		if ( $story_page && is_single( $story_id ) ) {
 			wp_redirect( get_permalink($story_page) );
 		}
 	}
+
 }
 new aseStoriesTemplateLoader;

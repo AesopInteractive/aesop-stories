@@ -85,18 +85,18 @@ if ( !function_exists('aesop_stories_locate_template') ):
 			$template_name = ltrim( $template_name, '/' );
 
 			// Check child theme first
-			if ( file_exists( trailingslashit( get_stylesheet_directory() ) . 'aesop-stories/partials/' . $template_name ) ) {
-				$located = trailingslashit( get_stylesheet_directory() ) . 'aesop-stories/partials/' . $template_name;
+			if ( file_exists( trailingslashit( get_stylesheet_directory() ) . 'aesop-stories/' . $template_name ) ) {
+				$located = trailingslashit( get_stylesheet_directory() ) . 'aesop-stories/' . $template_name;
 				break;
 
 			// Check parent theme next
-			} elseif ( file_exists( trailingslashit( get_template_directory() ) . 'aesop-stories/partials/' . $template_name ) ) {
-				$located = trailingslashit( get_template_directory() ) . 'aesop-stories/partials/' . $template_name;
+			} elseif ( file_exists( trailingslashit( get_template_directory() ) . 'aesop-stories/' . $template_name ) ) {
+				$located = trailingslashit( get_template_directory() ) . 'aesop-stories/' . $template_name;
 				break;
 
 			// Check theme compatibility last
-			} elseif ( file_exists( ASE_STORIES_DIR.'/includes/partials/'.$template_name ) ) {
-				$located = ASE_STORIES_DIR.'/includes/partials/'.$template_name;
+			} elseif ( file_exists( ASE_STORIES_DIR.'/includes/'.$template_name ) ) {
+				$located = ASE_STORIES_DIR.'/includes/'.$template_name;
 				break;
 			}
 		}
@@ -141,5 +141,21 @@ if ( !function_exists('aesop_stories_rcp') ):
 
 		if (current_user_can('manage_options') || (function_exists('rcp_is_paid_content') && !rcp_is_paid_content( get_the_ID() )) )
 			return true;
+	}
+endif;
+
+
+if ( !function_exists('aesop_stories_is_front_story') ):
+	function aesop_stories_is_front_story(){
+
+		$story_page = aesop_stories_get_opt('aesop_stories_front_page','aesop_story_settings_front');
+
+		if ( !$story_page )
+			return;
+
+		if ( $story_page && is_page( $story_page ) )
+			return true;
+		else
+			return false;
 	}
 endif;
