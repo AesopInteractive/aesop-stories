@@ -8,7 +8,7 @@ get_header();
 
 			<?php if ( have_posts() ): while( have_posts() ) : the_post();
 
-				aesop_stories_get_template_part('story-grid-item');
+				aesop_stories_get_template_part('content-story-grid-item');
 
 			endwhile;endif;?>
 

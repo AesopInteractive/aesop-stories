@@ -8,7 +8,6 @@ get_header();
 
 	$q = new WP_Query( array('post_type' => 'aesop_stories', 'post__in' => $id_array) );
 
-
 	if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();
 
 	the_title();
