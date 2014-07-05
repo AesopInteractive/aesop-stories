@@ -77,7 +77,7 @@ class aseStoriesTemplateLoader {
 	function redirector(){
 
 		$story_id 	= aesop_stories_get_opt('aesop_stories_front_story_id','aesop_story_settings_front');
-		$story_page = aesop_stories_get_opt('aesop_stories_front_page','aesop_story_settings_front' );
+		$story_page = get_option('page_on_front');
 
 		if ( $story_page && is_single( $story_id ) ) {
 			wp_redirect( get_permalink($story_page) );

@@ -81,11 +81,10 @@ class aesop_story_settings_api_wrap {
             ),
             'aesop_story_settings_front' => array(
             	array(
-                    'name' 				=> 'aesop_stories_front_page',
-                    'label' 			=> __( 'Page to Show Story', 'aesop-stories' ),
-                    'desc' 				=> __( 'Create a page and set it as the home page of your site.', 'aesop-stories' ),
-                    'type' 				=> 'select',
-                    'options' 			=> self::get_pages(),
+                    'name' 				=> 'aesop_stories_story_front',
+                    'label' 			=> __( 'Enable Story Front', 'aesop-stories' ),
+                    'desc' 				=> __( 'Enable a single story to be displayed as the front page of your site.', 'aesop-stories' ),
+                    'type' 				=> 'checkbox',
                     'default' 			=> '',
                     'sanitize_callback' => ''
                 ),

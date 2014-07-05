@@ -148,12 +148,13 @@ endif;
 if ( !function_exists('aesop_stories_is_front_story') ):
 	function aesop_stories_is_front_story(){
 
-		$story_page = aesop_stories_get_opt('aesop_stories_front_page','aesop_story_settings_front');
+		$story_page = get_option( 'page_on_front' );
+		$enabled	= aesop_stories_get_opt('aesop_stories_story_front', 'aesop_story_settings_front');
 
 		if ( !$story_page )
 			return;
 
-		if ( $story_page && is_page( $story_page ) )
+		if ( $story_page && is_page( $story_page ) && $enabled )
 			return true;
 		else
 			return false;
