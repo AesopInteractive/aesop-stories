@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         // watch our project for changes
         watch: {
             less: {
-				files: ['public/assets/less/*'],
+				files: ['public/assets/less/*','admin/assets/less/*'],
                 tasks: ['less']
             },
             livereload: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             }
         },
         // style (Sass) compilation via Compass
-		less: {		  	
+		less: {
 			adminLess: {
 		    	options: {
 		      		paths: ["admin/assets/less"],
