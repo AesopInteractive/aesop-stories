@@ -33,7 +33,6 @@ class AesopStoriesMenuTab {
 	  	if ( $q == false ) {
 
 	  		$args = array(
-	    		'author' => get_current_user_ID(),
 	    		'post_type' => 'aesop_stories',
 	    		'post_status' => 'publish, private, draft',
 	    		'posts_per_page' => -1,
@@ -68,7 +67,7 @@ class AesopStoriesMenuTab {
 
 			  	 	?>
 				      	<li <?php post_class();?>>
-				      		<div class="aesop-admin-story-grid-story" style="background:url('<?php echo $coverimg;?>') no-repeat; background-size:cover;">
+				      		<div class="aesop-admin-story-grid-story" style="background:url('<?php echo $coverimg;?>') no-repeat; background-size:cover;background-position:center center;">
 					      		<div class="aesop-admin-story-edit-meta">
 					      			<span class="aesop-admin-story-grid-title"><?php the_title(); ?></span>
 					      			<div class="aesop-admin-story-grid-actions">
