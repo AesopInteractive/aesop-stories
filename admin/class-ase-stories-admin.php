@@ -75,7 +75,9 @@ class ASE_Stories_Admin {
 		}
 
 
-		add_action('admin_enqueue_scripts', array($this,'admin_styles'));
+		add_action( 'admin_enqueue_scripts', 	array($this,'admin_styles' ));
+		add_action( 'init', 					array($this,'editor_styles' ));
+		add_action( 'pre_get_posts', 			array($this,'editor_styles' ));
 
 		require_once(ASE_STORIES_DIR.'/admin/includes/feat-img-mod.php');
 		require_once(ASE_STORIES_DIR.'/admin/includes/menu.php');
@@ -142,6 +144,26 @@ class ASE_Stories_Admin {
 		}
 
 
+	}
+
+	function editor_styles(){
+
+ 		global $post;
+
+	    $post_type = 'aesop_stories';
+
+	    // New post (init hook).
+	    if ( stristr( $_SERVER['REQUEST_URI'], 'post-new.php' ) !== false
+	            && ( isset( $_GET['post_type'] ) === true && $post_type == $_GET['post_type'] ) ) {
+	        add_editor_style( ASE_STORIES_URL.'/admin/assets/css/editor-style-' . $post_type . '.css' );
+	    }
+
+	    // Edit post (pre_get_posts hook).
+	    if ( stristr( $_SERVER['REQUEST_URI'], 'post.php' ) !== false
+	            && is_object( $post )
+	            && $post_type == get_post_type( $post->ID ) ) {
+	        add_editor_style( ASE_STORIES_URL. '/admin/assets/css/editor-style-' . $post_type . '.css' );
+	    }
 	}
 
 }
