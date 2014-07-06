@@ -138,7 +138,7 @@ class ASE_Stories_Admin {
 		}
 
 		// if single edit
-		if ('aesop_stories' == $current_screen->post_type) {
+		if ('aesop_stories' == $current_screen->post_type ) {
 			wp_enqueue_script( 'aesop-stories-admin-script' );
 
 		}
