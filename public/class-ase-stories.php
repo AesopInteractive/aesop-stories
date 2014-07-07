@@ -300,8 +300,22 @@ class ASE_Stories {
 			remove_action('wp_head', 'start_post_rel_link', 10, 0);
 			remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 			remove_action('wp_head', 'wp_generator');
+
+			add_action('wp_head', array($this,'preloader'));
 	    }
 
+	}
+
+	function preloader(){
+		?>
+		<script>
+		jQuery(document).ready(function(){
+			window.addEventListener('DOMContentLoaded', function() {
+    			jQuery("body").queryLoader2();
+			});
+		});
+		</script>
+		<?php
 	}
 	/**
 	 * Register and enqueue public-facing style sheet.
