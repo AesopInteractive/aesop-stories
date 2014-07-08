@@ -301,25 +301,8 @@ class ASE_Stories {
 			remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 			remove_action('wp_head', 'wp_generator');
 
-			if (is_single()) {
-				add_action('wp_head', array($this,'preloader'));
-			}
-
 	    }
 
-	}
-
-	function preloader(){
-		?>
-		<script>
-
-			window.load = function(){ 
-			    var loader = document.getElementById('loader'); 
-			    loader.style.display = 'none';
-			}
-
-		</script>
-		<?php
 	}
 	/**
 	 * Register and enqueue public-facing style sheet.
@@ -345,9 +328,6 @@ class ASE_Stories {
 		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story() ) {
 			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
 
-			if ( is_single() ) {
-				wp_enqueue_script( $this->plugin_slug . '-preloader', ASE_STORIES_URL.'/public/assets/js/preloader.js', array('jquery'), ASE_STORIES_VERSION);
-			}
 		}
 	}
 
