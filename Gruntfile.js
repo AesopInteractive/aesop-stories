@@ -47,7 +47,6 @@ module.exports = function(grunt) {
                 },
                	files: {
                     'public/assets/js/aesop-stories.min.js': [
-                        'public/assets/js/preloader.js',
                      	'public/assets/js/public.js'
                     ]
                 }
