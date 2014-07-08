@@ -302,9 +302,9 @@ class ASE_Stories {
 			remove_action('wp_head', 'wp_generator');
 
 			if (is_single()) {
-				add_action('wp_footer', array($this,'preloader'));
+				add_action('wp_head', array($this,'preloader'));
 			}
-			
+
 	    }
 
 	}
