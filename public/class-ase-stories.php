@@ -312,11 +312,11 @@ class ASE_Stories {
 	function preloader(){
 		?>
 		<script>
-		jQuery(document).ready(function(){
+
 			window.addEventListener('DOMContentLoaded', function() {
     			jQuery("body").queryLoader2();
 			});
-		});
+
 		</script>
 		<?php
 	}
