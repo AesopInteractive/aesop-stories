@@ -313,9 +313,10 @@ class ASE_Stories {
 		?>
 		<script>
 
-			window.addEventListener('DOMContentLoaded', function() {
-    			jQuery("body").queryLoader2();
-			});
+			window.load = function(){ 
+			    var loader = document.getElementById('loader'); 
+			    loader.style.display = 'none';
+			}
 
 		</script>
 		<?php
