@@ -95,6 +95,30 @@ class AesopStoriesMeta {
 			)
 		);
 
+	// story loader
+		$meta_boxes[] = array(
+			'title' => __('Story Loader', 'aesop-stories'),
+			'pages' 	=> array('aesop_stories'),
+			'fields' => array(
+				array(
+					'id' 			=> 'aesop_stories_preloaders',
+					'name' 			=> __('', 'aesop-stories'),
+					'type' 			=> 'group',
+					'repeatable'     => true,
+					'repeatable_max' => 4,
+					'sortable'		=> true,
+					'desc'			=> __('Click "Add New Media" below. You can display text and images.', 'aesop-stories'),
+					'fields' 		=> array(
+						array(
+							'id' 	=> 'text',
+							'name' 	=> __('Text', 'aesop-stories'),
+							'type' 	=> 'wysiwyg',
+							'cols'	=> 12
+						)
+					)
+				)
+			)
+		);
 		return $meta_boxes;
 
 	}
