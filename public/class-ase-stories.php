@@ -75,6 +75,8 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
 		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
 
+		add_action('wp_footer', array($this,'loader'));
+
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
@@ -344,5 +346,20 @@ class ASE_Stories {
 	function aesop_scroll_offset($offset){
 		$offset = 36;
 		return $offset;
+	}
+
+	/**
+	*
+	*	@todo - bake in quote support
+	*/
+
+	function loader(){
+
+		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story() ) { ?>
+			<div id="aesop-stories-loading">
+				<img src="http://placekitten.com/400/400">
+			</div>
+		<?php }
+
 	}
 }

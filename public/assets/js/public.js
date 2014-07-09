@@ -1,4 +1,14 @@
+
+jQuery(window).load(function() {
+   	jQuery("#aesop-stories-loading").fadeOut(function() {
+        jQuery(this).hide(); // Optional if it's going to only be used once.
+   	});
+});
+
 jQuery(document).ready(function(){
+
+		jQuery('body').css('display', 'none');
+	jQuery('body').fadeIn(500);
 
 	// globa variabls
 	var storyHeader			= jQuery('.aesop-story-cover'),
