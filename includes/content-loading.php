@@ -1,17 +1,23 @@
-<div id="aesop-stories-loading"><div class="aesop-stories-loading-inner">
-	<?php
+<div id="aesop-stories-loading">
+	<div class="aesop-stories-loading-inner">
+		<?php
 
-		$preloaders = get_post_meta( get_the_ID(), 'aesop_stories_preloaders', false );
+			$preloaders = get_post_meta( get_the_ID(), 'aesop_stories_preloaders', false );
 
-		shuffle($preloaders);
+			shuffle($preloaders);
 
-		$i = 1;
+			$i = 1;
 
-		foreach($preloaders as $preloader) { $i++;
+			if ( $preloaders ):
 
-			echo wpautop($preloader['text']);
+				foreach($preloaders as $preloader) { $i++;
 
-			if ($i = 1);break;
-		}
-	?>
-</div></div>
+					echo wpautop($preloader['text']);
+
+					if ($i = 1);break;
+				}
+
+			endif;
+		?>
+	</div>
+</div>
