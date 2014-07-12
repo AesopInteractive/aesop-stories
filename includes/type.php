@@ -11,18 +11,22 @@ class aseStoriesType{
 
 	function do_type() {
 
+		$slug_plural	= 	aesop_stories_get_opt('aesop_stories_domain_plural', 'aesop_story_settings_main','stories');
+		$slug_single 	= 	aesop_stories_get_opt('aesop_stories_domain_singular', 'aesop_story_settings_main','story');
+
+
 		$labels = array(
-			'name'                => _x( 'Stories', 'Post Type General Name', 'aesop-stories' ),
-			'singular_name'       => _x( 'Stories Item', 'Post Type Singular Name', 'aesop-stories' ),
-			'menu_name'           => __( 'Stories', 'aesop-stories' ),
-			'parent_item_colon'   => __( 'Parent Stories:', 'aesop-stories' ),
-			'all_items'           => __( 'All Stories', 'aesop-stories' ),
-			'view_item'           => __( 'View Story', 'aesop-stories' ),
-			'add_new_item'        => __( 'Add New Story', 'aesop-stories' ),
+			'name'                => _x( ucfirst($slug_plural), 'Post Type General Name', 'aesop-stories' ),
+			'singular_name'       => _x( ucfirst($slug_single).' Item', 'Post Type Singular Name', 'aesop-stories' ),
+			'menu_name'           => __( ucfirst($slug_plural), 'aesop-stories' ),
+			'parent_item_colon'   => __( 'Parent '.$slug_single.':', 'aesop-stories' ),
+			'all_items'           => __( 'All '.$slug_plural, 'aesop-stories' ),
+			'view_item'           => __( 'View '.$slug_single, 'aesop-stories' ),
+			'add_new_item'        => __( 'Add New '.$slug_single, 'aesop-stories' ),
 			'add_new'             => __( 'Add New', 'aesop-stories' ),
-			'edit_item'           => __( 'Edit Story', 'aesop-stories' ),
-			'update_item'         => __( 'Update Story', 'aesop-stories' ),
-			'search_items'        => __( 'Search Stories', 'aesop-stories' ),
+			'edit_item'           => __( 'Edit '.$slug_single, 'aesop-stories' ),
+			'update_item'         => __( 'Update '.$slug_single, 'aesop-stories' ),
+			'search_items'        => __( 'Search '.$slug_plural, 'aesop-stories' ),
 			'not_found'           => __( 'Not found', 'aesop-stories' ),
 			'not_found_in_trash'  => __( 'Not found in Trash', 'aesop-stories' ),
 		);
@@ -39,8 +43,8 @@ class aseStoriesType{
 			'show_in_admin_bar'   => true,
 			'menu_icon'           => 'dashicons-edit',
 			'can_export'          => true,
-			'has_archive'			=> 'stories',
-			'rewrite'				=> array('slug' => __('story','aesop-stories')),
+			'has_archive'			=> $slug_plural,
+			'rewrite'				=> array('slug' => __($slug_single,'aesop-stories')),
 			'exclude_from_search' => false,
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',

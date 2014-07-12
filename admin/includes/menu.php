@@ -11,11 +11,17 @@ class AesopStoriesMenuTab {
 	}
 
 	function menu_page(){
-	    add_menu_page( 'Stories', 'Stories', 'manage_options', 'aesop-stories', array($this,'all_stories'), 'dashicons-edit',30 );
+
+		$slug_plural	= 	aesop_stories_get_opt('aesop_stories_domain_plural', 'aesop_story_settings_main','Stories');
+
+	    add_menu_page( ucfirst($slug_plural), ucfirst($slug_plural), 'manage_options', 'aesop-stories', array($this,'all_stories'), 'dashicons-edit',30 );
 	}
 
 	function all_stories_tab() {
-		add_submenu_page( 'aesop-stories', 'All Stories', __('All Stories','aesop-stories'), 'manage_options', 'aesop-stories', array($this,'all_stories') );
+
+		$slug_plural	= 	aesop_stories_get_opt('aesop_stories_domain_plural', 'aesop_story_settings_main','Stories');
+
+		add_submenu_page( 'aesop-stories', 'All '.ucfirst($slug_plural), __('All '.ucfirst($slug_plural),'aesop-stories'), 'manage_options', 'aesop-stories', array($this,'all_stories') );
 	}
 
 	function add_story() {
@@ -27,6 +33,8 @@ class AesopStoriesMenuTab {
 	}
 
 	function all_stories(){
+
+		$slug_single 	= 	aesop_stories_get_opt('aesop_stories_domain_singular', 'aesop_story_settings_main','story');
 
 	  	$q = wp_cache_get( 'aesop_stories_admin_stories' );
 
@@ -44,7 +52,7 @@ class AesopStoriesMenuTab {
 
 	  	?>
 	  	<div class="aesop-admin-story-grid-wrap">
-	  		<h2>Stories	<span class="story-count"><?php echo $q->found_posts;?></span></h2>
+	  		<h2><?php _e( ucfirst( $slug_single ),'aesop-stories');?> <span class="story-count"><?php echo $q->found_posts;?></span></h2>
 
 		  	<ul class="aesop-admin-story-grid">
 
@@ -53,7 +61,7 @@ class AesopStoriesMenuTab {
 		  			<a href="<?php echo admin_url();?>post-new.php?post_type=aesop_stories" class="aesop-clear">
 		  				<div class="aesop-admin-grid-create-inner">
 		      				<i class="dashicons dashicons-plus"></i>
-		      				<h3><?php _e('Create a Story','aesop-stories');?></h3>
+		      				<h3><?php _e('Create a '.ucfirst($slug_single),'aesop-stories');?></h3>
 		      			</div>
 		      		 </a>
 

@@ -71,13 +71,21 @@ class aesop_story_settings_api_wrap {
         $settings_fields = array(
             'aesop_story_settings_main' => array(
             	array(
-                    'name' 				=> 'aesop_stories_domain',
-                    'label' 			=> __( 'Naming Convention', 'aesop-stories' ),
+                    'name' 				=> 'aesop_stories_domain_plural',
+                    'label' 			=> __( 'Archives Name', 'aesop-stories' ),
                     'desc' 				=> __( 'By default its called Stories. You can rename this to something like, portfolio. Flush permalinks after renaming by going to Settings-->Permalinks and clicking Save Settings.', 'aesop-stories' ),
                     'type' 				=> 'text',
                     'default' 			=> 'stories',
                     'sanitize_callback' => ''
-                )
+                ),
+                array(
+                    'name' 				=> 'aesop_stories_domain_singular',
+                    'label' 			=> __( 'Single Name', 'aesop-stories' ),
+                    'desc' 				=> __( 'By default the single post is set to "story". You can rename this to something like, item. Flush permalinks after renaming by going to Settings-->Permalinks and clicking Save Settings.', 'aesop-stories' ),
+                    'type' 				=> 'text',
+                    'default' 			=> 'story',
+                    'sanitize_callback' => ''
+                ),
             ),
             'aesop_story_settings_front' => array(
             	array(
