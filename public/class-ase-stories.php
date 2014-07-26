@@ -66,6 +66,8 @@ class ASE_Stories {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		add_action('wp_head', array($this,'temp_type'));
+
 		// clearn head
 		add_action('wp_print_styles', array($this,'clean_head'));
 
@@ -344,6 +346,23 @@ class ASE_Stories {
 	function aesop_scroll_offset($offset){
 		$offset = 36;
 		return $offset;
+	}
+
+	function temp_type(){
+		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) { ?>
+		<script type="text/javascript">
+		    (function() {
+		        var path = '//easy.myfonts.net/v2/js?sid=219982(font-family=Intro+Light)&sid=219992(font-family=Intro)&sid=220000(font-family=Intro+Bold)&key=Si7WsqNIhu',
+		            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+		            trial = document.createElement('script');
+		        trial.type = 'text/javascript';
+		        trial.async = true;
+		        trial.src = protocol + path;
+		        var head = document.getElementsByTagName("head")[0];
+		        head.appendChild(trial);
+		    })();
+		</script>
+		<?php }
 	}
 
 }

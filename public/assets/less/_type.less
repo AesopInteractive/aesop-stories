@@ -1,0 +1,39 @@
+@path:            "../../assets/fonts/journal-webfont";
+
+// TREND SLAB
+@font-face {
+  font-family: 'journalregular';
+  src: url('@{path}.eot?v=1.1');
+  src: url('@{path}.eot?#iefix&v=1.1') format('embedded-opentype'),
+    url('@{path}.woff?v=1.1') format('woff'),
+    url('@{path}.ttf?v=1.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.post-type-archive-aesop_stories, //body level
+.single-aesop_stories {
+    p {
+        color:@text-color;
+        font-family:@font-family-serif;
+        font-weight:300;
+        font-size: @font-size; // 19px
+        line-height: @line-height; // 30px
+        margin-bottom: @line-height;
+    }
+
+    .h1,.h2,.h3,.h4,.h5,.h6,
+    h1,h2,h3,h4,h5,h6 {
+        font-family: @font-family-serif;
+        letter-spacing: inherit;
+    }
+
+    a {
+        color:@link-color;
+        .transition(color .25s ease-in-out);
+
+        &:hover {
+            color:lighten(@link-color,7);
+        }
+    }
+}
