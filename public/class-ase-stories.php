@@ -352,7 +352,7 @@ class ASE_Stories {
 		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) { ?>
 		<script type="text/javascript">
 		    (function() {
-		        var path = '//easy.myfonts.net/v2/js?sid=219982(font-family=Intro+Light)&sid=219992(font-family=Intro)&sid=220000(font-family=Intro+Bold)&key=Si7WsqNIhu',
+		        var path = '//easy.myfonts.net/v2/js?sid=219978(font-family=Intro+Black)&sid=219982(font-family=Intro+Light)&sid=219992(font-family=Intro)&key=RbEc6Vmc2f',
 		            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
 		            trial = document.createElement('script');
 		        trial.type = 'text/javascript';
