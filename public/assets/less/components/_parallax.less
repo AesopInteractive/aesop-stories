@@ -1,0 +1,44 @@
+// account for timeline inside parallax
+.aesop-story .aesop-parallax-sc-caption-wrap {
+    padding:1.4rem;
+}
+.aesop-story-single .aesop-parallax-sc {
+
+    margin:0;
+    .aesop-timeline-stop {
+        position: static;
+        height:auto;
+        left:auto;
+        margin:-2rem auto 2rem;
+
+        &:before {
+            right:4px;
+        }
+    }
+    .scroll-nav__section p {
+        font-size: @font-size-small;
+        line-height: @font-size-small + 0.4;
+        margin-bottom:0;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        max-width: 400px;
+        color: @text-color;
+    }
+}
+
+// aesop image lightbox
+.aesop-img-enlarge i,
+.aesop-lb-link i {
+
+    position: relative;
+
+    &:after {
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+            content: '\f00e';
+    }
+}

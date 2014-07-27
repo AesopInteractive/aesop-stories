@@ -90,6 +90,7 @@ class ASE_Stories {
 
 	}
 
+
 	/**
 	 * Return the plugin slug.
 	 *
@@ -294,6 +295,9 @@ class ASE_Stories {
     		wp_deregister_script('twentyfourteen-script');
 	    	wp_dequeue_script('twentyfourteen-script');
 
+	    	wp_deregister_style('ai-core-style');
+	    	wp_dequeue_style('ai-core-style');
+
 	    	// clean up wp head on the resume page
 	    	remove_action('wp_head', 'rsd_link');
 			remove_action('wp_head', 'wlwmanifest_link');
@@ -304,6 +308,12 @@ class ASE_Stories {
 			remove_action('wp_head', 'wp_generator');
 
 	    }
+
+	   if ( 'aesop_stories' == get_post_type() && is_single() ) {
+    		// @todo - remove from public distro
+	    	wp_deregister_style('ase-style');
+	    	wp_dequeue_style('ase-style');
+	   }
 
 	}
 	/**
@@ -350,18 +360,8 @@ class ASE_Stories {
 
 	function temp_type(){
 		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) { ?>
-		<script type="text/javascript">
-		    (function() {
-		        var path = '//easy.myfonts.net/v2/js?sid=219978(font-family=Intro+Black)&sid=219982(font-family=Intro+Light)&sid=219992(font-family=Intro)&key=RbEc6Vmc2f',
-		            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-		            trial = document.createElement('script');
-		        trial.type = 'text/javascript';
-		        trial.async = true;
-		        trial.src = protocol + path;
-		        var head = document.getElementsByTagName("head")[0];
-		        head.appendChild(trial);
-		    })();
-		</script>
+			<script type="text/javascript" src="//use.typekit.net/dao5mtj.js"></script>
+			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<?php }
 	}
 

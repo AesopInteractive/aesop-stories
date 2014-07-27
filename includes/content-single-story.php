@@ -31,12 +31,7 @@
 
 					<?php
 
-					$vid_args = array(
-						'src' => $video_bg,
-						'autoplay' => 'on',
-						'loop'		=> 'on'
-					);
-					echo wp_video_shortcode($vid_args);
+					echo do_shortcode('[video src="'.$video_bg.'" loop="on" autoplay="on"]');
 					?>
 
 				</div>

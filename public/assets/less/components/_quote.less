@@ -1,0 +1,43 @@
+.aesop-story-single .aesop-quote-component {
+
+    padding:0;
+    margin:0;
+
+    blockquote {
+        border-left:none;
+        margin:0 auto;
+        padding:3rem 1rem;
+        width:100%;
+        max-width:@width;
+        font-size: 4.2em !important; // 42px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: @font-family-sans-serif;
+    }
+
+    cite {
+        display: block;
+        font-size: 0.58em !important; // 24px
+        font-style: italic;
+        font-weight: normal;
+    }
+
+    &.aesop-component-align-center,
+    .aesop-component-align-center {
+        text-align: center;
+    }
+
+    &.aesop-component-alignq-left,
+    &.aesop-component-align-right {
+        margin-left:@padding;
+        margin-right:@padding;
+    }
+
+    &.aesop-component-align-left {
+
+    }
+
+    &.aesop-component-align-right {
+
+    }
+}

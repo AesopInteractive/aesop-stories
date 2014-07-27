@@ -45,7 +45,7 @@
 }
 // entry
 .aesop-story-entry {
-    padding-top:@module-space;
+    //padding-top:@module-space;
     padding-bottom:@module-space;
     background:@base;
     z-index: 1;
@@ -65,6 +65,7 @@
     position: fixed;
     top:0;
 
+    /*
     // cover mask
     &:after {
         content:'';
@@ -75,6 +76,7 @@
         top:0;
         background:rgba(0,0,0,0.5);
     }
+    */
 
     // cover inner
     .aesop-story-cover-inner {
@@ -89,15 +91,17 @@
         text-shadow:0 1px 1px rgba(0,0,0,0.8);
 
         .aesop-story-title {
-            margin:0 auto 4rem;
-            font-size:12rem;
+            margin:0 auto;
+            font-size:8rem;
             line-height: 10rem;
             text-transform: uppercase;
             text-shadow:0 2px 2px rgba(0,0,0,0.8);
-            font-family: 'journalregular';
+            font-family: @font-family-sans-serif;
+            font-weight: bold;
+            color:white;
         }
         .aesop-story-meta {
-            font-family: @font-family-serif;
+            font-family: @font-family-hand;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.25px;

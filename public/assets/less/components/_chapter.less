@@ -1,0 +1,54 @@
+// chapter
+.aesop-article-chapter-wrap {
+    overflow: hidden;
+
+    .wp-video-shortcode,
+    .wp-video {
+        width:100% !important;
+        max-width:100% !important;
+
+        .mejs-overlay {
+            .opacity(0.2);
+        }
+        .mejs-controls {
+            z-index: -1;
+        }
+    }
+
+    .aesop-article-chapter {
+        height: 200px !important;
+        position: relative;
+    }
+
+    .aesop-chapter-title {
+        position: absolute;
+        left:-10000px;
+    }
+
+    .aesop-cover-title {
+        text-transform: uppercase;
+        display: inline-block;
+        letter-spacing: 3px;
+        margin:0 auto;
+        left:0;
+        right:0;
+        position: absolute;
+        bottom:0;
+        background:@base;
+        padding:0.4rem 0.8rem;
+        width:150px;
+        text-align: center;
+        font-size: 3.2em; //32px
+        font-family: @font-family-sans-serif;
+        font-weight: bold;
+        color:@green;
+
+        small {
+            display:block;
+            font-style: italic;
+            line-height: 1.4;
+            letter-spacing: none;
+            text-transform: none;
+        }
+    }
+}

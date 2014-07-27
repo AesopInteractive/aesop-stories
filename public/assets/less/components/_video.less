@@ -1,0 +1,80 @@
+// fullscreen video
+.aesop-video-component {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+
+    &.controls-hidden {
+
+        .wp-video-shortcode,
+        .wp-video {
+
+            .mejs-overlay,
+            .mejs-controls {
+                z-index: -1;
+            }
+        }
+    }
+
+    .wp-video-shortcode,
+    .wp-video {
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .aesop-video-component-caption {
+        position: absolute;
+        width:100%;
+        left:0;
+        right:0;
+        top:60px;
+        color:white;
+        font-family: @font-family-sans-serif;
+        font-weight: bold;
+        text-align: center;
+        z-index: 2;
+    }
+
+
+    &.aesop-vine-stagram-container {
+
+        .instagram,
+        .vine {
+
+            &.aesop-component-align-left,
+            &.aesop-component-align-right {
+                float:none;
+            }
+            &.aesop-component-align-center {
+                text-align: center;
+            }
+            &.aesop-component-align-left {
+                text-align: left;
+            }
+            &.aesop-component-align-right {
+                text-align: right;
+            }
+
+        }
+
+        &.aesop-vine-stagram-container-left {
+
+            .aesop-video-component-caption {
+                text-align: left;
+            }
+        }
+
+        &.aesop-vine-stagram-container-right {
+            .aesop-video-component-caption {
+                text-align: right;
+            }
+        }
+        &.aesop-vine-stagram-container-center {
+            text-align: center;
+        }
+       .aesop-video-component-caption {
+            float:none;
+        }
+    }
+
+}
