@@ -27,7 +27,7 @@
 			</div>
 
 			<?php if ( $video_bg && !wp_is_mobile() ) { ?>
-				<div class="aesop-story-cover-img aesop-video-container">
+				<div class="aesop-story-cover-img aesop-video-container aesop-video-component">
 
 					<?php
 
@@ -43,38 +43,7 @@
 
 		</header>
 
-		<!-- Story Header -->
-		<aside class="aesop-story-header">
-
-			<div class="aesop-story-header-inner">
-
-				<?php if (get_theme_mod('aesop_story_logo')) { ?>
-
-					<a class="aesop-story-logo"  href="#"><img src="<?php echo  get_theme_mod('aesop_story_site_logo');?>"></a>
-
-				<?php } else { ?>
-
-					<h1 class="aesop-story-site-title"><?php the_title();?></h1>
-
-				<?php } ?>
-
-				<?php if ( function_exists('aesop_component_exists') ) {
-
-					// TODO
-					// someting is up with this whole area
-
-					if ( aesop_component_exists('chapter')) {?>
-						<div class="aesop-story-chapters"></div>
-					<?php }
-
-					if ( aesop_component_exists('timeline_stop')) {?>
-						<div class="aesop-timeline"></div>
-					<?php } ?>
-
-				<?php } ?>
-			</div>
-
-		</aside>
+		<?php aesop_stories_get_template_part('content-header');?>
 
 		<!-- Story Entry -->
 		<section class="aesop-entry-content aesop-story-entry">
@@ -82,14 +51,5 @@
 			<?php the_content();?>
 
 		</section>
-
-		<?php if ( aesop_stories_rcp() ) { ?>
-		<!-- Story Footer -->
-		<footer class="aesop-story-footer">
-			<div class="aesop-content aesop-story-footer-inner">
-				<?php aesop_stories_get_template_part('content-contributors');?>
-			</div>
-		</footer>
-		<?php } ?>
 
 	</article>

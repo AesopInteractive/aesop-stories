@@ -1,8 +1,8 @@
 
 jQuery(window).load(function() {
-   	jQuery("#aesop-stories-loading").fadeOut(function() {
+	jQuery("#aesop-stories-loading").fadeOut(function() {
         jQuery(this).hide(); // Optional if it's going to only be used once.
-   	});
+	});
 });
 
 jQuery(document).ready(function(){
@@ -12,14 +12,14 @@ jQuery(document).ready(function(){
 
 	// globa variabls
 	var storyHeader			= jQuery('.aesop-story-cover'),
-		storyHeaderInner 	= jQuery('.aesop-story-cover-inner'),
+		storyHeaderInner	= jQuery('.aesop-story-cover-inner'),
 		storyFooter			= jQuery('.aesop-story-footer'),
-		storyEntry  		= jQuery('.aesop-story-entry'),
-		storyIndicator 		= jQuery('.aesop-story-indicator'),
+		storyEntry			= jQuery('.aesop-story-entry'),
+		storyIndicator		= jQuery('.aesop-story-indicator'),
 		didScroll,
-		lastScrollTop 		= 0,
-		delta 				= 5,
-		navbarHeight 		= jQuery('.aesop-story-header').outerHeight();
+		lastScrollTop		= 0,
+		delta				= 5,
+		navbarHeight		= jQuery('.aesop-story-header').outerHeight();
 
 	jQuery('html').addClass('aesop-story-single');
 
@@ -68,44 +68,10 @@ jQuery(document).ready(function(){
     // fade in story header
     jQuery(storyEntry).waypoint(function(direction){
 
-		jQuery('.aesop-story-header').toggleClass('visible');
+		//jQuery('.aesop-story-header').toggleClass('visible');
 		jQuery(storyHeader).toggleClass('not-visible');
 
 	});
-
-	// Hide Header on on scroll down
-	jQuery(window).scroll(function(event){
-	    didScroll = true;
-	});
-
-	setInterval(function() {
-	    if (didScroll) {
-	        hasScrolled();
-	        didScroll = false;
-	    }
-	}, 250);
-
-	function hasScrolled() {
-	    var st = jQuery(this).scrollTop();
-
-	    // Make sure they scroll more than delta
-	    if(Math.abs(lastScrollTop - st) <= delta)
-	        return;
-
-	    // If they scrolled down and are past the navbar, add class .nav-up.
-	    // This is necessary so you never see what is "behind" the navbar.
-	    if (st > lastScrollTop && st > navbarHeight){
-	        // Scroll Down
-	        jQuery('.aesop-story-header').removeClass('nav-down').addClass('nav-up');
-	    } else {
-	        // Scroll Up
-	        if(st + jQuery(window).height() < jQuery(document).height()) {
-	            jQuery('.aesop-story-header').removeClass('nav-up').addClass('nav-down');
-	        }
-	    }
-
-	    lastScrollTop = st;
-	}
 
 	// clean up 2012 header
 	jQuery('.single-aesop_stories #masthead, .single-aesop_stories #colophon , .post-type-archive-aesop_stories #masthead, .post-type-archive-aesop_stories #colophon').remove();

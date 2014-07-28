@@ -170,6 +170,7 @@
                     z-index: -1;
                 }
             }
+
         }
     }
 
@@ -185,117 +186,5 @@
         width: 100%;
         z-index: 2;
         .opacity(0.5);
-    }
-}
-
-// story header
-.admin-bar .aesop-story-header {
-    top:32px;
-}
-.aesop-story-header {
-    position: fixed;
-    height:@header-height;  //30px;
-    top:0;
-    width:100%;
-    z-index: 2;
-    background: @base;
-    opacity:0;
-    .transition(top .35s ease-in-out);
-    .clearfix();
-
-    // visible status after cover cleared
-    &.visible {
-        opacity:1.0;
-        z-index: 2;
-        display: block;
-        box-shadow:0 9px 9px -9px darken(@base,20);
-
-        &:after {
-            .opacity(0);
-        }
-    }
-
-    &.nav-up {
-        top:-@header-height;
-    }
-
-    .aesop-story-header-inner {
-        .clearfix();
-        .aesop-story-width;
-        height:@header-height;
-    }
-
-    .aesop-story-logo,
-    .aesop-story-site-title {
-        float: left;
-    }
-
-    // site logo
-    .aesop-story-logo {
-
-    }
-    .aesop-story-site-title {
-        font-size:@font-size-small;
-        margin:0;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        position: relative;
-        top: 7px;
-    }
-
-    // chapter scroll
-    .aesop-timeline,
-    .aesop-story-chapters {
-        position: relative;
-        float: right;
-        width:auto;
-        line-height: 1;
-        top:3px;
-
-        .scroll-nav {
-            .clearfix();
-
-            ol {
-                .clearfix();
-                margin:0;
-                padding:0;
-
-                li {
-                    display: inline-block;
-                    margin:0 10px;
-                    list-style-position: inside;
-
-                    &.in-view a {
-                        color:lighten(@link-color,10);
-                    }
-                    &.active a {
-                        color:@link-color;
-                    }
-
-                    &:first-child {
-                        margin-left:0;
-                        a {
-                            color:inherit;
-                        }
-                    }
-                    &:last-child {
-                        margin-right:0;
-                    }
-
-                    a {
-                        font-weight:300;
-                        display: block;
-                        color:inherit;
-                        text-transform: uppercase;
-                        font-size:@font-size-small;
-
-                        &:hover {
-                            text-decoration: none;
-                            color:@link-color;
-                        }
-                    }
-                }
-            }
-        }
     }
 }

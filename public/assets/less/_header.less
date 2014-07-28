@@ -1,0 +1,133 @@
+.admin-bar .aesop-story-header {
+    top:32px;
+}
+.aesop-story-header {
+    position: fixed;
+    height:100%;
+    top:0;
+    //left:-300px;
+    bottom:0;
+    width:300px;
+    z-index: 2;
+    background: @base;
+    padding:2rem;
+    .transition(left .35s ease-in-out);
+    .clearfix();
+
+    .aesop-story-header-inner {
+        .clearfix();
+
+    }
+
+    // site logo
+    .aesop-story-logo {
+
+    }
+
+    // site title
+    .aesop-story-site-title {
+        font-size:2.4em;
+        font-family: @font-family-sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin:0;
+        letter-spacing: 0.1rem;
+    }
+
+    // author
+    .aesop-story-meta {
+        text-align: center;
+        margin:0;
+        font-size: 1.8em;
+        line-height: 1;
+    }
+
+    // chapter scroll
+    .aesop-timeline,
+    .aesop-story-chapters {
+
+    }
+}
+
+.aesop-story-chapters {
+    border-bottom:1px solid fadeout(@text-color,35);
+
+    ol {
+        list-style: none;
+        margin:2rem 0;
+        padding:0;
+        .clearfix;
+        li {
+            float: left;
+            width:31%;
+            margin: 1%;
+
+            a {
+                border:1px solid fadeout(@text-color,35);
+                color:@text-color;
+                text-decoration: none;
+                padding:0.6rem 0.5rem;
+                display: block;
+                height:60px;
+                text-align: center;
+                font-family: @font-family-sans-serif;
+                font-size: @font-size-small;
+            }
+
+        }
+    }
+}
+
+.aesop-story-contributors-title {
+    text-align: center;
+    font-family: @font-family-sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin:2rem auto;
+    line-height: 1;
+    font-size: 1.4em;
+}
+// contributors
+.aesop-story-contributors {
+    border-bottom:1px solid @text-color;
+}
+.aesop-story-contributor {
+    margin-bottom:2rem;
+    text-align: center;
+
+    .aesop-story-contributor-avatar {
+        display: block;
+        border-radius: 100%;
+        max-width: 60px;
+        margin:1rem auto;
+    }
+
+    .aesop-story-contributor-name {
+        line-height: 1;
+    }
+
+    .aesop-story-contributor-name,
+    .aesop-story-contributor-occupation {
+        font-family: @font-family-sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        padding:0;
+        margin:0;
+    }
+    .aesop-story-contributor-occupation {
+        text-align: center;
+    }
+    .aesop-story-contributor-bio p{
+        font-size: @font-size-small;
+        line-height: @font-size-small;
+        margin:0;
+        text-align:left;
+    }
+}
+
+p.aesop-stories-cred{
+    font-size: @font-size-small;
+    line-height: @font-size-small;
+    margin:1rem auto;
+}
