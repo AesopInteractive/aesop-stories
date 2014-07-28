@@ -27,12 +27,12 @@
 			</div>
 
 			<?php if ( $video_bg && !wp_is_mobile() ) { ?>
-				<div class="aesop-story-cover-img aesop-video-container aesop-video-component">
+				<div class="aesop-story-cover-img aesop-video-container">
 
-					<?php
-
-					echo do_shortcode('[video src="'.$video_bg.'" loop="on" autoplay="on"]');
-					?>
+					<video width="600" height="360" autoplay loop>
+					  	<source src="<?php echo $video_bg;?>" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
 
 				</div>
 			<?php } else { ?>
