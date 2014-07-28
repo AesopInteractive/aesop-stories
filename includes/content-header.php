@@ -1,5 +1,7 @@
 <!-- Story Header -->
-<aside class="aesop-story-header">
+<aside id="aesop-story-header" class="aesop-story-header">
+
+	<a class="aesop-story-header-toggle" href="#aesop-story-header">+</a>
 
 	<?php if (get_theme_mod('aesop_story_logo')) { ?>
 

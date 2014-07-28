@@ -68,9 +68,19 @@ jQuery(document).ready(function(){
     // fade in story header
     jQuery(storyEntry).waypoint(function(direction){
 
-		//jQuery('.aesop-story-header').toggleClass('visible');
+		jQuery('.aesop-story-header').toggleClass('visible');
 		jQuery(storyHeader).toggleClass('not-visible');
 
+	});
+
+	// side toggle
+	jQuery('.aesop-story-header-toggle').click(function(e){
+		e.preventDefault();
+		jQuery('body').toggleClass('side-open');
+	});
+
+	jQuery('.aesop-story-entry').click(function(e){
+		jQuery('body').removeClass('side-open');
 	});
 
 	// clean up 2012 header

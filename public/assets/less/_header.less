@@ -1,3 +1,40 @@
+// header toggle
+.aesop-story-header-toggle {
+    position: fixed;
+    left:-10000px;
+    right:-@header-toggle-width;
+    width:@header-toggle-width;
+    top:0;
+    background:red;
+    padding:0.5rem;
+    color:@text-color;
+    text-decoration: none;
+    z-index: 99;
+}
+
+// header open
+.side-open {
+    .aesop-story-header {
+        left:0;
+
+        &.visible .aesop-story-header-toggle {
+            left:@header-width;
+        }
+    }
+
+}
+
+// header button visible
+.aesop-story-header.visible {
+
+    .aesop-story-header-toggle{
+        left:0;
+        .transition(left .25s ease-in-out);
+    }
+
+}
+
+// header styles
 .admin-bar .aesop-story-header {
     top:32px;
 }
@@ -5,18 +42,17 @@
     position: fixed;
     height:100%;
     top:0;
-    //left:-300px;
+    left:-@header-width;
     bottom:0;
-    width:300px;
+    width:@header-width;
     z-index: 2;
     background: @base;
     padding:2rem;
-    .transition(left .35s ease-in-out);
+    .transition(left .25s ease-in-out);
     .clearfix();
 
     .aesop-story-header-inner {
         .clearfix();
-
     }
 
     // site logo
@@ -26,7 +62,7 @@
 
     // site title
     .aesop-story-site-title {
-        font-size:2.4em;
+        font-size:@font-size-small;
         font-family: @font-family-sans-serif;
         font-weight: bold;
         text-align: center;
@@ -49,6 +85,7 @@
     }
 }
 
+// story chapters
 .aesop-story-chapters {
     border-bottom:1px solid fadeout(@text-color,35);
 
@@ -57,6 +94,7 @@
         margin:2rem 0;
         padding:0;
         .clearfix;
+
         li {
             float: left;
             width:31%;
@@ -66,9 +104,8 @@
                 border:1px solid fadeout(@text-color,35);
                 color:@text-color;
                 text-decoration: none;
-                padding:0.6rem 0.5rem;
+                padding:1rem 0.5rem;
                 display: block;
-                height:60px;
                 text-align: center;
                 font-family: @font-family-sans-serif;
                 font-size: @font-size-small;
