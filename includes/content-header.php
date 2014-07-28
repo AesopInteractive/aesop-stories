@@ -1,7 +1,7 @@
 <!-- Story Header -->
 <aside id="aesop-story-header" class="aesop-story-header">
 
-	<a class="aesop-story-header-toggle" href="#aesop-story-header">+</a>
+	<a class="aesop-story-header-toggle" href="#aesop-story-header"><i class="dashicons dashicons-plus"></i></a>
 
 	<?php if (get_theme_mod('aesop_story_logo')) { ?>
 

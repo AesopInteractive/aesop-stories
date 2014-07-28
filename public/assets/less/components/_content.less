@@ -22,7 +22,7 @@
     .aesop-content-comp-inner {
         border-bottom:1px solid #999;
         padding-bottom:3rem;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
     }
 
     .aesop-content-img {
@@ -36,17 +36,21 @@
         font-style: inherit;
         line-height: inherit;
 
-        p:first-child {
-            margin-top:0;
+        p{
+            font-size: @font-size-col;
+            line-height: @line-height-col;
+            &:first-child {
+                margin-top:0;
+            }
         }
     }
     .aesop-content-comp-columns-2 .aesop-content-comp-inner{
-        .content-columns(2, 40);
+        .content-columns(2, 60);
     }
     .aesop-content-comp-columns-3 .aesop-content-comp-inner{
-        .content-columns(3, 40);
+        .content-columns(3, 60);
     }
     .aesop-content-comp-columns-4 .aesop-content-comp-inner{
-        .content-columns(4, 40);
+        .content-columns(4, 60);
     }
 }
