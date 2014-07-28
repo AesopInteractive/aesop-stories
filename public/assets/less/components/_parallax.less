@@ -1,44 +1,100 @@
-// account for timeline inside parallax
-.aesop-story .aesop-parallax-sc-caption-wrap {
-    padding:1.4rem;
-}
+// parallax item
 .aesop-story-single .aesop-parallax-sc {
-
+    position: relative;
+    height: 0 !important;
+    padding-bottom:38% !important;
+    overflow: hidden;
+    -webkit-transform: translate3d(0px, 0px, 0px);
     margin:0;
-    .aesop-timeline-stop {
-        position: static;
-        height:auto;
-        left:auto;
-        margin:-2rem auto 2rem;
 
-        &:before {
-            right:4px;
+    //temp fluid width testing
+    //height:0 !important;
+   // padding-bottom:56.25%;
+
+    .aesop-parallax-sc-img {
+        height: 0 !important;
+        padding-bottom: 60% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width:100%;
+        left:0;
+
+        &.is-parallax {
+            top:-150px; // CHEATING
+        }
+
+    }
+
+    .aesop-parallax-sc-caption-wrap {
+        position: absolute;
+        background:white;
+        padding: .25rem .75rem;
+        max-width: 400px;
+        z-index: 1;
+        color:@text-color;
+
+        &.bottom-left {
+            bottom:20px;
+            left:20px;
+        }
+
+        &.top-left {
+            top:20px;
+            left:20px;
+        }
+
+        &.top-right {
+            top:20px;
+            right:20px;
+            text-align: right;
+        }
+
+        &.bottom-right {
+            bottom:20px;
+            right:20px;
+            text-align: right;
+        }
+
+        &.bottom-left {
+            bottom:20px;
+            left:20px;
         }
     }
-    .scroll-nav__section p {
-        font-size: @font-size-small;
-        line-height: @font-size-small + 0.4;
-        margin-bottom:0;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        max-width: 400px;
-        color: @text-color;
+    .aesop-lb-link {
+        position: absolute;
+        top:50%;
+        left:50%;
+        z-index: 1;
+
+        .opacity(.1);
+
+        i {
+            color:white;
+        }
     }
-}
 
-// aesop image lightbox
-.aesop-img-enlarge i,
-.aesop-lb-link i {
+    &:hover {
+        .aesop-lb-link {
+            .opacity(.5);
+            .transition(opacity .5s ease-in-out);
+        }
+    }
 
-    position: relative;
+    .aesop-parallax-sc-floater {
+        position: absolute;
+        z-index: 1;
 
-    &:after {
-          display: inline-block;
-          font-family: FontAwesome;
-          font-style: normal;
-          font-weight: normal;
-          line-height: 1;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-            content: '\f00e';
+        &.floater-right {
+            right:30px;
+        }
+        &.floater-left {
+            left:30px;
+        }
+        &.floater-center {
+            text-align: center;
+            margin-left:auto;
+            margin-right:auto;
+        }
     }
 }
