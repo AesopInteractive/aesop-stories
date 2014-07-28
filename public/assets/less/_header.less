@@ -29,6 +29,9 @@
 
 // header open
 .side-open {
+    .aesop-story-entry{
+        .translate3d(@header-width, 0, 0);
+    }
     .aesop-story-header {
         left:0;
 
@@ -37,6 +40,9 @@
         }
     }
 
+}
+.aesop-story-entry {
+    .transition(all .25s ease-in-out);
 }
 
 // header button visible
