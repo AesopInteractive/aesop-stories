@@ -24,6 +24,7 @@
     i {
         top:5px;
         position: relative;
+        .transition(all .25s linear);
     }
 }
 
@@ -40,6 +41,12 @@
         }
     }
 
+    .aesop-story-header-toggle i{
+        top:3px;
+        &:before {
+            content:'\f460';
+        }
+    }
 }
 .aesop-story-entry {
     .transition(all .25s ease-in-out);
