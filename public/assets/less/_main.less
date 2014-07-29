@@ -86,6 +86,8 @@
         position: absolute;
         z-index: 1;
         width: 100%;
+        max-width:@width;
+        margin:0 auto;
         left: 0;
         right: 0;
         text-shadow:0 1px 1px rgba(0,0,0,0.8);
@@ -93,7 +95,7 @@
         .aesop-story-title {
             margin:0 auto;
             font-size:8rem;
-            line-height: 10rem;
+            line-height: 9rem;
             text-transform: uppercase;
             text-shadow:0 -1px 3px rgba(0,0,0,.4);
             font-family: @font-family-sans-serif;
@@ -102,18 +104,18 @@
         }
         .aesop-story-meta {
             font-family: @font-family-hand;
-            font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 1.25px;
+            font-size:4em;
             color:inherit;
             text-align: center;
+            margin: 0 auto;
+            line-height: 1.2;
         }
     }
 
     // cover excerpt
     .aesop-story-excerpt {
         text-align: left;
-        max-width:70%;
         margin:3rem auto 0;
 
         p {
@@ -130,6 +132,7 @@
         font-family:@font-family-sans-serif;
         border-top:1px solid fadeout(white,30);
         border-bottom:1px solid fadeout(white,30);
+        padding:0.4rem 0;
     }
 
     // cover bg image

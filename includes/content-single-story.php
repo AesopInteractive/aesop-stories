@@ -14,7 +14,7 @@
 
 				<?php the_title('<h1 class="aesop-story-title">','</h1>');?>
 
-				<p class="aesop-story-meta">By <?php the_author();?></p>
+				<p class="aesop-story-meta">by J. Parrish Lewis</p>
 
 				<?php if ( has_excerpt() ) { ?>
 					<div class="aesop-story-excerpt">
