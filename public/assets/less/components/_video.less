@@ -1,6 +1,5 @@
 // fullscreen video
 .aesop-video-component {
-    height: 300px;
     overflow: hidden;
     position: relative;
 
@@ -22,12 +21,18 @@
         max-width:100% !important;
     }
 
+    .aesop-video-container {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+
     .aesop-video-component-caption {
         position: absolute;
         width:100%;
         left:0;
         right:0;
-        top:75px;
+        top:0;
         color:white;
         font-family: @font-family-sans-serif;
         font-weight: bold;
@@ -38,10 +43,25 @@
             display: block;
             font-size: @video-component-caption;
 
+            &:first-child {
+                margin-top:70px;
+            }
+
             &:nth-child(3),
             &:first-child {
                 font-weight: 400;
             }
+        }
+
+        p {
+            color:inherit;
+            text-align: left;
+        }
+
+        h3 {
+            margin-top:4rem;
+            color:white;
+            font-weight: 900;
         }
     }
 
