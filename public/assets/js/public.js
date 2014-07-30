@@ -16,6 +16,7 @@ jQuery(document).ready(function(){
 		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry			= jQuery('.aesop-story-entry'),
 		storyIndicator		= jQuery('.aesop-story-indicator'),
+		musicShutOff        = jQuery('.aesop-parallax-sc-190-2'),
 		didScroll,
 		lastScrollTop		= 0,
 		delta				= 5,
@@ -86,4 +87,9 @@ jQuery(document).ready(function(){
 	// clean up 2012 header
 	jQuery('.single-aesop_stories #masthead, .single-aesop_stories #colophon , .post-type-archive-aesop_stories #masthead, .post-type-archive-aesop_stories #colophon').remove();
 
+	// custom js
+	jQuery(musicShutOff).append('<div class="aesop-parallax-floater-3"></div>');
+	 jQuery(musicShutOff).waypoint(function(direction){
+	 	jQuery(this).toggleClass('img-out');
+	 }, { offset: '100%' });
 });
