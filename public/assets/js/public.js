@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry			= jQuery('.aesop-story-entry'),
 		storyIndicator		= jQuery('.aesop-story-indicator'),
-		musicShutOff        = jQuery('.aesop-parallax-sc-190-2'),
+		musicShutOff        = jQuery('.aesop-parallax-sc-1660-2'),
 		didScroll,
 		lastScrollTop		= 0,
 		delta				= 5,
