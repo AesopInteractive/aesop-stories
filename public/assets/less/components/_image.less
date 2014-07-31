@@ -1,7 +1,8 @@
 // image component
 .aesop-story-single .aesop-image-component {
     img{
-        //.box-shadow(0 0 6px -1px rgba(0,0,0,0.5));
+        .box-shadow(0 0 5px -1px rgba(0,0,0,0.4));
+        border:4px solid white;
     }
     .aesop-img-enlarge {
         margin:0 0 0.5rem;
@@ -42,4 +43,8 @@
     &:active img{
         box-shadow: none;
     }
+}
+
+.aesop-story-single .aesop-quote-component + .aesop-image-component {
+    margin-top:6rem;
 }

@@ -1,10 +1,10 @@
 // video
 
 // local post id
-//@postid: 190;
+@postid: 190;
 
 // staging post id
-@postid: 1660;
+//@postid: 1660;
 
 // production post id
 //@postid: 190;
@@ -16,8 +16,8 @@
     height:360px;
 }
 // parallax
-.aesop-story-single .aesop-parallax-sc-@{postid}-2 {
-    margin:6rem 0;
+.aesop-story-single .aesop-parallax-sc-@{postid}-1 {
+    margin-top:6rem;
    .aesop-parallax-sc-img:after {
         content:'';
         position: absolute;
@@ -66,5 +66,93 @@
         p {
             text-align: left;
         }
+    }
+}
+
+// chapter
+#chapter-unique-@{postid}-1 {
+    margin:0;
+}
+
+// content component
+#aesop-content-component-@{postid}-2 .aesop-content-comp-inner{
+    padding-left:5rem;
+    padding-right:5rem;
+    margin-bottom:-1rem;
+}
+
+// quote components
+.aesop-stories-quote-img {
+    margin:2rem auto -3rem;
+    display: block;
+    width:@width;
+    position: relative;
+    z-index: 1;
+
+    &.parents-img,
+    &.orange-img,
+    &.pills-img,
+    &.dirt-img {
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &.parents-img {
+        height:460px;
+        background-image: url(../img/parents.png);
+    }
+
+    &.orange-img {
+        height:228px;
+        background-image: url(../img/orange.png);
+        position: relative;
+        left:5rem;
+    }
+
+    &.pills-img {
+        height:228px;
+        background-image: url(../img/pills.png);
+    }
+
+    &.dirt-img {
+        height:300px;
+        background-image: url(../img/dirt.png);
+        margin-bottom: -6rem;
+    }
+}
+
+#aesop-quote-component-@{postid}-3, // parents
+#aesop-quote-component-@{postid}-5, // oranges
+#aesop-quote-component-@{postid}-7, // pills
+#aesop-quote-component-@{postid}-11 { // dirt
+    margin-bottom:2rem;
+    blockquote{
+        font-weight: normal;
+        font-size:3.6em !important;
+        font-size: @font-size-lead;
+        line-height:@line-height-lead;
+        font-style: normal;
+        padding:4rem 1rem;
+    }
+
+    cite {
+        font-size: 1em !important;
+        font-weight: 700;
+    }
+
+    &:before,
+    &:after {
+        content:'';
+        width:@width;
+        margin-left:auto;
+        margin-right:auto;
+        display: block;
+        height:5px;
+        background-image: url(../img/hr.png);
+        background-repeat: no-repeat;
+    }
+
+    &:after {
+        .rotate(180deg);
     }
 }

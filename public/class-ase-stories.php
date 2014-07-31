@@ -76,6 +76,9 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
 		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
+		add_filter('aesop_stacked_gallery_styles_2378-1', array($this,'aesop_stacked_gallery_styles'));
+		add_filter('aesop_chapter_img_styles_190-1', array($this,'aesop_chapter_img_styles'));
+		add_filter('the_content', 		array($this,'remove_img_ptags'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
 		require_once(ASE_STORIES_DIR.'/includes/helpers.php');
@@ -343,6 +346,12 @@ class ASE_Stories {
 		}
 	}
 
+	function remove_img_ptags($content){
+
+	   	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+
+	}
+
 	function img_sizes(){
 		add_image_size('aesop-story-cover', 1200, 9999, true);
 		add_image_size('aesop-story-grid', 400, 400, true );
@@ -363,6 +372,14 @@ class ASE_Stories {
 			<script type="text/javascript" src="//use.typekit.net/dao5mtj.js"></script>
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<?php }
+	}
+
+	function aesop_stacked_gallery_styles(){
+		return 'background-size:contain;';
+	}
+
+	function aesop_chapter_img_styles(){
+		return 'background-size:cover;background-position:center bottom;';
 	}
 
 }

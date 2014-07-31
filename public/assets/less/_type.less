@@ -56,9 +56,8 @@
 
     .h1,h1 {
         font-size: 8em; //80px
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 0;
     }
 
     .h2,h2 {
@@ -89,6 +88,35 @@
         font-family: @font-family-hand;
         color:@green;
         font-size:6.2em;
+
         margin-top:0;
+    }
+
+    .aesop-story-hr {
+        border:none;
+        height:5px;
+        background-image: url(../img/hr.png);
+        background-repeat: no-repeat;
+
+        &.reverse {
+            .rotate(180deg);
+        }
+
+        &.cow-hr {
+            height:190px;
+            background-position:center center;
+            margin-bottom: 6rem;
+            &:before {
+                content:'';
+                height:192px;
+                width:284px;
+                display: block;
+                margin:0 auto;
+                background-image: url(../img/cow.png);
+                background-repeat: no-repeat;
+                position: relative;
+                top: 25px;
+            }
+        }
     }
 }
