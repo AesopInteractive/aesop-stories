@@ -76,8 +76,8 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
 		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
-		add_filter('aesop_stacked_gallery_styles_2378-1', array($this,'aesop_stacked_gallery_styles'));
-		add_filter('aesop_chapter_img_styles_190-1', array($this,'aesop_chapter_img_styles'));
+		add_filter('aesop_stacked_gallery_styles_2357-1', array($this,'aesop_stacked_gallery_styles'));  //2357 staging / 2378 local
+		add_filter('aesop_chapter_img_styles_1660-1', array($this,'aesop_chapter_img_styles')); // 1660 staging // 190 local 
 		add_filter('the_content', 		array($this,'remove_img_ptags'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
