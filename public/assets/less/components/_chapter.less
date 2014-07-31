@@ -2,6 +2,10 @@
 .aesop-story-single .aesop-article-chapter-wrap {
     overflow: hidden;
 
+    &.aesop-component {
+        margin:10rem 0;
+    }
+
     .wp-video-shortcode,
     .wp-video {
         width:100% !important;
@@ -16,8 +20,9 @@
     }
 
     .aesop-article-chapter {
-        height: 200px !important;
+        height: 340px !important;
         position: relative;
+        .box-shadow(inset 0 3px 3px rgba(0,0,0,0.35));
     }
 
     .aesop-chapter-title {
@@ -28,20 +33,19 @@
     .aesop-cover-title {
         text-transform: uppercase;
         display: inline-block;
-        letter-spacing: 3px;
         margin:0 auto;
         left:0;
         right:0;
         position: absolute;
         bottom:0;
         background:@base;
-        padding:0.4rem 0.8rem;
-        width:150px;
+        padding:1rem 1rem 0.8rem;
+        width:180px;
         text-align: center;
         font-size: 3.2em; //32px
-        font-family: @font-family-sans-serif;
+        font-family: @font-family-intro;
         font-weight: bold;
-        color:@green;
+        color:@light-green;
 
         small {
             display:block;

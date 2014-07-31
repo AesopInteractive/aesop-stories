@@ -1,12 +1,22 @@
-@path:            "../../assets/fonts/journal-webfont";
+@path:                  "../../assets/fonts/journal-webfont";
+@intro_path:            "../../assets/fonts/intro-webfont";
 
-// TREND SLAB
 @font-face {
   font-family: 'journalregular';
   src: url('@{path}.eot?v=1.1');
   src: url('@{path}.eot?#iefix&v=1.1') format('embedded-opentype'),
     url('@{path}.woff?v=1.1') format('woff'),
     url('@{path}.ttf?v=1.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'intro';
+  src: url('@{intro_path}.eot?v=1.1');
+  src: url('@{intro_path}.eot?#iefix&v=1.1') format('embedded-opentype'),
+    url('@{intro_path}.woff?v=1.1') format('woff'),
+    url('@{intro_path}.ttf?v=1.1') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,8 +56,8 @@
 
     .h1,h1 {
         font-size: 8em; //80px
-        margin-top: 6rem;
-        margin-bottom: 6rem;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
         text-align: center;
     }
 
@@ -63,7 +73,7 @@
         font-family: @font-family-sans-serif;
         font-weight:400;
         margin-top:1rem;
-        margin-bottom: 3rem;
+        margin-bottom: 0;
     }
 
     a {
