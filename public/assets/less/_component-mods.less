@@ -85,11 +85,12 @@
 .aesop-stories-quote-img {
     margin:2rem auto -3rem;
     display: block;
-    width:@width;
+    width:100%;
     position: relative;
     z-index: 1;
 
     &.parents-img,
+    &.cereal-img,
     &.orange-img,
     &.pills-img,
     &.dirt-img,
@@ -125,9 +126,15 @@
         height:352px;
         background-image: url(../img/king.png);
     }
+    &.cereal-img {
+        height:300px;
+        background-image: url(../img/cereal.png);
+        margin-bottom: -6rem;
+    }
 }
 
 #aesop-quote-component-@{postid}-3, // parents
+#aesop-quote-component-@{postid}-4, // cereal
 #aesop-quote-component-@{postid}-5, // oranges
 #aesop-quote-component-@{postid}-7, // pills
 #aesop-quote-component-@{postid}-11, // dirt
@@ -162,4 +169,8 @@
     &:after {
         .rotate(180deg);
     }
+}
+
+#aesop-gallery-2378-2 {
+    background-color:black;
 }

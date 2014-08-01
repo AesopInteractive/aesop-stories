@@ -93,38 +93,4 @@ jQuery(document).ready(function(){
 	 jQuery(musicShutOff).waypoint(function(direction){
 	 	jQuery(this).toggleClass('img-out');
 	 }, { offset: '100%' });
-
-	 // gallery darken waypoint\
-	 /*
-    jQuery(gallery).waypoint(function(direction){
-
-		jQuery(storyEntry).addClass('gallery-dark');
-
-	}, { triggerOnce: true });
-
-
-	jQuery(gallery).waypoint(function(direction){
-
-		jQuery(storyEntry).removeClass('gallery-dark');
-
-	}, { offset: 'bottom-in-view', triggerOnce: true });
-*/
-
-	jQuery(gallery)
-	  .waypoint(function(direction) {
-	    if (direction === 'down') {
-	      	jQuery(storyEntry).addClass('gallery-dark');
-	    }
-	  })
-	  .waypoint(function(direction) {
-	    if (direction === 'up') {
-	      jQuery(storyEntry).removeClass('gallery-dark');
-	    }
-	  });
-
-	jQuery('.lead.gallery-light').waypoint(function(direction){
-
-		jQuery(storyEntry).removeClass('gallery-dark');
-
-	}, { offset: 'bottom-in-view' });
 });
