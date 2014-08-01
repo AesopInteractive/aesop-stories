@@ -16,7 +16,8 @@ jQuery(document).ready(function(){
 		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry			= jQuery('.aesop-story-entry'),
 		storyIndicator		= jQuery('.aesop-story-indicator'),
-		musicShutOff        = jQuery('.aesop-parallax-sc-1660-1'),
+		musicShutOff        = jQuery('.aesop-parallax-sc-190-1'),
+		gallery    			= jQuery('#aesop-gallery-2378-1'),
 		didScroll,
 		lastScrollTop		= 0,
 		delta				= 5,
@@ -92,4 +93,38 @@ jQuery(document).ready(function(){
 	 jQuery(musicShutOff).waypoint(function(direction){
 	 	jQuery(this).toggleClass('img-out');
 	 }, { offset: '100%' });
+
+	 // gallery darken waypoint\
+	 /*
+    jQuery(gallery).waypoint(function(direction){
+
+		jQuery(storyEntry).addClass('gallery-dark');
+
+	}, { triggerOnce: true });
+
+
+	jQuery(gallery).waypoint(function(direction){
+
+		jQuery(storyEntry).removeClass('gallery-dark');
+
+	}, { offset: 'bottom-in-view', triggerOnce: true });
+*/
+
+	jQuery(gallery)
+	  .waypoint(function(direction) {
+	    if (direction === 'down') {
+	      	jQuery(storyEntry).addClass('gallery-dark');
+	    }
+	  })
+	  .waypoint(function(direction) {
+	    if (direction === 'up') {
+	      jQuery(storyEntry).removeClass('gallery-dark');
+	    }
+	  });
+
+	jQuery('.lead.gallery-light').waypoint(function(direction){
+
+		jQuery(storyEntry).removeClass('gallery-dark');
+
+	}, { offset: 'bottom-in-view' });
 });
