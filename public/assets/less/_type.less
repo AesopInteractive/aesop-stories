@@ -28,6 +28,10 @@
         line-height: @line-height;
           -webkit-font-smoothing: antialiased;
          -moz-osx-font-smoothing: grayscale;
+
+        @media(max-width:@responsive-break) {
+            font-size:@responsive-line-height;
+        }
     }
     p {
         color:@text-color;
@@ -36,10 +40,20 @@
         font-size: @font-size; // 19px
         margin-bottom: 1em;
 
+        @media(max-width:@responsive-break) {
+            font-size:@responsive-font-size;
+        }
+
         &.lead {
             font-size: @font-size-lead;
             line-height: @line-height-lead;
             font-style: italic;
+
+            @media(max-width:@responsive-break) {
+                font-size:@responsive-font-size-lead;
+                line-height:@responsive-line-height-lead;
+            }
+
         }
     }
 
@@ -56,13 +70,13 @@
     }
 
     .h1,h1 {
-        font-size: 8em; //80px
+        font-size: @h1-font-size;
         margin-top: 2rem;
         margin-bottom: 0;
     }
 
     .h2,h2 {
-        font-size:6.2em; //62px
+        font-size:@h2-font-size;
         margin:0 auto 1rem;
         text-align: center;
     }
@@ -73,7 +87,7 @@
 
     .h3,h3 {
         color:@green;
-        font-size: 3.2em; //40px
+        font-size: @h3-font-size;
         font-family: @font-family-sans-serif;
         font-weight:600;
         margin-top:1rem;

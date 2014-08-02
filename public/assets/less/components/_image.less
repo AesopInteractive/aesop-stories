@@ -16,7 +16,25 @@
         color:lighten(@text-color,15);
         font-size:@font-size-small;
         font-family:@font-family-sans-serif;
+        font-weight:600;
     }
+
+    .aesop-image-component-caption {
+        position: absolute;
+        background:@image-border;
+        display: inline-block;
+        padding:0.6rem 1rem;
+    }
+
+    .aesop-image-component-caption-bottom-right {
+
+        .aesop-image-component-caption {
+            bottom:10px;
+            right:10px;
+            padding-right:0;
+        }
+    }
+
     .aesop-cap-cred,
     .aesop-img-enlarge {
         //color:@aesop-flip-text;
@@ -34,6 +52,7 @@
 
     .aesop-image-component-image {
         display: block;
+        position: relative;
     }
 
     &:active img{
