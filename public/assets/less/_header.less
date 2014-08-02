@@ -31,7 +31,7 @@
 // header open
 .side-open {
     .aesop-story-entry{
-        .translate3d(@header-width, 0, 0);
+        .translate(@header-width, 0);
     }
     .aesop-story-header {
         left:0;
@@ -49,7 +49,7 @@
     }
 }
 .aesop-story-entry {
-    .transition(all .25s ease-in-out);
+    .transition(all .25s ease-in);
 }
 
 // header button visible
@@ -57,7 +57,7 @@
 
     .aesop-story-header-toggle{
         left:0;
-        .transition(left .25s ease-in-out);
+        .transition(left .25s ease-in);
     }
 
 }
@@ -79,8 +79,9 @@
     z-index: 2;
     background: @panel-back;
     padding:2rem;
-    .transition(left .25s ease-in-out);
+    .transition(left .25s ease-in);
     .clearfix();
+    -webkit-backface-visibility: hidden;
 
     .aesop-story-header-inner {
         .clearfix();
