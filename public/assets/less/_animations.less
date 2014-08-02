@@ -15,6 +15,64 @@
     }
 }
 
+@-moz-keyframes readme {
+    0% {
+        .opacity(0.5);
+        bottom: 25px;
+    }
+
+    90% {
+        .opacity(0);
+    }
+
+    100% {
+        .opacity(0);
+        bottom:0;
+    }
+}
+
+@keyframes readme {
+    0% {
+        .opacity(0.5);
+        bottom: 25px;
+    }
+
+    90% {
+        .opacity(0);
+    }
+
+    100% {
+        .opacity(0);
+        bottom:0;
+    }
+}
+
 .aesop-story-indicator {
    -webkit-animation:readme 3s linear infinite;
+}
+
+
+
+@-webkit-keyframes spinner {
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+
+}
+
+@-moz-keyframes spinner {
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+
+}
+
+@keyframes spinner {
+
+    to {
+        transform: rotate(360deg);
+    }
+
 }
