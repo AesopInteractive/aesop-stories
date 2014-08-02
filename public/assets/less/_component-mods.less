@@ -1,5 +1,3 @@
-// video
-
 // local post id
 @postid: 190;
 
@@ -135,7 +133,7 @@
         height:228px;
         background-image: url(../img/orange.png);
         position: relative;
-        //left:5rem;
+        background-position: 55% center;
     }
 
     &.pills-img {
@@ -165,6 +163,7 @@
 #aesop-quote-component-@{postid}-5, // oranges
 #aesop-quote-component-@{postid}-7, // pills
 #aesop-quote-component-@{postid}-11, // dirt
+#aesop-quote-component-@{postid}-15,
 #aesop-quote-component-@{postid}-17 { // king
     margin-bottom:4rem;
     blockquote{
@@ -200,4 +199,26 @@
 
 #aesop-gallery-2378-2 {
     background-color:black;
+}
+
+
+// quote components plain 
+#aesop-quote-component-@{postid}-6,
+#aesop-quote-component-@{postid}-9,
+#aesop-quote-component-@{postid}-13,
+#aesop-quote-component-@{postid}-16,
+#aesop-quote-component-@{postid}-18 {
+    margin:5rem auto;
+
+}
+
+// image background quotes
+#aesop-quote-component-@{postid}-12,
+#aesop-quote-component-@{postid}-14 {
+    display: table;
+    margin: 3rem auto;
+    blockquote {
+        display: table-cell;
+        vertical-align: middle;
+    }
 }
