@@ -12,6 +12,7 @@ jQuery(document).ready(function(){
 
 	jQuery('p:empty').remove();//hack
 
+
 	// globa variabls
 	var storyHeader			= jQuery('.aesop-story-cover'),
 		storyHeaderInner	= jQuery('.aesop-story-cover-inner'),
@@ -44,12 +45,23 @@ jQuery(document).ready(function(){
    		jQuery(storyHeaderInner).css({'top':marginTop});
    	}
 
+   	var panelHeight = function(){
+		if ( jQuery(window).height() <= 700 ) {
+			jQuery('body').addClass('small-height')
+		} else {
+			jQuery('body').removeClass('small-height')
+		}
+	}
+
+
    	storyInnerPosition();
 	storyResizer();
+	panelHeight();
 
 	jQuery(window).on('resize', function(){
         storyResizer();
         storyInnerPosition();
+        panelHeight();
     });
 
 	if ( jQuery.cookie("scroll") !== null ) {
