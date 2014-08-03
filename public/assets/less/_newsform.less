@@ -1,0 +1,96 @@
+.aesop-stories-newsletter {
+    background: @dark-green;
+    background-image: url('../img/quote-texture.png');
+    position: relative;
+    padding:6rem 1rem 7rem;
+
+    .aesop-stories-newsletter-inner {
+        max-width: 600px;
+        margin:0 auto;
+    }
+
+    .aesop-stories-social {
+        text-align: center;
+        padding-bottom:4rem;
+        margin:2rem auto 3rem;
+        border-bottom:1px solid fadeout(@panel-color,25);
+        max-width: 600px;
+
+        a {
+            text-decoration: none;
+            .transition(background .15s ease-in-out);
+
+            &:hover i {
+                background:darken(@link-color,7);
+            }
+        }
+
+        i {
+            display: inline-block;
+            color:white;
+            margin:0 5px;
+            background:@link-color;
+            border-radius:100%;
+            padding:4px;
+            height:30px;
+            width:30px;
+            font-size: @font-size-small;
+
+            &:before {
+                position: relative;
+                top:5px;
+            }
+        }
+    }
+    h3,
+    p {
+        margin:0;
+        text-align: center;
+        color:@panel-color;
+    }
+    h3 {
+        font-size: 4.2em!important;
+        font-weight: 700;
+        text-align: center;
+        font-family: @font-family-sans-serif;
+        margin-bottom:-0.7rem;
+    }
+
+    form {
+        position: relative;
+        margin:2rem auto 0;
+
+        #webform_submit_button {
+            height:39px;
+            position: absolute;
+            right:0;
+            top:2px;
+            outline:none;
+            border:none;
+            background:@link-color;
+            color:white;
+            font-family: @font-family-sans-serif;
+            line-height: 1.75rem;
+            font-size:1.75rem;
+            padding:1.2rem 1.8rem 1.1rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        #signup_email {
+            height:43px;
+            width:100%;
+            border-radius:3px;
+            border:1px solid darken(@dark-green,10);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.15);
+            outline:none;
+            font-family: 'Courier New';
+            padding:0.8rem;
+            font-size: @font-size - 0.2;
+        }
+
+        textarea {
+            width:100%;
+        }
+    }
+}

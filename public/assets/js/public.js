@@ -7,8 +7,10 @@ jQuery(window).load(function() {
 
 jQuery(document).ready(function(){
 
-		jQuery('body').css('display', 'none');
+	jQuery('body').css('display', 'none');
 	jQuery('body').fadeIn(500);
+
+	jQuery('p:empty').remove();//hack
 
 	// globa variabls
 	var storyHeader			= jQuery('.aesop-story-cover'),
@@ -16,7 +18,7 @@ jQuery(document).ready(function(){
 		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry			= jQuery('.aesop-story-entry'),
 		storyIndicator		= jQuery('.aesop-story-indicator'),
-		musicShutOff        = jQuery('.aesop-parallax-sc-1660-1'), //190 local - 1660 staging
+		musicShutOff        = jQuery('.aesop-parallax-sc-190-1'), //190 local - 1660 staging
 		didScroll,
 		lastScrollTop		= 0,
 		delta				= 5,
