@@ -1,10 +1,11 @@
 // header toggle
 .aesop-story-single .aesop-story-header-toggle {
     color:@panel-color;
+    .transition(color .2s ease-in-out);
 
     &:hover {
         text-decoration: none;
-        color:@panel-color;
+        color:@brown;
     }
 }
 .aesop-story-header-toggle {
@@ -12,7 +13,7 @@
     left:-10000px;
     right:-@header-toggle-width;
     width:@header-toggle-width;
-    height:@header-toggle-width;
+    height:@header-toggle-width - 10;
     text-align: center;
     top:0;
     background:@panel-back;
@@ -38,7 +39,7 @@
         left:0;
 
         &.visible .aesop-story-header-toggle {
-            left:@header-width;
+            left:@header-width - 10;
         }
     }
 
@@ -81,9 +82,10 @@
     background: @panel-back;
     background-image: url('../img/quote-texture.png');
     padding:2rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     .transition(left .25s ease-in);
     .clearfix();
-    -webkit-backface-visibility: hidden;
+    .box-shadow(inset -12px 0 12px -8px rgba(0,0,0,0.5));
 
     .aesop-story-header-inner {
         .clearfix();
@@ -123,7 +125,8 @@
 
 // story chapters
 .aesop-story-chapters {
-    border-bottom:1px solid @panel-color;
+    border-bottom:1px solid darken(@dark-green,10);
+    .box-shadow(0 1px 0 rgba(255,255,255,0.15));
 
     ol {
         list-style: none;
@@ -141,7 +144,8 @@
             }
 
             a {
-                border:1px solid @panel-color;
+                border:1px solid fadeout(@panel-color,25);
+                background:@dark-green;
                 color:@panel-color;
                 text-decoration: none;
                 padding:2.4rem 0.5rem;
@@ -149,6 +153,13 @@
                 text-align: center;
                 font-family: @font-family-sans-serif;
                 font-size: @font-size-small;
+                .transition(all .2s ease-in-out);
+
+                &:hover {
+                    color:@panel-color;
+                    border:1px solid @brown;
+                    background:@brown;
+                }
             }
 
         }
@@ -167,7 +178,8 @@
 }
 // contributors
 .aesop-story-contributors {
-    border-bottom:1px solid @panel-color;
+    border-bottom:1px solid darken(@dark-green,10);
+    .box-shadow(0 1px 0 rgba(255,255,255,0.15));
 }
 .aesop-story-contributor {
     margin-bottom:2rem;
@@ -177,8 +189,9 @@
     .aesop-story-contributor-avatar {
         display: block;
         border-radius: 100%;
-        max-width: 70px;
+        max-width: 75px;
         margin:1rem auto;
+        .aesop-stories-border;
     }
 
     .aesop-story-contributor-name {
@@ -201,7 +214,7 @@
     .aesop-story-contributor-bio p{
         font-size: @font-size-small;
         line-height: @font-size-small;
-        margin:0;
+        margin:0.5rem auto 0;
         text-align:left;
         color:@panel-color;
     }
@@ -210,6 +223,6 @@
 p.aesop-stories-cred{
     font-size: @font-size-small;
     line-height: @font-size-small;
-    margin:1rem auto;
+    margin:2rem auto 0;
     color:@panel-color
 }

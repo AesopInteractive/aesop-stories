@@ -73,9 +73,8 @@ class ASE_Stories {
 
 		add_action('init', array($this,'img_sizes'));
 
+		add_filter('aesop_chapter_scroll_container', array($this,'aesop_chapter_scroll_container'));
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
-		add_filter('aesop_chapter_scroll_offset', array($this,'aesop_scroll_offset'));
-		add_filter('aesop_timeline_scroll_offset', array($this,'aesop_scroll_offset'));
 		add_filter('aesop_grid_gallery_spacing', array($this,'aesop_grid_gallery_spacing'));
 		add_filter('aesop_stacked_gallery_styles_2378-2', array($this,'aesop_stacked_gallery_styles'));  //2357 staging / 2378 local
 		add_filter('aesop_chapter_img_styles_190-1', array($this,'aesop_chapter_img_styles')); // 1660 staging // 190 local 
@@ -365,11 +364,10 @@ class ASE_Stories {
 		return $class;
 	}
 
-	function aesop_scroll_offset($offset){
-		$offset = 36;
-		return $offset;
+	function aesop_chapter_scroll_container($class){
+		$class = '.aesop-story-entry';
+		return $class;
 	}
-
 	function aesop_grid_gallery_spacing(){
 		return 40;
 	}

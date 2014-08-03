@@ -9,7 +9,7 @@
 
 	<?php } else { ?>
 
-		<h1 class="aesop-story-site-title"><?php the_title();?></h1>
+		<h1 class="aesop-story-site-title" itemprop="title"><?php the_title();?></h1>
 
 	<?php } ?>
 
@@ -53,6 +53,6 @@
 
 	</div>
 
-	<p class="aesop-stories-cred">This story is powered with Aesop Story Engine and the Aesop Stories plugin. Copyright 2014 Aesopinteractive L.L.C.</p>
+	<p class="aesop-stories-cred">Story powered by Aesop Story Engine. Copyright 2014 Aesopinteractive L.L.C.</p>
 
 </aside>
