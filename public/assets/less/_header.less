@@ -148,7 +148,7 @@
                 background:@dark-green;
                 color:@panel-color;
                 text-decoration: none;
-                padding:2.4rem 0.5rem;
+                padding:2rem 0.5rem;
                 display: block;
                 text-align: center;
                 font-family: @font-family-sans-serif;
@@ -159,6 +159,10 @@
                     color:@panel-color;
                     border:1px solid @brown;
                     background:@brown;
+                }
+
+                &:active {
+                    background:darken(@brown,7);
                 }
             }
 
@@ -189,7 +193,7 @@
     .aesop-story-contributor-avatar {
         display: block;
         border-radius: 100%;
-        max-width: 75px;
+        max-width: 72px;
         margin:1rem auto;
         .aesop-stories-border;
     }
@@ -203,7 +207,7 @@
         font-family: @font-family-sans-serif;
         font-weight: bold;
         text-transform: uppercase;
-        display: block;
+        display: inline-block;
         padding:0;
         margin:0;
         font-size: 1.2em;
@@ -211,6 +215,7 @@
     .aesop-story-contributor-occupation {
         text-align: center;
         font-weight: 300;
+        font-style: italic;
     }
     .aesop-story-contributor-bio p{
         font-size: @font-size-small;
