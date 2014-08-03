@@ -26,11 +26,15 @@
     }
 }
 
-// office
-#aesop-content-component-@{postid}-2 .aesop-content-comp-inner{
+// content component padding
+#aesop-content-component-@{postid}-2 .aesop-content-comp-inner,
+#aesop-content-component-@{postid}-6 .aesop-content-comp-inner{
     padding-left:5rem;
     padding-right:5rem;
     margin-bottom:-1rem;
+}
+#aesop-content-component-@{postid}-6 .aesop-content-comp-inner{
+    margin-bottom:-3rem;
 }
 //started get scared
 #aesop-content-component-@{postid}-3 {
@@ -136,34 +140,29 @@
 
     &.parents-img {
         height:460px;
-        //background-image: url(../img/parents.png);
+        margin-bottom: -6rem;
     }
 
     &.orange-img {
         height:228px;
-        //background-image: url(../img/orange.png);
         position: relative;
         background-position: 55% center;
     }
 
     &.pills-img {
         height:228px;
-        //background-image: url(../img/pills.png);
     }
 
     &.dirt-img {
         height:300px;
-        //background-image: url(../img/dirt.png);
         margin-bottom: -6rem;
     }
 
     &.king-img {
         height:352px;
-        //background-image: url(../img/king.png);
     }
     &.cereal-img {
         height:300px;
-        //background-image: url(../img/cereal.png);
         margin-bottom: -6rem;
     }
 }
@@ -207,6 +206,7 @@
     }
 }
 
+// convo gallery
 #aesop-gallery-@{galleryid}-2 {
     background-color:black;
 }
@@ -220,6 +220,23 @@
 #aesop-quote-component-@{postid}-18 {
     margin:5rem auto;
 
+}
+
+// not sure there are any
+#aesop-quote-component-@{postid}-12 {
+    text-shadow:0 0 4px rgba(0,0,0,0.65);
+
+    blockquote cite {
+        font-size: 0.7em !important;
+        font-weight:700;
+    }
+}
+
+// strong i said
+#aesop-quote-component-@{postid}-16 {
+    blockquote {
+        font-size:4em !important;
+    }
 }
 
 // image background quotes
