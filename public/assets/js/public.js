@@ -106,4 +106,18 @@ jQuery(document).ready(function(){
 	 jQuery(musicShutOff).waypoint(function(direction){
 	 	jQuery(this).toggleClass('img-out');
 	 }, { offset: '100%' });
+	 
+	jQuery('#chapter-unique-190-5').waypoint({
+		offset:'bottom-in-view',
+		handler: function(direction){
+	   		jQuery('#chapter-unique-190-5 .mejs-playpause-button button').trigger('click');
+	   	}
+	});
+
+	jQuery('#chapter-unique-190-5').waypoint({
+		handler: function(direction){
+	   		jQuery('#chapter-unique-190-5 .mejs-playpause-button button').trigger('click');
+	   	}
+	}, { offset: '100%' });
+
 });
