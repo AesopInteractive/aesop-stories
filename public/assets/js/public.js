@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
 		storyFooter			= jQuery('.aesop-story-footer'),
 		storyEntry			= jQuery('.aesop-story-entry'),
 		storyIndicator		= jQuery('.aesop-story-indicator'),
-		musicShutOff        = jQuery('.aesop-parallax-sc-190-1'), //190 local - 1660 staging
+		musicShutOff        = jQuery('.aesop-parallax-sc-1660-1'), //190 local - 1660 staging
 		didScroll,
 		lastScrollTop		= 0,
 		delta				= 5,
@@ -107,16 +107,16 @@ jQuery(document).ready(function(){
 	 	jQuery(this).toggleClass('img-out');
 	 }, { offset: '100%' });
 	 
-	jQuery('#chapter-unique-190-5').waypoint({
+	jQuery('#chapter-unique-1660-5').waypoint({
 		offset:'bottom-in-view',
 		handler: function(direction){
-	   		jQuery('#chapter-unique-190-5 .mejs-playpause-button button').trigger('click');
+	   		jQuery('#chapter-unique-1660-5 .mejs-playpause-button button').trigger('click'); //190 local / 1660 staging
 	   	}
 	});
 
-	jQuery('#chapter-unique-190-5').waypoint({
+	jQuery('#chapter-unique-1660-5').waypoint({
 		handler: function(direction){
-	   		jQuery('#chapter-unique-190-5 .mejs-playpause-button button').trigger('click');
+	   		jQuery('#chapter-unique-1660-5 .mejs-playpause-button button').trigger('click');
 	   	}
 	}, { offset: '100%' });
 
