@@ -46,7 +46,7 @@ class AesopStoriesMeta {
 					'id'				=> 'aesop_stories_video_bg',
 					'name'				=> __('', 'aesop_stories'),
 					'desc'				=> 'Display a looping video as cover background instead of Story Cover Image.',
-					'type'				=> 'file',
+					'type'				=> 'text',
 					'default'			=> '',
 					'cols'				=> 12
 				)

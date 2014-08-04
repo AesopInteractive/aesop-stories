@@ -1,7 +1,6 @@
 <?php
 	$post_id 		= get_the_ID();
-	$get_video_bg 	= get_post_meta( $post_id, 'aesop_stories_video_bg', true );
-	$video_bg 		= $get_video_bg ? wp_get_attachment_url( $get_video_bg ) : null;
+	$video_bg 		= get_post_meta( $post_id, 'aesop_stories_video_bg', true );
 	$coverimg 		= wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'aesop-story-cover' );
 
 	?>
@@ -31,7 +30,7 @@
 
 					<video width="600" height="360" autoplay loop>
 					  	<source src="<?php echo $video_bg;?>" type="video/mp4">
-						Your browser does not support the video tag.
+						<div class="aesop-stories-video-fallback" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
 					</video>
 
 				</div>
