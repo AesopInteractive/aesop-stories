@@ -121,7 +121,7 @@
 
 // quote components
 .aesop-stories-quote-img {
-    margin:4rem auto -3rem;
+    margin:4rem auto -5rem;
     display: block;
     width:100%;
     position: relative;
@@ -155,15 +155,16 @@
 
     &.dirt-img {
         height:300px;
-        margin-bottom: -6rem;
+        margin-bottom: -7rem;
     }
 
     &.king-img {
         height:352px;
+        margin-bottom: -2.5rem;
     }
     &.cereal-img {
         height:300px;
-        margin-bottom: -6rem;
+        margin-bottom: -8rem;
     }
 }
 
@@ -241,11 +242,35 @@
 
 // image background quotes
 #aesop-quote-component-@{postid}-12,
-#aesop-quote-component-@{postid}-14 {
+#aesop-quote-component-@{postid}-14,
+#aesop-quote-component-@{postid}-19 {
     display: table;
     margin: 3rem auto;
     blockquote {
         display: table-cell;
         vertical-align: middle;
+    }
+}
+
+#aesop-quote-component-@{postid}-18 {
+    margin-bottom: 0;
+}
+// dear wesley
+#aesop-content-component-@{postid}-7 {
+
+    .aesop-content-comp-inner p{
+        font-family: @font-family-hand;
+        font-size:4.8em;
+        line-height: 1.1;
+        font-weight: normal;
+        color:@green;
+
+        &:first-child {
+            margin-bottom: 0.6rem;
+        }
+
+        &:last-child {
+            margin-top:0;
+        }
     }
 }
