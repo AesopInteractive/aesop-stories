@@ -10,10 +10,10 @@ get_header();
 
 	if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();
 
-	the_title();
-
 		aesop_stories_get_template_part('content-single-story');
-
+		aesop_stories_get_template_part('content-loading');
 	endwhile;endif;
+
+aesop_stories_get_template_part('content-news');
 
 get_footer();
