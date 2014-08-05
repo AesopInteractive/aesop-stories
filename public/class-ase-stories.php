@@ -76,6 +76,7 @@ class ASE_Stories {
 		add_filter('aesop_grid_gallery_spacing', array($this,'aesop_grid_gallery_spacing'));
 		add_filter('aesop_stacked_gallery_styles_1663-2', array($this,'aesop_stacked_gallery_styles'));  //1663 staging / 2378 local
 		add_filter('aesop_chapter_img_styles_1660-1', array($this,'aesop_chapter_img_styles')); // 1660 staging // 190 local 
+		add_filter('aesop_chapter_component_appears', array($this,'aesop_chapter_component_appears'));
 		add_filter('the_content', 		array($this,'remove_img_ptags'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
@@ -333,6 +334,13 @@ class ASE_Stories {
 
 	function aesop_chapter_img_styles(){
 		return 'background-size:cover;background-position:center bottom;';
+	}
+
+	function aesop_chapter_component_appears( $appears ){
+
+		$appears = is_page() || is_single();
+
+		return $appears;
 	}
 
 }
