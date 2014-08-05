@@ -76,7 +76,7 @@ class ASE_Stories {
 		add_filter('aesop_grid_gallery_spacing', array($this,'aesop_grid_gallery_spacing'));
 		add_filter('aesop_stacked_gallery_styles_1663-2', array($this,'aesop_stacked_gallery_styles'));  //1663 staging / 2378 local
 		add_filter('aesop_chapter_img_styles_1660-1', array($this,'aesop_chapter_img_styles')); // 1660 staging // 190 local 
-		add_filter('aesop_chapter_component_appears', array($this,'aesop_chapter_component_appears'));
+		add_action('wp_footer', 						array($this,'aesop_chapter_loader'),21);
 		add_filter('the_content', 		array($this,'remove_img_ptags'));
 
 		require_once(ASE_STORIES_DIR.'/includes/type.php');
@@ -338,9 +338,44 @@ class ASE_Stories {
 
 	function aesop_chapter_component_appears( $appears ){
 
-		$appears = is_page() || is_single();
+		$appears = is_home();
 
 		return $appears;
+	}
+
+
+	function aesop_chapter_loader(){
+
+		// maintain backwards compatibility
+		$offset = 0;
+
+		// allow theme developers to determine the offset amount
+		$chapterOffset = apply_filters('aesop_chapter_scroll_offset', $offset );
+
+		// filterable content class
+		$contentClass = apply_filters('aesop_chapter_scroll_container', '.aesop-entry-content');
+
+		// filterabl content header class
+		$contentHeaderClass = apply_filters('aesop_chapter_scroll_nav', '.aesop-entry-header');
+		?>
+			<!-- Chapter Loader -->
+			<script>
+				jQuery(document).ready(function(){
+
+					jQuery('<?php echo $contentClass;?>').scrollNav({
+					    sections: '.aesop-chapter-title',
+					    arrowKeys: true,
+					    insertTarget: '<?php echo $contentHeaderClass;?>',
+					    insertLocation: 'appendTo',
+					    showTopLink: true,
+					    showHeadline: false,
+					    scrollOffset: <?php echo $chapterOffset;?>,
+					});
+
+				});
+			</script>
+
+		<?php
 	}
 
 }
