@@ -64,22 +64,6 @@ jQuery(document).ready(function(){
         panelHeight();
     });
 
-	if ( jQuery.cookie("scroll") !== null ) {
-        jQuery(document).scrollTop( jQuery.cookie("scroll") );
-    }
-
-	// fade the cover out on scroll and stop the paint after we're past the header
-    jQuery(window).on('scroll',function(){
-
-    	scrollPosition = jQuery(this).scrollTop();
-
-    	if ( scrollPosition <= jQuery(window).height() ) {
-    		storyFader();
-    	}
-
-    	jQuery.cookie("scroll", jQuery(document).scrollTop() );
-    });
-
     // fade in story header
     jQuery(storyEntry).waypoint(function(direction){
 

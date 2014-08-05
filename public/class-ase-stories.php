@@ -23,7 +23,7 @@ class ASE_Stories {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -66,8 +66,6 @@ class ASE_Stories {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		add_action('wp_head', array($this,'temp_type'));
-
 		// clearn head
 		add_action('wp_print_styles', array($this,'clean_head'));
 
@@ -76,7 +74,7 @@ class ASE_Stories {
 		add_filter('aesop_chapter_scroll_container', array($this,'aesop_chapter_scroll_container'));
 		add_filter('aesop_chapter_scroll_nav', array($this,'aesop_chapter_scroll_nav'));
 		add_filter('aesop_grid_gallery_spacing', array($this,'aesop_grid_gallery_spacing'));
-		add_filter('aesop_stacked_gallery_styles_2357-2', array($this,'aesop_stacked_gallery_styles'));  //2357 staging / 2378 local
+		add_filter('aesop_stacked_gallery_styles_1663-2', array($this,'aesop_stacked_gallery_styles'));  //1663 staging / 2378 local
 		add_filter('aesop_chapter_img_styles_1660-1', array($this,'aesop_chapter_img_styles')); // 1660 staging // 190 local 
 		add_filter('the_content', 		array($this,'remove_img_ptags'));
 
@@ -85,11 +83,6 @@ class ASE_Stories {
 		require_once(ASE_STORIES_DIR.'/includes/template-loader.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/styles.php');
 		require_once(ASE_STORIES_DIR.'/public/includes/shortcodes.php');
-
-		// rcp integration
-		if ( class_exists('RCP_Payments') ) {
-			require_once(ASE_STORIES_DIR.'/includes/rcp.php');
-		}
 
 	}
 
@@ -274,51 +267,18 @@ class ASE_Stories {
 
 	function clean_head(){
 
-		if ('aesop_stories' == get_post_type() || is_post_type_archive('aesop_stories')) {
 
-			//deregister 2012 styles and scripts
-	    	wp_deregister_script('twentytwelve-navigation');
-	    	wp_dequeue_script(	'twentytwelve-navigation');
+    	wp_deregister_style('ai-core-style');
+    	wp_dequeue_style('ai-core-style');
 
-	    	wp_deregister_style( 'twentytwelve-style' );
-	    	wp_dequeue_style(	'twentytwelve-style');
-
-	    	//deregister 2013 styles and scripts
-	    	wp_deregister_style( 'twentythirteen-style' );
-    		wp_dequeue_style(	'twentythirteen-style');
-
-	    	wp_deregister_script('twentythirteen-script');
-	    	wp_dequeue_script('twentythirteen-script');
-
-
-	    	//deregister 2014 styles and scripts
-    		wp_deregister_style( 'twentyfourteen-style' );
-    		wp_dequeue_style(	'twentyfourteen-style');
-
-    		wp_deregister_script('twentyfourteen-script');
-	    	wp_dequeue_script('twentyfourteen-script');
-
-	    	wp_deregister_style('ai-core-style');
-	    	wp_dequeue_style('ai-core-style');
-
-	    	// clean up wp head on the resume page
-	    	remove_action('wp_head', 'rsd_link');
-			remove_action('wp_head', 'wlwmanifest_link');
-			remove_action('wp_head', 'index_rel_link');
-			remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-			remove_action('wp_head', 'start_post_rel_link', 10, 0);
-			remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-			remove_action('wp_head', 'wp_generator');
-
-	    }
-
-	   if ( 'aesop_stories' == get_post_type() && is_single() ) {
-    		// @todo - remove from public distro
-	    	wp_deregister_style('ase-style');
-	    	wp_dequeue_style('ase-style');
-
-	    	wp_enqueue_style('dashicons');
-	   }
+    	// clean up wp head on the resume page
+    	remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'index_rel_link');
+		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+		remove_action('wp_head', 'start_post_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+		remove_action('wp_head', 'wp_generator');
 
 	}
 	/**
@@ -328,24 +288,19 @@ class ASE_Stories {
 	 */
 	public function enqueue_styles() {
 
-		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) {
-			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
 
-			// dashichons
-			wp_enqueue_style('dashicons');
-			// fonts
-			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lustria', ASE_STORIES_VERSION);
-			wp_enqueue_style( $this->plugin_slug . '-plugin-font', '//fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic', ASE_STORIES_VERSION);
+		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', ASE_STORIES_URL.'/public/assets/css/style.css', ASE_STORIES_VERSION );
 
-		}
+		// dashichons
+		wp_enqueue_style('dashicons');
+
 	}
 
 	public function enqueue_scripts(){
 
-		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story() ) {
-			wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
+		wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
 
-		}
+
 	}
 
 	function remove_img_ptags($content){
@@ -370,13 +325,6 @@ class ASE_Stories {
 	}
 	function aesop_grid_gallery_spacing(){
 		return 40;
-	}
-
-	function temp_type(){
-		if ('aesop_stories' == get_post_type() || aesop_stories_is_front_story()  ) { ?>
-			<script type="text/javascript" src="//use.typekit.net/dao5mtj.js"></script>
-			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		<?php }
 	}
 
 	function aesop_stacked_gallery_styles(){
