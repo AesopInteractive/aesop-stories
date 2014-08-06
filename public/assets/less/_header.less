@@ -154,12 +154,14 @@
                 font-family: @font-family-sans-serif;
                 font-size: @font-size-small;
                 .transition(all .2s ease-in-out);
-                .box-shadow(0 0 4px rgba(0,0,0,0.4));
+                .box-shadow(0 0 4px rgba(0,0,0,0.2));
+                border-radius:2px;
 
                 &:hover {
                     color:darken(@dark-green,10);
                     border:1px solid @brown;
                     background:@brown;
+                    .box-shadow(inset 0 -1px 1px rgba(255,255,255,0.2));
                 }
 
                 &:active {
