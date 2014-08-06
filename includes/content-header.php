@@ -29,7 +29,7 @@
 
 		?>
 		<div class="aesop-story-contributors">
-			<h4 class="aesop-story-contributors-title">Contributors</h4>
+			<h4 class="aesop-story-contributors-title">Story Contributors</h4>
 			<?php foreach($contributors as $contributor) {
 
 				$avatar = $contributor['avatar'] ? wp_get_attachment_image_src( $contributor['avatar'], 'thumbnail' ) : false;

@@ -144,8 +144,8 @@
             }
 
             a {
-                border:1px solid fadeout(@panel-color,25);
-                background:@dark-green;
+                border:1px solid fadeout(white,65);
+                background:darken(@dark-green,4);
                 color:@panel-color;
                 text-decoration: none;
                 padding:2rem 0.5rem;
@@ -154,15 +154,17 @@
                 font-family: @font-family-sans-serif;
                 font-size: @font-size-small;
                 .transition(all .2s ease-in-out);
+                .box-shadow(0 0 4px rgba(0,0,0,0.4));
 
                 &:hover {
-                    color:@panel-color;
+                    color:darken(@dark-green,10);
                     border:1px solid @brown;
                     background:@brown;
                 }
 
                 &:active {
                     background:darken(@brown,7);
+                    box-shadow: none;
                 }
             }
 
@@ -203,7 +205,7 @@
         font-weight: 700;
         text-transform: uppercase;
         position: relative;
-        top:8px;
+        top:2px;
     }
 
     .aesop-story-contributor-name,
@@ -218,6 +220,7 @@
         font-style: italic;
         text-transform: none;
         font-weight: normal;
+        margin-top:2px;
     }
     .aesop-story-contributor-bio {
         clear: left;
@@ -227,6 +230,10 @@
             margin:0.5rem auto 0;
             text-align:left;
             color:@panel-color;
+
+            a {
+                color:inherit;
+            }
         }
     }
 }
