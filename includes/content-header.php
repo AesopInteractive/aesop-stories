@@ -13,7 +13,7 @@
 
 	<?php } ?>
 
-	<p class="aesop-story-meta">by <?php the_author();?></p>
+	<p class="aesop-story-meta">by J. Parrish Lewis</p>
 
 	<?php if ( function_exists('aesop_component_exists') ) {
 
