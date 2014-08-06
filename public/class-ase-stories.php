@@ -300,6 +300,7 @@ class ASE_Stories {
 	public function enqueue_scripts(){
 
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', ASE_STORIES_URL.'/public/assets/js/aesop-stories.min.js', array('jquery'), ASE_STORIES_VERSION, true );
+		//wp_enqueue_script( $this->plugin_slug . '-loader', ASE_STORIES_URL.'/public/assets/js/pace.min.js', array('jquery'), ASE_STORIES_VERSION, true );
 
 
 	}

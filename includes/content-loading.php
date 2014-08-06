@@ -19,6 +19,5 @@
 
 			endif;
 		?>
-		<div class="aesop-stories-spinner">Loading...</div>
 	</div>
 </div>

@@ -1,14 +1,19 @@
-
+/*
 jQuery(window).load(function() {
 	jQuery("#aesop-stories-loading").fadeOut(function() {
         jQuery(this).hide(); // Optional if it's going to only be used once.
+        jQuery('.pace-inactive').hide();
 	});
 });
+*/
 
 jQuery(document).ready(function(){
 
+	/*
 	jQuery('body').css('display', 'none');
 	jQuery('body').fadeIn(500);
+
+	*/
 
 	jQuery('p:empty').remove();//hack
 
