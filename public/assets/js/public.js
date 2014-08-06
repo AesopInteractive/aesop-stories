@@ -25,7 +25,7 @@ jQuery(document).ready(function(){
 
 	var storyFader = function(){
 	 	window_scroll = jQuery(this).scrollTop();
-   		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/ (jQuery(window).height() / 1.4))});
+   		jQuery(storyHeader).css({ 'opacity' : 1-(window_scroll/ (jQuery(window).height() / 1.2))});
    		jQuery(storyHeaderInner).css({'opacity' : 1-(window_scroll/ (jQuery(window).height() / 2.5))});
    		jQuery(storyIndicator).css({'opacity' : 0.5-(window_scroll/ (jQuery(window).height() / 10))});
    	}
@@ -43,7 +43,6 @@ jQuery(document).ready(function(){
 		}
 	}
 
-
    	storyInnerPosition();
 	storyResizer();
 	panelHeight();
@@ -53,6 +52,10 @@ jQuery(document).ready(function(){
         storyInnerPosition();
         panelHeight();
     });
+
+    jQuery(window).on('scroll', function(){
+    	storyFader();
+    });	
 
     // fade in story header
     jQuery(storyEntry).waypoint(function(direction){
