@@ -8,6 +8,45 @@
     }
 }
 
+@media(max-width:1023px) {
+    .aesop-content-component {
+       .aesop-content-comp-wrap {
+            &.aesop-content-comp-columns-2 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-3 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-4 .aesop-content-comp-inner{
+                .content-columns(1, 20);
+                max-width:100% !important ; //overriding js
+
+                p {
+                    padding:0;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:480px) {
+    .aesop-story-single .aesop-quote-component {
+        blockquote {
+            padding: 2.2rem 1rem;
+            font-size: 3em !important;
+            line-height: 1;
+        }
+
+        cite {
+            margin-top:10px;
+        }
+    }
+
+    .aesop-content-comp-inner {
+        h2,p {
+            padding-left:0;
+            padding-right: 0;
+        }
+    }
+}
+
 .small-height {
     .aesop-story-chapters ol li a {
         padding-top:1rem;
