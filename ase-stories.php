@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  *----------------------------------------------------------------------------*/
 
 // Set some constants
-define('ASE_STORIES_VERSION', '1.0');
+define('ASE_STORIES_VERSION', '0.2');
 define('ASE_STORIES_DIR', plugin_dir_path( __FILE__ ));
 define('ASE_STORIES_URL', plugins_url( '', __FILE__ ));
 
