@@ -14,7 +14,7 @@ class aesopStoriesShortcodes{
 			'height' => '50px'
 		);
 		$atts = shortcode_atts($defaults, $atts);
-		$out = sprintf('<hr class="aesop-stories-hr" style="border:none;background:url(\'%s\') no-repeat center center;height:%s" />',$atts['img'],$atts['height']);
+		$out = sprintf('<hr class="aesop-stories-breaker" style="border:none;background:url(\'%s\') no-repeat center center;height:%s" />',$atts['img'],$atts['height']);
 
 		return $out;
 	}
