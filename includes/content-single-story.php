@@ -1,6 +1,7 @@
 <?php
 	$post_id 		= get_the_ID();
 	$video_bg 		= get_post_meta( $post_id, 'aesop_stories_video_bg', true );
+	$video_bg_ogg 	= get_post_meta( $post_id, 'aesop_stories_video_bg_ogg', true );
 	$coverimg 		= wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'aesop-story-cover' );
 
 	?>
@@ -30,6 +31,7 @@
 
 					<video width="600" height="360" autoplay loop>
 					  	<source src="<?php echo $video_bg;?>" type="video/mp4">
+					  	<source src="<?php echo $video_bg_ogg;?>" type="video/ogg">
 						<div class="aesop-stories-video-fallback" style="background:url('<?php echo $coverimg[0];?>') center center;background-size:cover;"></div>
 					</video>
 

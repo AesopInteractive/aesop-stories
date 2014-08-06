@@ -49,6 +49,14 @@ class AesopStoriesMeta {
 					'type'				=> 'text',
 					'default'			=> '',
 					'cols'				=> 12
+				),
+				array(
+					'id'				=> 'aesop_stories_video_bg_ogg',
+					'name'				=> __('', 'aesop_stories'),
+					'desc'				=> 'OGG Display a looping video as cover background instead of Story Cover Image.',
+					'type'				=> 'text',
+					'default'			=> '',
+					'cols'				=> 12
 				)
 			)
 		);
