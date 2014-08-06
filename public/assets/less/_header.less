@@ -187,48 +187,53 @@
 }
 .aesop-story-contributor {
     margin-bottom:2rem;
-    text-align: center;
     color:@panel-color;
 
     .aesop-story-contributor-avatar {
         display: block;
         border-radius: 100%;
-        max-width: 72px;
-        margin:1rem auto;
+        max-width: 50px;
+        margin:0 1rem 1rem 0;
+        float: left;
         .aesop-stories-border;
     }
 
     .aesop-story-contributor-name {
         line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: relative;
+        top:8px;
     }
 
     .aesop-story-contributor-name,
     .aesop-story-contributor-occupation {
         font-family: @font-family-sans-serif;
-        font-weight: bold;
-        text-transform: uppercase;
-        display: inline-block;
+        display: block;
         padding:0;
         margin:0;
         font-size: 1.2em;
     }
     .aesop-story-contributor-occupation {
-        text-align: center;
-        font-weight: 300;
         font-style: italic;
+        text-transform: none;
+        font-weight: normal;
     }
-    .aesop-story-contributor-bio p{
-        font-size: @font-size-small;
-        line-height: @font-size-small;
-        margin:0.5rem auto 0;
-        text-align:left;
-        color:@panel-color;
+    .aesop-story-contributor-bio {
+        clear: left;
+        p{
+            font-size: @font-size-small;
+            line-height: @font-size-small - 0.15;
+            margin:0.5rem auto 0;
+            text-align:left;
+            color:@panel-color;
+        }
     }
 }
 
 p.aesop-stories-cred{
     font-size: @font-size-small;
-    line-height: @font-size-small;
+    line-height: @font-size-small - 0.15;
     margin:2rem auto 0;
     color:@panel-color
 }

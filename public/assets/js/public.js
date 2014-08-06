@@ -36,7 +36,7 @@ jQuery(document).ready(function(){
    	}
 
    	var panelHeight = function(){
-		if ( jQuery(window).height() <= 700 ) {
+		if ( jQuery(window).height() <= 860 ) {
 			jQuery('body').addClass('small-height')
 		} else {
 			jQuery('body').removeClass('small-height')

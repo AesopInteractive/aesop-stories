@@ -40,8 +40,7 @@
 				?>
 				<div class="aesop-story-contributor">
 					<img class="aesop-story-contributor-avatar" src="<?php echo $avatar[0];?>" alt="<?php echo $name;?>">
-					<h5 class="aesop-story-contributor-name"><?php echo $name;?></h5>
-					<small class="aesop-story-contributor-occupation"><?php echo $occ;?></small>
+					<h5 class="aesop-story-contributor-name"><?php echo $name;?><small class="aesop-story-contributor-occupation"><?php echo $occ;?></small></h5>
 					<div class="aesop-story-contributor-bio"><?php echo wpautop($bio);?></div>
 				</div>
 			<?php } ?>
