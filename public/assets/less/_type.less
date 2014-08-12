@@ -38,7 +38,7 @@
         font-family:@font-family-sans-serif;
         font-weight:600;
         font-size: @font-size; // 19px
-        margin-bottom: 1em;
+        margin-bottom: 1.5rem;
 
         @media(max-width:@responsive-break) {
             font-size:@responsive-font-size;
@@ -55,6 +55,10 @@
             }
 
         }
+    }
+
+    .aesop-component + .lead {
+        margin-top:10rem;
     }
 
     .h1,.h2,.h3,.h4,.h5,.h6,
@@ -78,7 +82,7 @@
     .h2,h2 {
         font-size:@h2-font-size;
         line-height: 0.7;
-        margin:4rem auto 3rem;
+        margin:10rem auto 5rem;
         text-align: center;
     }
 
@@ -91,8 +95,8 @@
         font-size: @h3-font-size;
         font-family: @font-family-sans-serif;
         font-weight:600;
-        margin-top:1rem;
-        margin-bottom: 0;
+        margin-top:4rem;
+        margin-bottom: 4rem;
         line-height: 1;
     }
 
@@ -139,5 +143,9 @@
                 top: 25px;
             }
         }
+    }
+
+    hr + h2 {
+        margin-top:3rem;
     }
 }
