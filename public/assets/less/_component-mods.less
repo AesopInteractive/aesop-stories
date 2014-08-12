@@ -1,10 +1,12 @@
 // local post id
 //@postid:        190;
-//@galleryid:    2378;
+//@galleryid:     2378;
+//@gridgalleryid:  1668;
 
 // staging post id
 @postid: 1660;
 @galleryid:    1663;
+@gridgalleryid:  1668;
 
 // production post id
 //@postid: 190;
@@ -50,7 +52,7 @@
 }
 //bomb
 #aesop-content-component-@{postid}-4 {
-    padding:7rem 1.2rem;
+    padding:0 1rem 6rem;
     .box-shadow(inset 0 6px 6px -4px rgba(0,0,0,.35));
 
     .lead {
@@ -58,6 +60,9 @@
     }
 }
 
+#aesop-content-component-@{postid}-6 {
+    margin-top:8rem;
+}
 // parallax
 .aesop-story-single .aesop-parallax-sc-@{postid}-1 {
     margin-top:10rem;
@@ -104,7 +109,7 @@
     }
 }
 .aesop-story-single .aesop-parallax-sc-@{postid}-2 {
-   //margin-top:6rem;
+    margin-top:10rem;
    .aesop-parallax-sc-img:after {
         content:'';
         position: absolute;
@@ -154,6 +159,11 @@
             text-align: left;
         }
     }
+}
+
+.aesop-story-single .aesop-parallax-sc-@{postid}-3,
+.aesop-story-single .aesop-parallax-sc-@{postid}-4 {
+    margin-top:10rem;
 }
 
 // chapter
@@ -229,6 +239,12 @@
     }
 }
 
+#aesop-quote-component-@{postid}-15,
+#aesop-quote-component-@{postid}-20,
+#aesop-quote-component-@{postid}-22 {
+    margin-top:10rem;
+}
+
 #aesop-quote-component-@{postid}-3, // parents
 #aesop-quote-component-@{postid}-4, // cereal
 #aesop-quote-component-@{postid}-5, // oranges
@@ -238,7 +254,7 @@
 #aesop-quote-component-@{postid}-17, // king
 #aesop-quote-component-@{postid}-21,
 #aesop-quote-component-@{postid}-24 { // king
-    margin-bottom:8rem;
+    margin-bottom:10rem;
     blockquote{
         font-weight: normal;
         font-size:3.6em !important;
@@ -274,8 +290,8 @@
 #aesop-gallery-@{galleryid}-2 {
     background-color:black;
 }
-#aesop-grid-gallery-1668 {
-    height:398px;
+#aesop-grid-gallery-@{gridgalleryid}-1 {
+    margin-top:10rem;
 }
 
 // quote components plain 
@@ -284,7 +300,7 @@
 #aesop-quote-component-@{postid}-13,
 #aesop-quote-component-@{postid}-16,
 #aesop-quote-component-@{postid}-18 {
-    margin:5rem auto;
+    margin:10rem auto;
 
 }
 
